@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Payment.master.cs" Inherits="YoeJoyWeb.Master.Payment" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>攸怡网 - 综合类互联网商城 100%正品行货 折扣 实惠</title>
+    <meta property="qc:admins" content="2422330137617527163757" />
+    <script type="text/javascript" src="../static/js/dev/jquery-1.8.1.js"></script>
+    <script type="text/javascript" src="../static/js/dev/usercustom.js"></script>
+    <script type="text/javascript" src="../static/js/dev/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/dev/YoeJoy.Namespace.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" src="../static/js/dev/YoeJoy.Object.js"></script>
+    <script type="text/javascript" src="../static/js/dev/Yoejoy.Site.js"></script>
+    <script type="text/javascript" src="../static/js/dev/jquery.scrollLoading-min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="ProcessHeader">
+        <div id="banner">
+            <a class="logo" href="#">
+                <img alt="logo" src="../static/images/logo.gif" width="243" height="50" /></a>
+            <div id="welcomeContent">
+                <p class="Myname">
+                    <b>
+                        <%=UserIDTxt%>,欢迎您</b> <a href="#">[退出]</a>
+                </p>
+                <p class="Myinfo">
+                    <span><a href="../Default.aspx">去首页继续购物 |</a></span> <span><a href="../User/MyProfile.aspx">
+                        我的攸怡 |</a></span> <span><a href="help-index.html">帮助中心</a> </span>
+                </p>
+                <%--<div id="chartContent"> <img alt="背景"
+        src="../static/images/gwctop.png" width="374" height="18"> <div class="shopping">
+        <p class="l"> <a href="#"> <img src="../static/images/char.jpg"></a> <a href="product.html"><span>全脂牛奶全脂牛奶全脂牛奶全脂牛奶</span></a>
+        <b>￥15000.00</b> </p> <div class="r"> <a class="sub" href="javascript:void(0)">-</a>
+        <input class="num" maxlength="3" value="1" type="text"> <a class="add" href="javascript:void(0)">+</a>
+        <p> 删除</p> </div> </div> <div class="payNow"> <div class="l"> 共<b>12</b>件商品 </div>
+        <div class="r"> <p> 合计：<b>￥1900.9</b></p> <a href="process2.html"> <img src="../static/images/jsbt.png"></a>
+        </div> </div> </div>--%>
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="ModuleContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="BackupContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="BackupContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="ScriptContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <div id="footer">
+        <ul id="Guide">
+            <a id="topp" href="#">
+                <img src="../static/images/topp.png"></a>
+            <li><a class="guidePic" href="#">
+                <img src="../static/images/guide.jpg"></a> </li>
+            <li>
+                <div class="guideDesc">
+                    <h2>
+                        <img src="../static/images/footico1.png">关于攸怡</h2>
+                    <p>
+                        <a href="">@攸怡(腾迅)</a> <a href="">@攸怡(新浪)</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="guideDesc">
+                    <h2>
+                        <img src="../static/images/footico2.png">新手指南</h2>
+                    <p>
+                        <a href="http://www.ue96.com/help/help01.aspx">会员注册</a> <a href="http://www.ue96.com/help/help09.aspx">订单状态</a> <a href="http://www.ue96.com/help/help05.aspx">服务协议</a>
+                        <a href="http://www.ue96.com/help/help06.aspx">隐私声明</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="guideDesc">
+                    <h2>
+                        <img src="../static/images/footico3.png">我的帐户</h2>
+                    <p>
+                        <a href="http://www.ue96.com/User/MyProfile.aspx">我的攸怡</a> <a href="http://www.ue96.com/User/MyAddress.aspx">变更收货地址</a> <a href="http://www.ue96.com/User/MyOrder.aspx">我的订单记录</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="guideDesc">
+                    <h2>
+                        <img src="../static/images/footico4.png">客户服务中心</h2>
+                    <p>
+                        <a href="http://www.ue96.com/help/help17.aspx">退换货政策</a> <a href="http://www.ue96.com/help/help11.aspx">商品运送说明</a> <a href="http://www.ue96.com/help/help15.aspx">支付方式</a>
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <div id="footMsg">
+            <span class="minLogo">
+                <img src="../static/images/logob.jpg"></span> <span class="menu">
+				<a href="http://www.ue96.com/Default.aspx">商城首页</a>
+				<a href="http://www.ue96.com/help/help04.aspx">关于攸怡</a>
+				<a href="http://www.ue96.com/User/MyProfileDetail.aspx">我的账户</a>
+				<a href="http://www.ue96.com/help/help.aspx">服务中心</a>
+				<a href="mailto:contact@joyoplan.com">联系我们</a>
+                    <br>
+                    <em>联系热线: 400-808-9196  E-Mail: contact@joyoplan.com<br>
+                        沪ICP备09017990号</em> </span>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+/*大类菜单*/
+#ItemSortCon{margin-top:1px;}
+#Menu{position:absolute;width:208px;}
+#Menu .header{display:none}
+#Menu .Listcontent{top:-1px;}
+.classMenu{display:none;}
+.lbg{margin-top:1px; height:0}
+#ItemSort{text-align:center;}
+#ItemSort span{font-weight:bold; color:#FFF; font-size:14px; padding:56px 0 7px 0;}
+#ItemSort span b{width:15px;}
+/*大类菜单*/
+#adShow{float:left; width:780px; height:277px; position:relative}
+#adShow a{display:none}
+#adShow a.show{display:inline-block}
+#adShow .btItem{position:absolute; top:10px; right:10px}
+#adShow .btItem a{display:inline-block; width:29px; height:28px; background:url(../images/showbg.png) 1.5px -448.5px no-repeat; font-size:14px; font-weight:bold; color:#555; text-align:center; line-height:2}
+#adShow .btItem a.selected{background:url(../images/showbg.png) -35px -447px no-repeat; color:#BE1E2D}
+
+#position{width:1200px; margin:0 auto; margin-bottom:10px; border-bottom:#ccc solid 1px; clear:both;zoom:1; padding:5px 0}	
+#position span,#position b{color:color: #666; padding-right:7px;}
+#position b{font-weight:bold; font-size:14px;}
+
+#foodImport{width:208px}
+#foodImport h2{background:#F90; font-size:14px; font-weight:bold; color:#000; overflow:hidden;zoom:1;}
+#foodImport h2 i,#foodImport h2 b,#foodImport h2 strong{float:left;}
+#foodImport h2 i{background: url(../images/showbg.png) 0px 0px no-repeat;width: 30px;height: 27px;}
+#foodImport h2 b{width: 148px;height: 25px;background-color: #F9AA3D;border-top: solid 2px #EF4100;color: black; line-height:1.8}
+#foodImport h2 strong{background: url(../images/showbg.png) -40px 0px no-repeat;width: 30px;height: 27px;}
+.listOut{border:#F00 solid 2px; border-top:none; border-radius:0 0 6px 6px; padding:0 10px; margin-top:-1px} 
+.listOut li{border-top:dotted 1px #ccc}
+#foodImport h3{ color:#BB1F23; font-weight:bold; font-size:14px; padding-top:7px; margin-left:10px}
+#foodImport p{overflow:hidden;zoom:1; margin:0 7px; padding-bottom:5px;}
+#foodImport p a{display:block; width:45%;float:left; text-align:center; border-right:#F63 solid 1px; margin-top:5px}
+
+#Discount{float:right;width:192px; height:276px; overflow:hidden; padding-bottom:-1px; border-bottom:solid 1px #ccc}
+#Discount dt{ font-size:14px; font-weight:bold; color:#333;background:#EBEBEB; overflow:hidden;zoom:1}
+#Discount dt i,#Discount dt b,#Discount dt strong{ float:left;}
+#Discount dt i{background: url(../images/showbg.png) -80px 0px no-repeat;width: 30px;height: 27px;}
+#Discount dt b{width:132px; height:26px; line-height:1.8; color:#5D7887; border-top: solid 1px #CCC; background-color:#E6E7E8;}
+#Discount dt strong{background: url(../images/showbg.png) -110px 0px no-repeat;width: 30px;height: 27px;}
+#Discount dd{overflow:hidden; zoom:1; border-bottom:dotted #ccc 1px;border-left: solid 1px #CCC; border-right: solid 1px #CCC; padding:2px 0 3px 0}
+#Discount dd img{vertical-align:middle}
+#Discount dd h2,#Discount dd p{float:left;}
+#Discount dd h2{width:35%; text-align:center;}
+#Discount dd p{width:60%}
+#Discount dd .name{margin-bottom:5px}
+
+.chocolate{clear:both; zoom:1; margin-top:10px}
+.chocolate h2{overflow:hidden; zoom:1; background:url(../images/minbg.jpg) repeat-x; height:25px}
+.chocolate h2 span{float:left; background:url(../images/showbg.png) no-repeat -80px -37px; width:93px; height:25px; color:#fff; font-weight:bold; font-size:14px; line-height:1.7; text-indent:5px}
+.chocolate h2 a{float:right; margin-top:3px; margin-right:8px;}
+
+.mainShow{overflow:hidden;zoom:1; border:#ccc solid 1px}
+.hot{float:right;width:192px}
+.hot a{display:block;height:100%;}
+
+.mainProduct{float:left; width:80%; border-right:dotted 1px #ccc; margin-top:-1px}
+.mainProduct .product{overflow:hidden;zooom:1; text-align:center; margin-bottom:-1px}
+.mainProduct .product li{ float:left; width:24.9%; padding:10px 0; border-bottom:dotted 1px #ccc}
+.mainProduct .product h3{padding:3px 0px;}
+.mainProduct .product p{padding:0 10px;}
+
+.ranking dt{font-size:14px;font-weight:bold; margin-top:10px; overflow:hidden;zoom:1;}
+.ranking dt i,.ranking dt b,.ranking dt strong{float:left;}
+.ranking dt i{background: url(../images/showbg.png) 0px -37px no-repeat;width:30px;height:27px;}
+.ranking dt b{width:148px;height:27px; background-color:#BB1F23;color:white; line-height:1.95}
+.ranking dt strong{background: url(../images/showbg.png) -40px -37px no-repeat;width:30px;height: 27px;}
+.ranking dd{zoom:1}
+.sellRanking{border:#BB1F23 solid 1px; width:206px; border-top:none; border-radius:0 0 6px 6px; margin-top:-1px}
+.sellRanking li{overflow:hidden;zoom:1; border-top:dotted 1px #ccc; margin:0 10px; padding:5px 0;}
+.sellRanking a,.sellRanking em{display:block;}
+.sellRanking a.productPic,.sellRanking div,.sellRanking em{float:left;}
+.sellRanking em{width:10%; font-weight:bold; text-align:center; margin-top:25px;}
+.sellRanking a.productPic{width:28%;}
+.sellRanking div{width:57%}
+.sellRanking .adText{margin-bottom:5px}
+.sellRanking .price{text-align:left; padding-left:71px; *padding-left:81px}

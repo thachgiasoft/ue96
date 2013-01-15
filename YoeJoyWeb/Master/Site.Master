@@ -1,0 +1,209 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="YoeJoyWeb.Site" %>
+
+<%@ Register Src="../Controls/UserProfiler.ascx" TagName="UserProfiler" TagPrefix="uc1" %>
+<%@ Register Src="../Controls/OnlieShoppingCart.ascx" TagName="OnlieShoppingCart"
+    TagPrefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>攸怡网 - 综合类互联网商城 100%正品行货 折扣 实惠</title>
+    <meta property="qc:admins" content="2422330137617527163757" />
+    <link type="text/css" rel="Stylesheet" href="../static/css/base.css" />
+    <script type="text/javascript" src="../static/js/dev/jquery-1.8.1.js"></script>
+    <script type="text/javascript" src="../static/js/dev/usercustom.js"></script>
+    <script type="text/javascript" src="../static/js/dev/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/dev/YoeJoy.Namespace.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" src="../static/js/dev/YoeJoy.Object.js"></script>
+    <script type="text/javascript" src="../static/js/dev/Yoejoy.Site.js"></script>
+    <script type="text/javascript" src="../static/js/dev/jquery.scrollLoading-min.js"></script>
+</head>
+<body id="bg">
+    <form runat="server">
+    <dl id="logo">
+        <dt><a href="#">
+            <img alt="logo" src="../static/images/logo.gif" /></a></dt>
+        <uc1:UserProfiler ID="UserProfiler1" runat="server" />
+    </dl>
+    <div class="ThreeRow top">
+        <%=LeftTopDivTag%>
+        <asp:ContentPlaceHolder ID="LeftTopModule" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="right">
+        <uc2:OnlieShoppingCart ID="OnlieShoppingCart1" runat="server" />
+        <div id="ServiceLine">
+            <span>400-808-9196&nbsp;(9:30~18:30)</span> <font>9914838&nbsp;(9:30~22:00)</font>
+        </div>
+        <asp:ContentPlaceHolder ID="RightTopModule" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="middle">
+        <dl id="Search">
+            <dt id="topNav"><a href="<%=SiteBaseURL %>Default.aspx">首页</a><a href="grounp.html">团购</a>
+            </dt>
+            <dd>
+                <p id="HotWord">
+                    <span>热门搜索:</span> <a href="search.html">ＩＴ数码</a> <a href="search.html">巧克力</a>
+                    <a href="search.html">进口糖果</a>
+                </p>
+                <div id="SearchBox">
+                    <p>
+                        <input id="txtSearch" value="数码产品" type="text" />
+                        <button type="button" id="btnSearch">
+                        </button>
+                        <input type="hidden" id="siteBaseURL" value="<%=SiteBaseURL %>" />
+                        <input type="hidden" id="siteSearchURL" value="<%=SiteBaseURLSearch %>" />
+                    </p>
+                </div>
+            </dd>
+        </dl>
+        <script type="text/javascript">
+
+            function RefreshOnlineShoppingCart() {
+                var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=view&random=" + Math.random();
+                //var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=view";
+                $.get(shoppingCartServiceURL, function (data) {
+                    $("#count").empty().append(data);
+                    ReCartBindHoverEvent();
+                });
+            };
+
+            function ReCartBindHoverEvent() {
+
+                var char = $('#count img');
+                var charf = $('#count');
+                var charContent = $('#chartContent');
+                var car = $('#chart img');
+
+                char.hover(function () {
+                    charContent.css('display', 'block');
+                    car.attr({ 'src': '../static/images/gwcbt1.png' });
+                }, function () {
+                });
+
+                charf.hover(function () {
+                }, function () {
+                    charContent.css('display', 'none');
+                    car.attr({ 'src': '../static/images/gwcbt0.png' });
+                });
+
+                charContent.hover(function () {
+                    charContent.show();
+                    car.attr({ 'src': '../static/images/gwcbt1.png' });
+                }, function () {
+                    charContent.hide();
+                    car.attr({ 'src': '../static/images/gwcbt0.png' });
+                });
+            };
+
+            function DeleteShoppingCartItem(sender) {
+                var $this = $(sender);
+                var deleteHandlerBaseURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=delete";
+                var productSysNo = $this.children("input").val();
+                var params = "pid=" + productSysNo;
+                $.post(deleteHandlerBaseURL, params, function (data) {
+                    var result = YoeJoy.Site.Utility.GetJsonStr(data);
+                    if (result.IsSuccess) {
+                        RefreshOnlineShoppingCart();
+                    }
+                    else {
+                        alert(result.Msg);
+                    }
+                });
+            };
+
+            $(function () {
+                $("#btnSearch").click(function (event) {
+                    var keyWords = $("#txtSearch").val();
+                    if (keyWords.length > 0) {
+                        var searchURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Pages/Search.aspx?q=" + escape(keyWords);
+                        window.location.href = searchURL;
+                    }
+                    else {
+                        return;
+                    }
+                });
+
+            });
+        </script>
+        <asp:ContentPlaceHolder ID="MiddleTopModule" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <asp:ContentPlaceHolder ID="SiteNavModule" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="LeftBigModule" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="RightBigModule" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="BackupContent1" runat="server">
+    </asp:ContentPlaceHolder>
+    </div>
+    <asp:ContentPlaceHolder ID="HomeMiddleContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="BackupContent2" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="ScriptContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <div id="footer">
+        <ul id="Guide">
+            <a id="topp" href="#">
+                <img src="../static/images/topp.png"></a>
+            <li><a class="guidePic" href="#">
+                <img src="../static/images/guide.jpg"></a> </li>
+            <li>
+                <div class="guideDesc">
+                    <h2>
+                        <img src="../static/images/footico1.png">关于攸怡</h2>
+                    <p>
+                        <a href="">@攸怡(腾迅)</a> <a href="">@攸怡(新浪)</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="guideDesc">
+                    <h2>
+                        <img src="../static/images/footico2.png">新手指南</h2>
+                    <p>
+                        <a href="http://www.ue96.com/help/help01.aspx">会员注册</a> <a href="http://www.ue96.com/help/help09.aspx">
+                            订单状态</a> <a href="http://www.ue96.com/help/help05.aspx">服务协议</a> <a href="http://www.ue96.com/help/help06.aspx">
+                                隐私声明</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="guideDesc">
+                    <h2>
+                        <img src="../static/images/footico3.png">我的帐户</h2>
+                    <p>
+                        <a href="http://www.ue96.com/User/MyProfile.aspx">我的攸怡</a> <a href="http://www.ue96.com/User/MyAddress.aspx">
+                            变更收货地址</a> <a href="http://www.ue96.com/User/MyOrder.aspx">我的订单记录</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="guideDesc">
+                    <h2>
+                        <img src="../static/images/footico4.png">客户服务中心</h2>
+                    <p>
+                        <a href="http://www.ue96.com/help/help17.aspx">退换货政策</a> <a href="http://www.ue96.com/help/help11.aspx">
+                            商品运送说明</a> <a href="http://www.ue96.com/help/help15.aspx">支付方式</a>
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <div id="footMsg">
+            <span class="minLogo">
+                <img src="../static/images/logob.jpg"></span> <span class="menu"><a href="http://www.ue96.com/Default.aspx">
+                    商城首页</a> <a href="http://www.ue96.com/help/help04.aspx">关于攸怡</a> <a href="http://www.ue96.com/User/MyProfileDetail.aspx">
+                        我的账户</a> <a href="http://www.ue96.com/help/help.aspx">服务中心</a> <a href="mailto:contact@joyoplan.com">
+                            联系我们</a>
+                    <br>
+                    <em>联系热线: 400-808-9196 E-Mail: contact@joyoplan.com<br>
+                        沪ICP备09017990号</em> </span>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

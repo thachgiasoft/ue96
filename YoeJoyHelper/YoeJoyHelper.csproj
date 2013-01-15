@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C830E24-8D46-4827-B6D5-E06C70A36E8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YoeJoyHelper</RootNamespace>
+    <AssemblyName>YoeJoyHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\Data\CacheObj.cs" />
+    <Compile Include="Application\Data\JsonContentTransfomer.cs" />
+    <Compile Include="Application\Data\SharedCacheObj.cs" />
+    <Compile Include="Application\Web\ADHelper.cs" />
+    <Compile Include="Application\Web\BrandProductHelper.cs" />
+    <Compile Include="Application\Web\BrandsHelper.cs" />
+    <Compile Include="Application\Data\CacheHelper.cs" />
+    <Compile Include="Application\Data\CacheObjKeys.cs" />
+    <Compile Include="Application\Web\CategoryHelper.cs" />
+    <Compile Include="Application\Web\FrontProductsHelper.cs" />
+    <Compile Include="Application\Web\PanicBuyingHelper.cs" />
+    <Compile Include="Application\Web\InComingProductHelper.cs" />
+    <Compile Include="Application\Web\ProductDetailHelper.cs" />
+    <Compile Include="Application\Data\SqlDBHelper.cs" />
+    <Compile Include="Application\Web\SearchHelper.cs" />
+    <Compile Include="Application\Web\CustomerHelper.cs" />
+    <Compile Include="Application\Web\WebBulletinHelper.cs" />
+    <Compile Include="Application\YoeJoyConfig.cs" />
+    <Compile Include="Extension\MyExtension.cs" />
+    <Compile Include="Model\ADModule.cs" />
+    <Compile Include="Model\BrandModel.cs" />
+    <Compile Include="Model\CustomerModel.cs" />
+    <Compile Include="Model\FrontProductDisplayModel.cs" />
+    <Compile Include="Model\GroupBuyModel.cs" />
+    <Compile Include="Model\PanicBuyingProductModel.cs" />
+    <Compile Include="Model\InComingProductModel.cs" />
+    <Compile Include="Model\ProductDetailModel.cs" />
+    <Compile Include="Model\ProductMappingModel.cs" />
+    <Compile Include="Model\PromotionProductModel.cs" />
+    <Compile Include="Model\WishListModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\DESProvider.cs" />
+    <Compile Include="Security\SecurityPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utility\CommonUtility.cs" />
+    <Compile Include="Utility\GroupBuyUtility.cs" />
+    <Compile Include="Utility\NewProductImageUtility.cs" />
+    <Compile Include="Utility\NewPromotionUtility.cs" />
+    <Compile Include="Utility\NewStockUtility.cs" />
+    <Compile Include="Utility\WebBulletinUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Icson.BLL\Icson.BLL.csproj">
+      <Project>{1B8411C9-38AE-4ED1-A402-10D42AF81ADA}</Project>
+      <Name>Icson.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Icson.DBAccess\Icson.DBAccess.csproj">
+      <Project>{BE10DABE-A744-4026-A29A-264FA8F0DEAA}</Project>
+      <Name>Icson.DBAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Icson.Objects\Icson.Objects.csproj">
+      <Project>{AA5FFEA0-A382-4833-B90B-785D7F84E856}</Project>
+      <Name>Icson.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Icson.Utils\Icson.Utils.csproj">
+      <Project>{675C262F-07A7-4492-A999-E7F76CFFE709}</Project>
+      <Name>Icson.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

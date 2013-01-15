@@ -1,0 +1,247 @@
+.model{display:none;}
+.myNowAddress{display:none;}
+.myNowAddress span{color:#999;}
+#NewAdressContent{display:none;}
+
+.addNewAdress{width:69px; height:20px; font-family:"黑体"; font-size:12px; background:url(../images/allbt.png) 0 -32px no-repeat; text-align:center; line-height:1.7}
+#process img{ width:100%;}
+
+#ProcessHeader{ border-bottom:3px solid #ba2022; padding-top:10px; height:65px;}
+#banner{width:980px; margin:0 auto;}
+#banner .logo{ float:left;}
+#welcomeContent{float:right; text-align:right; width:390px; margin-top:18px; position:relative;zoom:1}
+.Myname{text-align:right; padding-bottom:3px;}
+.Myname b{color:#ff9700;}
+.Myname a{color:#00F;padding:0 7px;}
+.Myinfo a img{ vertical-align:text-bottom;}
+
+#Mycart b{color:#ba2022;}
+#MyYoyi{position:relative;zoom:1; width:71px;}
+#MyYoyi .MyYoyi{position:absolute;left:0; top:-12px;padding:1px; text-align:left; background:#fff;}
+#MyYoyi .MyYoyi em{padding-bottom:5px; padding-left:5px; line-height:15px; display:none;}
+#MyYoyi .MyYoyis{border:#ccc solid 1px; padding:0;}
+
+#chartContent{ position:absolute;right:78px; top:38px; border:rgb(249,170,61) solid 2px; background:#fff; background:#FFF;display:none; }
+.shopping{overflow:hidden;zoom:1; margin:0 10px; padding:10px 0;}
+.shopping .l a,.shopping .l span,.shopping .l b{ float:left;}
+.shopping .l a img{border:#ccc solid 1px; width:30px; height:30px;}
+.shopping .l a{text-align:left}
+.shopping .l span{width:150px; margin-left:5px;}
+.shopping .l b{color:#900;}
+.shopping .r{float:right; overflow:hidden; zoom:1; text-align:center;}
+.shopping .r span{ border:#ccc solid 1px; padding:0 3px;}
+.shopping .r input{width:20px; text-align:center;}
+.payNow{ border-top:#ccc solid 1px; padding:10px 10px; overflow:hidden;zoom:1; background:#F2F2F2;}
+.payNow b{color:#900;}
+.payNow .r{text-align:center;}
+.payNow .r a{margin-top:15px;}
+
+#content{clear:both;zoom:1; width:980px; padding-top:10px;}
+
+#FreeDesc{border:#ccc solid 1px; margin-top:10px;}
+#FreeDesc h2{padding:10px;}
+#FreeDesc h2 input{vertical-align:middle;}
+#FreeDesc h2 span{vertical-align:middle;}
+#FreeDesc h2 em{color:#ba2022; vertical-align:middle;}
+#FreeDesc h2 a{color:blue; vertical-align:middle; margin-left:5px;}
+
+#ProductAcount{width:100%; border-top:#ba2022 solid 3px; text-align:center; background:#f5f5f5;}
+#ProductAcount thead{line-height:25px;}
+#ProductAcount th{font-weight:normal; border-bottom:#ccc solid 1px; vertical-align:middle;}
+#ProductAcount td{border-bottom:#ccc solid 1px; border-right:#ccc solid 1px;}
+#ProductAcount em{text-decoration:line-through; color:#999;}
+#ProductAcount span{ font-weight:bold;}
+#ProductAcount b{ color:#ba2022;}
+
+.AllNum{background:#fff0f1;}
+.AllNum span{border:#ccc solid 1px; padding:1px 6px; vertical-align:middle;}
+.AllNum input{width:25px; vertical-align:middle; text-align:center;}
+.AllNum .kc{background:#ba2022; color:#fff; padding:3px 15px; margin-top:5px;}
+
+.ProductAcountTitle{ text-align:left; padding:10px 0; padding-left:10px;}
+.ProductAcountTitle input{vertical-align:middle;}
+.ProductAcountTitle a{vertical-align:middle;}
+
+.priceAll{text-align:right; padding:10px;}
+.priceAll span{ margin-right:10px;}
+.priceAll strong{font-weight:bold; color:#ba2022; font-size:16px;}
+
+#comfirm{overflow:hidden;zoom:1; border:#ccc solid 1px; padding:10px; margin-top:10px;}
+#comfirm .l{margin-top:10px;}
+#comfirm .l input{vertical-align:middle; margin-right:5px;}
+#comfirm .l a{vertical-align:middle; color:blue; margin-left:8px;}
+
+#comfirm .r b{font-size:18px; vertical-align:middle;}
+#comfirm .r strong{color:#ba2022; font-weight:bold; font-size:28px; vertical-align:middle;}
+#comfirm .r a{vertical-align:middle;}
+
+#footer{ width:980px;}
+#Guide{ overflow:hidden; zoom:1; height:150px; border:#CCC solid 1px; border-top:#900 solid 2px; margin-top:10px; position:relative;zoom:1;}
+#Guide li{float:left; width:19.9%; height:100%;}
+#Guide img.guidePic{width:100%; height:100%;}
+.guideDesc{padding-top:10px; margin-left:25px;}
+.guideDesc h2{ font-weight:bold;}
+.guideDesc h2 img{vertical-align:middle; margin-right:5px;}
+.guideDesc p{border-left:dotted 1px #ccc; margin-left:10px;}
+.guideDesc p a{display:block; padding-left:10px; line-height:18px;}
+#topp{position:absolute; right:8px; top:0;}
+
+
+#footMsg{ text-align:left;padding:10px 0; margin-bottom:30px; margin-left:25px;}
+.minLogo{padding-right:8px; padding-bottom:5px;}
+#footMsg span{text-align:left;}
+#footMsg span a{padding:0 8px; border-right:#ccc solid 1px;}
+#footMsg span em{color:#999;padding-bottom:5px; padding-top:5px;}
+
+#ProductDetail,#InvoiceInfo,#SentMethod,#PriceMethod,.consigneeInfo{border:#ccc solid 1px; border-bottom:#f48131 solid 2px; margin-top:10px; background:#FBF9F4;}
+h2.titles{background:url(../images/pxbg.png) repeat-x;border-bottom: solid 2px #E21D05; line-height:25px; height:25px;}
+h2.titles span{font-weight:bold; margin:0 7px; color:#000;}
+h2.titles a{color:blue;}
+
+#addAdress{margin:0 15px; padding-top:10px; padding-bottom:15px; }
+#addNewAdress{margin-top:5px;}
+
+#NewAdressContent{border-top:dashed #ccc 1px; margin-top:8px; padding-top:8px;}
+#NewAdressContent p{padding:5px 0;}
+#NewAdressContent label{ width:6em;}
+#NewAdressContent span{color:red;}
+#NewAdressContent em{ margin:0 8px;}
+
+.useCheck{margin-left:10px; margin-top:10px;}
+.useCheck .use{width:40px; height:22px; background:url(../images/allbt.png) -80px 0 no-repeat; text-align:center; line-height:1.8}
+.useCheck .slave{color:#999; padding-left:15px}
+.useCheck p{padding-top:5px;}
+.useCheck a{ vertical-align:middle;}
+.useCheck input{vertical-align:middle;}
+.useCheck label{vertical-align:middle; font-weight:bold; margin-right:15px;}
+.useCheck input.text{ vertical-align:middle; height:20px; color:#999; margin-left:15px;}
+.useCheck b{font-weight:normal; color:#f00}
+.useCheck .ex{font-family:"黑体"; width:12px; height:12px; background-color:#fedba3; font-weight:bold; color:#f66313; text-align:center; line-height:1; vertical-align:middle}
+.useCheck .sale{display:none}
+
+#payBank{background:#fff; border:#ccc solid 1px; padding:10px; margin:10px 50px 10px 20px;}
+#payBank h3{ font-size:14px; border-bottom:#ccc solid 1px; padding-bottom:5px;}
+#payBank h3 a{ color:#03F; margin-left:10px;}
+#payBank h3 b{font-size:12px}
+#payBank p{ padding:10px 0; padding-bottom:15px;}
+#payBank p span{ color:#999; vertical-align:middle;}
+#payBank p input{vertical-align:middle; margin-right:8px;}
+#payBank p img{color:#999; vertical-align:middle; margin-right:15px;}
+
+#sent{ margin:10px 15px;}
+#sent h3 b{margin-right:10px;}
+#sent p{margin-left:5em; padding:5px 0;}
+#sent div{margin-left:5em;}
+#sent table{ width:100%;border:#ccc solid 1px; border-bottom:none; line-height:25px;}
+#sent td{border-bottom:#ccc solid 1px; padding-left:1em;}
+#sent thead{background:#fff;}
+#sent tfoot{ text-align:right;}
+#sent tfoot td{ padding-right:15px;}
+#sent tfoot b{ color:#900; font-weight:bold; font-size:16px;}
+#sent tfoot a{color:blue;}
+
+#modfiedGoods{margin:10px 15px;}
+#modfiedGoods .use{width:40px; height:22px; text-align:center; line-height:1.8; color:#666; background:url(../images/allbt.png) -130px 0 no-repeat}
+#modfiedGoods table caption{ text-align:right;}
+#modfiedGoods table caption a{ color:blue;}
+#modfiedGoods table{width:100%; border:#ccc solid 1px; text-align:center; line-height:25px;}
+#modfiedGoods table thead{background:#EAEAEA;}
+
+#modfiedGoods p{padding:5px 0;}
+#modfiedGoods p label,#modfiedGoods p input,#modfiedGoods p a{vertical-align:middle;}
+#modfiedGoods p label,#modfiedGoods p input{margin-right:8px;}
+#modfiedGoods p input{height:20px; color:#999;}
+#modfiedGoods p em{ color:#000; font-weight:bold; font-size:14px;}
+#modfiedGoods p b{color:#900; font-size:16px;}
+#modfiedGoods p{text-align:right;}
+#modfiedGoods a{ color:blue;}
+
+
+#submitBill{background:#fff; padding:10px; text-align:right;}
+#submitBill p{text-align:left;}
+#submitBill p b{font-size:14px;}
+#submitBill p a{color:blue; margin-left:5px;}
+#submitBill p span{margin-left:1em; margin-top:5px;}
+
+#invoiceFill{border-top:solid 2px #E21D05; padding:15px; display:none}
+#invoiceFill p{ padding:5px;}
+#invoiceFill input,#invoiceFill label,#invoiceFill a,#invoiceFill span{vertical-align:middle; margin-right:5px;}
+
+#BookStatus{text-align:center; margin:20px 60px;}
+#BookStatus a{color:blue; padding:8px 0;}
+#BookStatus h2{font-size:14px; padding:15px 0; color:#000;}
+#BookStatus p{background:#fffeef; padding:8px; margin-bottom:10px;}
+#BookStatus p b{color:#C30; font-size:14px;}
+#BookStatus table{margin-bottom:10px}
+#BookStatus table thead{ font-weight:bold; background:#D3D3D3;}
+#BookStatus table{width:100%; border:#ccc solid 1px; border-bottom:none; border-right:none; line-height:28px;}
+#BookStatus table td,#BookStatus table th{border-bottom:#ccc solid 1px; border-right:#ccc solid 1px;}
+#BookStatus table b{color:#c30; font-size:14px;}
+#BookStatus table tfoot td{ text-align:left;padding:8px;}
+#BookStatus table tfoot a,#BookStatus table tfoot img,#BookStatus table tfoot span,#BookStatus table tfoot b{vertical-align:middle; margin:0; padding:0;}
+#BookStatus table tfoot span{margin-right:6px;}
+#BookStatus table tfoot a{color:blue; background:url(../images/tri1.jpg) no-repeat right center; padding-right:12px;}
+#BookStatus .check{margin-right:50px;}	
+#BookStatus a img{margin-top:30px;}
+
+#stutes{border: solid 1px #FC3;background-color:#fffceb; padding:5px; overflow:hidden;}
+#stutes .l{overflow:hidden;}
+#stutes .r{overflow:hidden; margin-bottom:5px;}
+#stutes .l em,#stutes .l b,#stutes .l a{float:left;}
+#stutes .l em,#stutes .l b{margin-top:4px;}
+#stutes .l b{margin-left:5px;}
+#stutes .l em{margin-right:8px;}
+#stutes .l em{font-size: 14px;font-weight:bold;color: #0C0;}
+#stutes .r a{float:left; margin-left:8px;}
+#stutes .l a,#stutes .r a{width:46px;height:23px;background: url(../images/btbg0.png) no-repeat;line-height:23px;color: white; text-align:center;}
+#stutes .r a.print{width:69px;background: url(../images/allbt.png) no-repeat;}
+#stutes p{clear:both;zoom:1;}
+#stutes p.tips{ border-top:dashed 1px #FC3; padding-top:5px;}
+#stutes p a{color:blue; line-height:18px;}
+
+#bookFollow{border: solid 1px #FC3; width:100%; line-height:28px; text-align:center; margin-bottom:10px;}
+#bookFollow thead th{width:130px;}
+#bookFollow thead td{border-bottom:solid 1px #FC3;border-left:solid 1px #FC3;background-color:#fffceb;}
+#bookFollow tbody th{border-bottom:#ccc solid 1px;}
+#bookFollow tfoot td{ text-align:left; padding-left:10px;}
+
+.group1{width:688px; height:109px; margin:0px auto; background:url(../images/ddzt1.png) 42px 0px no-repeat; overflow:hidden; margin-top:10px;}
+.group1 div{width:137px; height:99px; float:left; padding-top:49px;}
+.group1 div p{color:#999; text-align:center;}
+.group1 div p .mem0{color:#000;}
+
+.group2{border:solid 1px #ccc; background-color:#E8E8E8; padding:10px 5px;}
+a.tiaoxing{display:block; color:#069; margin-top:10px;}
+.group2 span.title0{font-size:14px; font-weight:bold;}
+.group2 .item0{background-color:#fff; padding:10px 10px 0px 10px; margin-bottom:10px;}
+.group2 .item0>div{padding:10px 0px; border-bottom:solid 1px #EBEBEB;}
+.group2 .item0>div p{line-height:18px; margin-top:8px;}
+.group2 .item0 table{ border-collapse:collapse; border:solid 1px #ccc; line-height:28px; margin-top:8px;}
+.group2 .item0 table .price{color:#F00;}
+.group2 .item0 table a{color:#069;}
+.group2 .item0 table a:hover{color:#C30;}
+.group2 .item0 table thead{background-color:#EBEBEB; height:25px;}
+.group2 .item0 table tbody td{border:solid 1px #ccc; padding:5px;}
+.group2 .item1{text-align:right; overflow:hidden;}
+.group2 .item1 p{border-bottom:solid 1px #ccc; width:250px; float:right; padding-bottom:5px; font-size:14px; padding-right:10px; margin-bottom:10px}
+
+
+
+#Guide li{float:left; width:24.9%; height:100%;}
+.guideDesc{padding-top:10px; margin-left:55px;}
+
+
+#PriceMethod .choiced{background:none; border:none;}
+#PriceMethod .choiced p{ padding:10px 15px;}
+#PriceMethod .choiced p b{ font-weight:normal; color:red;}
+.choiced label,.choiced span,.choiced img{vertical-align:middle; margin-bottom:5px;}
+.choiced table{width:100%; text-align:center; line-height:25px;}
+.choiced table th{font-weight:normal; background:rgb(163,224,248);}
+
+.showInvoices{ padding:15px 0;}
+.showInvoices p{ padding:2px 15px;}
+
+.choiced{ display:none;}
+
+#BookStatus .submit,.submit{padding:0; width:120px; height:35px; text-align:center; line-height:2; background:url(../images/allbt.png) -67px -91px no-repeat; color:#fff; font-family:"黑体"; font-size:18px}
+.submit:hover{color:#FFC}

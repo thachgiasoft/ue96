@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE10DABE-A744-4026-A29A-264FA8F0DEAA}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Icson.DBAccess</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Icson.DBAccess</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <SccAuxPath>
+    </SccAuxPath>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ASPDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\CategoryDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ColorDac.cs" />
+    <Compile Include="Basic\CurrencyDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\CustomerDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\DeliveryManDepositDac.cs" />
+    <Compile Include="Basic\DepartMentDC.cs" />
+    <Compile Include="Basic\EmailDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\InventoryDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\LogDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ManufacturerDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\PaipaiResposeDac.cs" />
+    <Compile Include="Basic\PriceReportDac.cs" />
+    <Compile Include="Basic\PrivilegeDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ProductAttributeDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ProductBarcodeDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ProductBasicDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ProductIDDac.cs" />
+    <Compile Include="Basic\ProductPriceCompetitorDac.cs" />
+    <Compile Include="Basic\ProductPriceDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ProductPriceMarketDac.cs" />
+    <Compile Include="Basic\ProductPriceRangeDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ProductRelatedDac.cs" />
+    <Compile Include="Basic\ProductSaleTrendDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ProductStatusDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ProductVendorDac.cs" />
+    <Compile Include="Basic\RoleDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\SizeDac.cs" />
+    <Compile Include="Basic\SMSDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\StockDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\SyncDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\SysMenuDac.cs" />
+    <Compile Include="Basic\UserDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\UserFavoriteLinkDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\UserRolePrivilegeDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\VendorDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\WorkdayDac.cs" />
+    <Compile Include="Complain\ComplainDac.cs" />
+    <Compile Include="Exceptions\DataAccessException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Finance\DailyPayAmtRestrictDac.cs" />
+    <Compile Include="Finance\NetPayDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Finance\PMPaymentDac.cs" />
+    <Compile Include="Finance\POPayDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Finance\SOIncomeDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Finance\SOIncomeVoucherDac.cs" />
+    <Compile Include="ImportData\AreaConvertDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImportData\ImportDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\BulletinDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\CustomerTopicDac.cs" />
+    <Compile Include="Online\DailyClickDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\FeedBackDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\FeedBackShowListDac.cs" />
+    <Compile Include="Online\LinkSourceDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\OnlineC1_C2Dac.cs" />
+    <Compile Include="Online\OnlineC1_ProductDac.cs" />
+    <Compile Include="Online\OnlineListDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\OnlineListProductDac.cs" />
+    <Compile Include="Online\OnlineListQADac.cs" />
+    <Compile Include="Online\PollDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\ProductNotifyDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\ProductRemarkDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\ProductReviewDac.cs" />
+    <Compile Include="Online\QADac.cs" />
+    <Compile Include="Online\QuestionnaireSurveyDac.cs" />
+    <Compile Include="Online\ShoppingGuideDac.cs" />
+    <Compile Include="Online\SubscribeDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\TopicComplainDac.cs" />
+    <Compile Include="Online\TopicDac.cs" />
+    <Compile Include="Online\TopicImageDac.cs" />
+    <Compile Include="Online\TopicItemDac.cs" />
+    <Compile Include="Online\TopicRemarkDac.cs" />
+    <Compile Include="Online\TopicReplyDac.cs" />
+    <Compile Include="Online\WebBulletinDac.cs" />
+    <Compile Include="Online\WishListDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Promotion\CouponDac.cs" />
+    <Compile Include="Promotion\CouponRequestDac.cs" />
+    <Compile Include="Promotion\PromotionItemGroupDac.cs" />
+    <Compile Include="Promotion\PromotionItemProductDac.cs" />
+    <Compile Include="Promotion\PromotionMasterDac.cs" />
+    <Compile Include="Purchase\PMPOAmtRestrictDac.cs" />
+    <Compile Include="Purchase\POApportionDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Purchase\POApportionSubjectDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Purchase\POBasketDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Purchase\PODac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Review\ReviewC3ItemScoreDac.cs" />
+    <Compile Include="Review\ReviewComplainDac.cs" />
+    <Compile Include="Review\ReviewDac.cs" />
+    <Compile Include="Review\ReviewRemarkDac.cs" />
+    <Compile Include="Review\ReviewReplyDac.cs" />
+    <Compile Include="RMA\PreSaleRefundDac.cs" />
+    <Compile Include="RMA\RMAContactCustomerDac.cs" />
+    <Compile Include="RMA\RMAHandoverDac.cs" />
+    <Compile Include="RMA\RMAOutBoundDac.cs" />
+    <Compile Include="RMA\RMARefundDac.cs" />
+    <Compile Include="RMA\RMARegisterDac.cs" />
+    <Compile Include="RMA\RMARequestDac.cs" />
+    <Compile Include="RMA\RMAReturnDac.cs" />
+    <Compile Include="RMA\RMARevertDac.cs" />
+    <Compile Include="RMA\RMASendAccessoryDac.cs" />
+    <Compile Include="RMA\RMAShiftDac.cs" />
+    <Compile Include="Sale\AbnormalSODac.cs" />
+    <Compile Include="Sale\CountdownDac.cs" />
+    <Compile Include="Sale\DeliveryDac.cs" />
+    <Compile Include="Sale\DeliveryDelayDac.cs" />
+    <Compile Include="Sale\DeliveryManArrearageLogDac.cs" />
+    <Compile Include="Sale\DLDac.cs" />
+    <Compile Include="Sale\DODac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\DSDac.cs" />
+    <Compile Include="Sale\EqifaLogDac.cs" />
+    <Compile Include="Sale\FreeShipFeeDac.cs" />
+    <Compile Include="Sale\PointDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\RMADac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\RODac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\ROVoucherDac.cs" />
+    <Compile Include="Sale\SaleGiftDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\SaleRuleDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\SearchKeyTrackDac.cs" />
+    <Compile Include="Sale\SOAdwaysDac.cs" />
+    <Compile Include="Sale\SOAlipayDac.cs" />
+    <Compile Include="Sale\SODac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\SOSaleRuleDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\SOServiceDac.cs" />
+    <Compile Include="Sale\SOSizeTypeSetListDac.cs" />
+    <Compile Include="Sale\SOUserAuditRatioDac.cs" />
+    <Compile Include="Sale\SOVATDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\SOVoucherDac.cs" />
+    <Compile Include="Sale\SOWeightDac.cs" />
+    <Compile Include="Sale\SRDac.cs" />
+    <Compile Include="Sale\WhProductShelvingInspectionDac.cs" />
+    <Compile Include="Sale\WHUserWorkRatioDac.cs" />
+    <Compile Include="SequenceDac.cs" />
+    <Compile Include="Solution\PrjDac.cs" />
+    <Compile Include="Solution\SlnDac.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="Stock\AdjustDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stock\LendDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stock\ShiftDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stock\TransferDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stock\VirtualDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UtilDac.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Icson.Objects\Icson.Objects.csproj">
+      <Project>{AA5FFEA0-A382-4833-B90B-785D7F84E856}</Project>
+      <Name>Icson.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Icson.Utils\Icson.Utils.csproj">
+      <Project>{675C262F-07A7-4492-A999-E7F76CFFE709}</Project>
+      <Name>Icson.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

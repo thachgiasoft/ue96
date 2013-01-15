@@ -1,0 +1,93 @@
+@charset "utf-8";
+/*页头*/
+#ProcessHeader{border-bottom:3px solid #ba2022; padding-top:10px; height:65px; position:relative; z-index:100}
+#banner{width:980px; margin:0 auto}
+#banner .logo{ float:left;}
+#welcomeContent{float:right; text-align:right; width:390px; margin-top:40px; position:relative; zoom:1}
+#Mycart{height:24px; line-height:2}
+#Mycart b{color:#ba2022;}
+#chartContent{ position:absolute;right:0; top:25px; border:rgb(249,170,61) solid 2px; background:#fff; background:#FFF;display:none; }
+.shopping{overflow:hidden;zoom:1; margin:0 10px; padding:10px 0;}
+.shopping .l a,.shopping .l span,.shopping .l b{ float:left;}
+.shopping .l a img{border:#ccc solid 1px; width:30px; height:30px;}
+.shopping .l span{width:150px; margin-left:5px;}
+.shopping .l b{color:#900;}
+.shopping .r{float:right; overflow:hidden; zoom:1; text-align:center;}
+.shopping .r span{ border:#ccc solid 1px; padding:0 3px;}
+.shopping .r input{width:20px; text-align:center;}
+.payNow{ border-top:#ccc solid 1px; padding:10px 10px; overflow:hidden;zoom:1; background:#F2F2F2;}
+.payNow b{color:#900;}
+.payNow .r{text-align:center;}
+.payNow .r a{margin-top:15px;}
+.Myinfo span{height:22px}
+.Myinfo .gwc img{vertical-align:top; margin-right:2px}
+/*注册登录*/
+#login_global{width:980px; margin:0 auto; border:solid 1px #ccc; position:relative; height:490px; margin-top:10px}
+#login_global input{line-height:1.8; padding-left:5px}
+#login_global .group{margin-top:15px}
+#login_global h3{height:27px; font-size:14px; font-weight:bold; padding-left:15px; line-height:1.9; border:solid 1px #ccc; border-top:none}
+#login_global .group em{font-size:14px; text-align:right}
+#login_global .group .input input{border:solid 1px #ccc; height:23px}
+#login_global .group .input input.selected{border:solid 1px #F90}
+.mastW{width:544px; position:absolute; left:-1px}
+.login h3{background-color:#5d7885; color:#fff}
+.login .group{padding-left:40px}
+.login .group p{padding:14px 0}
+.login .group p span{margin:0 15px 0 2px}
+.login .group em{width:56px}
+.login .group .default{color:#999}
+.login .group .input input{ width:240px; margin-right:10px}
+.login .group .button{padding-left:56px}
+.login .group .button input{width:63px; height:30px; background:url(../images/allbt.png) 0 -91px no-repeat; color:#fff; font-weight:bold; font-size:16px}
+.login .group .button a{width:120px; height:26px; background:url(../images/allbt.png) 0 -61px no-repeat; margin-left:15px; vertical-align:middle}
+.login .group .joint{border-top:dotted 1px #ccc; margin-top:14px; padding-top:28px; padding-left:15px}
+.login .group ul{margin-left:11px; overflow:hidden; width:318px}
+.login .group ul li{float:left; height:18px; padding:0 5px 0 24px; border-right:solid 1px #ccc; position:relative; right:-1px; background:url(../images/jointIco.png) no-repeat}
+.login .group ul .163{background-position:-1px 0}
+.login .group ul .renren{background-position:5px -28px}
+.login .group ul .sina{background-position:5px -56px}
+.login .group ul .kaixin{background-position:5px -84px}
+.login .group ul .douban{background-position:5px -112px}
+.login .group ul li a{line-height:1.7}
+.slaveW{width:439px; position:absolute; right:-1px; *right:-7px}
+.register h3{background:url(../images/helpline.gif) repeat-x}
+.register .group{border-left:solid 1px #ccc; border-right:solid 1px #ccc; padding:0 27px; margin-bottom:15px}
+.register .group strong{font-weight:bold; padding-bottom:2px}
+.register .group .note{padding-left:70px; margin-bottom:12px; color:#999; height:17px}
+.register .group .note span{display:none}
+.register .group .note strong{color:#f00; font-weight:100}
+.register .group em{width:70px}
+.register .group .input input{width:195px}
+.register .group .code input{width:98px}
+.register .group .code img{margin:0 15px; vertical-align:middle}
+.register .group .button{padding-left:70px; margin-bottom:10px}
+.register .group .button input{width:187px; height:30px; background:url(../images/allbt.png) 0 -131px no-repeat; font-size:16px; font-weight:bold; color:#fff}
+.register .group textarea{width:100%; height:95px; overflow-y:scroll; resize:none}
+/*注册成功*/
+.moduel{width:980px; margin:0 auto; border:solid 1px #ccc; padding-bottom:5px; background:url(../images/succ.gif) no-repeat; margin-top:10px}
+#success{background-position:240px 40px}
+.moduel h3{background:url(../images/helpline.gif) repeat-x; height:27px; font-size:14px; font-weight:bold; padding-left:15px; line-height:1.9; border-bottom:solid 1px #ccc; margin-bottom:15px}
+.moduel div{margin:0 auto; padding:15px 0}
+#success div{width:413px}
+#success .item0{border-bottom:solid 1px #ccc}
+.moduel div p{margin-bottom:10px}
+.moduel strong{font-size:16px; font-weight:bold}
+.moduel em{font-weight:bold; color:#666}
+.moduel span{font-weight:bold; color:#C30}
+#success i{color:#999}
+#success .item0 b{color:#F60}
+.moduel .bt{width:86px; height:30px; background:url(../images/allbt.png) 0 -251px no-repeat; font-size:14px; font-weight:bold; color:#fff; text-align:center; line-height:2.2}
+.moduel .bt:hover{color:#FF9}
+#activa{background-position:310px 40px}
+#activa .item0{width:275px}
+/*页尾*/
+#footer{width:980px}
+#Guide{overflow:hidden; zoom:1; border:#CCC solid 1px; border-top:#900 solid 2px; margin-top:10px; position:relative;zoom:1}
+#Guide li{float:left; width:24.9%}
+#Guide img.guidePic{width:100%; height:100%;}
+.guideDesc{padding-top:10px; margin-left:55px;}
+.guideDesc h2{ font-weight:bold;}
+.guideDesc h2 img{vertical-align:middle; margin-right:5px;}
+.guideDesc p{border-left:dotted 1px #ccc; margin-left:10px;}
+.guideDesc p a{display:block; padding-left:10px; line-height:18px;}
+#topp{position:absolute; right:8px; top:0;}

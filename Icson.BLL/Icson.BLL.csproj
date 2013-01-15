@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B8411C9-38AE-4ED1-A402-10D42AF81ADA}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Icson.BLL</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Icson.BLL</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <SccAuxPath>
+    </SccAuxPath>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Basic\DeliveryManDepositManager.cs" />
+    <Compile Include="Basic\PaipaiManager.cs" />
+    <Compile Include="Basic\SizeManager.cs" />
+    <Compile Include="Basic\SysMenuManager.cs" />
+    <Compile Include="Basic\UserRatioManager.cs" />
+    <Compile Include="Complain\ComplainManager.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ASPManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\CategoryManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\CurrencyManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\CustomerManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\EmailManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\IInitializable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\InventoryManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ManufacturerManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\PriceReportManager.cs" />
+    <Compile Include="Basic\ProductIDManager.cs" />
+    <Compile Include="Basic\ProductManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ProductSaleTrendManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\SMSManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\StockManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\SyncManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\SysManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\VendorManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BizException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DaemonManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Finance\NetPayManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Finance\PMPaymentManager.cs" />
+    <Compile Include="Finance\POPayManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Finance\SOIncomeManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Finance\UnitCostManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuListManager.cs" />
+    <Compile Include="Online\BulletinManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\CartManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\DailyClickManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\FeedBackManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\FeedBackShowListManager.cs" />
+    <Compile Include="Online\LinkSourceManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\OnlineListManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\OnlineListProductManager.cs" />
+    <Compile Include="Online\OnlineListQAManager.cs" />
+    <Compile Include="Online\PollManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\ProductNotifyManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Basic\ProductRelatedManager.cs" />
+    <Compile Include="Online\ProductRemarkManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\ProductReviewManager.cs" />
+    <Compile Include="Online\QAManager.cs" />
+    <Compile Include="Online\QuestionnaireSurveyManager.cs" />
+    <Compile Include="Online\ShoppingGuideManager.cs" />
+    <Compile Include="Online\SolutionManager.cs" />
+    <Compile Include="Online\SubscribeManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Online\TopicManager.cs" />
+    <Compile Include="Online\WebBulletinManager.cs" />
+    <Compile Include="Online\WishListManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Promotion\CouponManager.cs" />
+    <Compile Include="Promotion\PromotionManager.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\PurchaseManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Report\ReportManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Review\ReviewManager.cs" />
+    <Compile Include="RMA\RMAOutBoundManager.cs" />
+    <Compile Include="RMA\RMARefundManager.cs" />
+    <Compile Include="RMA\RMARegisterManager.cs" />
+    <Compile Include="RMA\RMARequestManager.cs" />
+    <Compile Include="RMA\RMAReturnManager.cs" />
+    <Compile Include="RMA\RMARevertManager.cs" />
+    <Compile Include="RMA\RMASendAccessoryManager.cs" />
+    <Compile Include="Sale\AbnormalSOManager.cs" />
+    <Compile Include="Sale\CountdownManager.cs" />
+    <Compile Include="Sale\DeliveryManager.cs" />
+    <Compile Include="Sale\DLManager.cs" />
+    <Compile Include="Sale\DOManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\DSManager.cs" />
+    <Compile Include="Sale\EqifaLogManager.cs" />
+    <Compile Include="Sale\FreeShipFeeManager.cs" />
+    <Compile Include="Sale\PointManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\RMAManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\ROManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\SaleManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sale\SearchKeyTrackManager.cs" />
+    <Compile Include="Sale\SRManager.cs" />
+    <Compile Include="Sale\VoucherManager.cs" />
+    <Compile Include="Sale\WhProductShelvingInspectionManager.cs" />
+    <Compile Include="Solution\DIYManager.cs" />
+    <Compile Include="Solution\PrjManager.cs" />
+    <Compile Include="Solution\SlnManager.cs" />
+    <Compile Include="Stock\AdjustManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stock\LendManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stock\ShiftManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stock\TransferManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stock\VirtualManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Icson.DBAccess\Icson.DBAccess.csproj">
+      <Project>{BE10DABE-A744-4026-A29A-264FA8F0DEAA}</Project>
+      <Name>Icson.DBAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Icson.Objects\Icson.Objects.csproj">
+      <Project>{AA5FFEA0-A382-4833-B90B-785D7F84E856}</Project>
+      <Name>Icson.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Icson.Utils\Icson.Utils.csproj">
+      <Project>{675C262F-07A7-4492-A999-E7F76CFFE709}</Project>
+      <Name>Icson.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

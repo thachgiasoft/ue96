@@ -1,0 +1,198 @@
+@charset "utf-8";
+/*大类菜单*/
+#ItemSortCon{margin-top:1px;}
+#Menu{position:absolute;width:208px;}
+#Menu .header{display:none}
+#Menu .Listcontent{top:-1px;}
+.classMenu{display:none;}
+.lbg{margin-top:1px}
+.ItemSort1{background:url(../images/hov2.png) no-repeat left top;}
+.ItemSort{background:url(../images/hov3.png) no-repeat left top;}
+#ItemSort{text-align:center;}
+#ItemSort span{font-weight:bold; color:#FFF; font-size:14px; padding:56px 0 7px 0;}
+#ItemSort span b{width:15px;}
+/*商品购买信息区(product.html)*/
+#buyArea{overflow:hidden; zoom:1; position:relative; margin-bottom:5px}
+#buyArea h1{font-size:21px; font-weight:bold; color:#000; clear:both; margin-bottom:6px}
+#buyArea h1 span{color:#F00; font-size:16px}
+#buyArea #photoShow{float:left; width:375px; margin-right:10px; margin-bottom:5px; position:relative; border:solid 1px #ccc}
+#buyArea #photoShow .bigPhoto{width:375px; height:375px; font-size:0; border-bottom:solid 1px #ccc}
+#buyArea #photoShow .bigPhoto img{width:375px; height:375px;}
+#buyArea #photoShow .magnifier{width:155px; height:155px; border:solid 1px #FBCDAE; background:url(../images/fangdajing.png) no-repeat; position:absolute; display:none}
+#buyArea #photoShow .magnifier:hover{cursor:all-scroll; cursor:move}
+#buyArea .bigWindow{width:388px; height:388px; border:solid 1px #FFCACA; position:absolute; top:32px; left:385px; background-color:#fff; display:none}
+#buyArea .smallPhoto{overflow:hidden; zoom:1; margin-bottom:5px}
+#buyArea .smallPhoto .photoItem{width:330px; height:72px; overflow:hidden; float:left; margin:0 3px; position:relative}
+#buyArea .smallPhoto .prev{width:17px; height:23px; margin-top:27px; margin-left:2px; float:left}
+#buyArea .smallPhoto .prev a{width:17px; height:23px; background:url(../images/showbg.png) 0px -219px no-repeat; display:none}
+#buyArea .smallPhoto .prev a:hover{background:url(../images/showbg.png) -27px -219px no-repeat}
+#buyArea .smallPhoto .next{width:17px; height:23px; margin-top:27px; float:left}
+#buyArea .smallPhoto .next a{width:17px; height:23px; background:url(../images/showbg.png) -54px -219px no-repeat; display:none}
+#buyArea .smallPhoto .next a:hover{background:url(../images/showbg.png) -81px -219px no-repeat}
+#buyArea .smallPhoto ul{position:absolute}
+#buyArea .smallPhoto li{float:left}
+#buyArea .smallPhoto li a{padding-top:10px}
+#buyArea .smallPhoto li a:hover{background:url(../images/showbg.png) -108px -231px no-repeat}
+#buyArea .smallPhoto li img{ width:58px; height:58px; border:solid 1px #ccc; margin:0px 3px 3px 3px}
+#buyArea .smallPhoto li a:hover img{border:solid 4px #F9AA3D; border-top:none; margin:1px 0px 0px 0px}
+#buyArea .buyInfo{float:left; color:#555; width:595px}
+#buyArea .buyInfo hr{border-top:dotted 1px #ccc; margin-bottom:10px; size:0}
+#buyArea .buyInfo .yprice,.tglb .yprice{text-decoration:line-through}
+#buyArea .buyInfo p{padding-left:15px; margin-bottom:10px}
+#buyArea .buyInfo .yyj{font-size:26px; font-weight:bold; line-height:1; color:#ED1C24; vertical-align:middle; }
+#buyArea .buyInfo select{border:solid 1px #ccc; margin-left:3px;}
+#buyArea .share{border:solid 1px #ccc; clear:both; width:288px; padding:3px 0 3px 10px}
+#buyArea .share a{padding:0 10px 0 25px; border-right:dotted 1px #ccc}
+#buyArea .share .sina{background:url(../images/showbg.png) -185px -214px no-repeat}
+#buyArea .share .qq{background:url(../images/showbg.png) -185px -236px no-repeat}
+#buyArea .share .kaixin{background:url(../images/showbg.png) -185px -258px no-repeat}
+#buyArea .buyApp{color:#000; border-top:solid 1px #ccc; border-bottom:solid 1px #ccc}
+#buyArea .buyApp h6{padding:10px 15px}
+#buyArea .buyApp .attrib{background-color:#f5f5f5}
+#buyArea .buyApp .selected{background-color:#eeeeee}
+#buyArea .buyApp div{background-color:#f1f1d2}
+#buyArea .buyApp div h5{ padding:0px 15px 10px 15px}
+#buyArea .buyApp label{padding:3px; background-color:#fff; border:solid 2px #c1c1c1}
+#buyArea .buyApp label.selected{background-color:#ffffde; border:solid 2px #f89e3c}
+#buyArea .buyApp .bt6{margin-right:30px; padding-left:45px; width:106px}
+#buyArea .buyApp .bt5{margin-right:30px}
+#buyArea .buyApp .link1{border-left:solid 1px #ccc; padding:0px 10px; line-height:1}
+/*猜你喜欢*/
+#guessLike .group li{overflow:hidden; zoom:1}
+#guessLike .group li .photo{float:left; margin-right:5px; *margin-right:-3px}
+#guessLike .group .adText{margin-bottom:3px}
+#guessLike .group .price{text-align:left; padding-left:67px}
+/*浏览记录*/
+#record .group li{overflow:hidden; zoom:1}
+#record .group li .photo{float:left; margin-right:5px; *margin-right:-3px}
+#record .group .adText{margin-bottom:3px}
+#record .group .price{text-align:left; padding-left:67px}
+/*浏览过的还看过*/
+#alsoSeen{border:solid 1px #ccc; margin-bottom:10px; border-top:1px solid #F9A93B}
+#alsoSeen .title{color:#666; background-color:#eee; padding:8px 11px; font-size:14px; font-weight:bold}
+#alsoSeen .list{overflow:hidden; zoom:1; width:978px; padding:0 1px}
+#alsoSeen .list li{float:left; width:176px; padding:5px 9px 8px 9px; text-align:center}
+/*商品介绍菜单*/
+.introMenu{overflow:hidden; height:25px; background:url(../images/reddot.gif) 0px 23px repeat-x #fff; margin-bottom:10px; position:relative; z-index:100}
+.introMenu li{float:left; width:88px; height:23px; border-bottom:none; background:url(../images/showbg.png) -96px -252px no-repeat; font-size:12px; margin-right:5px; text-align:center; cursor:pointer; line-height:2.2; overflow:hidden}
+.introMenu .selected{background:url(../images/showbg.png) 0px -252px no-repeat; height:25px}
+/*商品评价*/
+#introduce .group{display:none}
+#introduce .group.selected{display:block}
+#comments h3{height:28px; border:solid 1px #ccc; background:url(../images/showline.gif) repeat-x; font-size:14px; font-weight:bold; padding-left:10px; line-height:2}
+#comments .comments-head{border:solid 1px #ccc; border-top:none; overflow:hidden}
+#comments .comments-head div{margin:10px 0; padding:5px 15px; border-left:solid 1px #ccc; float:left; height:68px}
+#comments .comments-head .left{float:left; width:339px; margin:10px 0; padding:0 15px}
+#comments .comments-head .left dt{float:left; width:159px; margin-right:15px; text-align:center}
+#comments .comments-head .left dt .mast{font-size:20px; margin-top:5px}
+#comments .comments-head .left dt strong{font-size:45px; line-height:1}
+#comments .comments-head .left dd{float:left; width:165px}
+#comments .comments-head .progressBar em{height:15px}
+#comments .comments-head .progressBar span{color:#666; width:42px; height:15px}
+#comments .comments-head .progressBar *{background-color:#fff}
+#comments .comments-head .center{width:428px}
+#comments .comments-head .center p{margin-bottom:5px}
+#comments .comments-head .center li{float:left; width:155px; font-size:12px; position:relative; margin-right:20px; margin-bottom:5px}
+#comments .comments-head .center li span{position:absolute; right:0px}
+#comments .comments-head .right{width:120px}
+#comments .comments-head .right p{margin-bottom:5px}
+#comments .menu{border:solid 1px #ccc; border-top:solid 2px #bd0000; margin:10px 0; background-color:#f4f4f4; height:27px; position:relative; z-index:1}
+#comments .menu li{float:left; border-right:solid 1px #ccc; padding:5px; height:17px}
+#comments .menu li.selected{background-color:#fff; height:18px; position:relative; z-index:100}
+#comments .allComment .comment{display:none}
+#comments .allComment .selected{display:block}
+#comments .item{margin-bottom:10px; overflow:hidden}
+#comments .item .left{float:left; width:100px; margin-right:0}
+#comments .item .left .photo{width:52px; height:53px; background:url(../images/showbg.png) -156px -286px no-repeat; padding-top:3px}
+#comments .item .right{float:left; width:881px}
+#comments .item .right .title{height:35px; padding-left:30px; background:url(../images/showbg.png) -178px 0 no-repeat}
+#comments .item .right .title p{position:relative; border-top:solid 1px #f3e6c6; border-right:solid 1px #f3e6c6; padding:9px 0 5px 0; background-color:#fffcf5}
+#comments .item .right .title img{margin:0px 2px}
+#comments .item .right .title a{font-weight:bold; height:16px; line-height:1.4; vertical-align:middle}
+#comments .item .right .title span{position:absolute; right:15px}
+#comments .item .right .title hr{border-top:solid 1px #f3e6c6; margin-right:15px}
+#comments .item .right .allContent{margin-left:11px; border:solid 1px #f3e6c6; border-top:none; padding:5px 15px 5px 18px;  background-color:#fffcf5}
+#comments .item .right .argument p{margin-bottom:5px}
+#comments .item .right .argument em{width:60px; text-align:right; color:#999}
+#comments .allContent .bt6{width:66px; height:24px; vertical-align:middle; border-top:solid 1px #ccc; border-left:solid 1px #ccc; border-right:solid 1px #666; border-bottom:solid 1px #666; margin-right:15px}
+#comments .item .right .reply li{border-top:dotted 1px #f3e6c6; padding:5px 0}
+#comments .item .right .reply p{position:relative}
+#comments .item .right .reply em{position:absolute; right:0; top:7px}
+#comments .item .right .reply strong{font-size:22px; width:30px; text-align:center; vertical-align:middle}
+#comments .item .right .reply .slave{margin:0 5px}
+#comments .item .right .reply .content{margin-left:41px}
+#comments .title1{border:solid 1px #ccc; border-top:solid 2px #bd0000; margin:10px 0; background-color:#f4f4f4; height:27px; line-height:2.2; padding-left:10px}
+#comments #reply{display:none}
+#comments .replyBox{border:solid 1px #ccc; background-color:#f7f7f7; padding:10px 15px}
+#comments .replyBox p{margin-bottom:10px}
+#comments .replyBox strong{font-weight:bold}
+#comments .replyBox textarea{resize:none; overflow-y:scroll; width:99%; height:50px}
+#comments .replyBox button{border:solid 1px #ccc; padding:3px 5px}
+.fastBuy .bt4{margin-left:20px}
+/*评论撰写窗口*/
+#fComment .alignLine{background-color:#BA1F23; color:#fff; font-size:14px; padding:5px}
+#fComment .alignLine .rColumn{right:9px; color:#fff; cursor:pointer}
+#fComment .content p{margin:5px 0 10px 50px}
+#fComment .content em{font-weight:bold}
+#fComment .content input{border:solid 1px #ccc; height:20px; width:330px}
+#fComment .content textarea{resize:none; overflow-y:scroll; margin-top:-5px; width:368px; height:100px}
+#fComment .content .button{text-align:center; margin-bottom:0; padding-bottom:10px}
+#fComment .content button{border:solid 1px #ccc; padding:2px}
+#fComment .level a{width:16px; height:16px; background:url(../images/pf0.png) no-repeat; margin-right:3px; vertical-align:middle}
+#fComment .level a.selected{background:url(../images/pf1.png)}
+/*商品问答*/
+#introduce .qa .alignLine .link1{background:url(../images/showbg.png) -191px -47px no-repeat; height:20px; line-height:1.4; text-indent:20px}
+#introduce .qa dl{padding:10px 0; border-bottom:dotted 1px #ccc; overflow:hidden; zoom:1}
+#introduce .qa dt{float:left}
+#introduce .qa dd{float:right}
+#introduce .qa dt em{width:570px}
+#introduce .qa  dt span{width:41px; height:16px; vertical-align:top; margin-right:20px}
+#introduce .qa .question dt span{background:url(../images/showbg.png) -167px -346px no-repeat}
+#introduce .qa .answer dt span{background:url(../images/showbg.png) -167px -363px no-repeat}
+#introduce .qa .singleQA .mem{margin:2px 0 20px 0}
+#introduce .qa .singleQA .mem a{margin-left:5px}
+.qaBox .alignLine{padding:5px 10px; background-color:#BA1F23; color:#fff}
+.qaBox .alignLine .rColumn{color:#fff; padding-right:10px; *padding-right:20px}
+.qaBox p{margin:2px 20px}
+.qaBox em{font-weight:bold}
+.qaBox .mast0{border-top:dotted 1px #ccc; padding-top:5px}
+.qaBox textarea{resize:none; overflow-y:scroll; width:100%; height:100px; margin-top:3px}
+.qaBox button{border:solid 1px #ccc; padding:2px 5px}
+/*购物车确认窗口样式*/
+#cartCheck .alignLine{background-color:#BA1F23; color:#fff; padding:5px 10px}
+#cartCheck .alignLine .rColumn{color:#fff; padding-right:10px}
+#cartCheck .group0{padding:10px; overflow:hidden; zoom:1; border-bottom:solid 1px #ccc; background-color:#eee}
+#cartCheck .group0 .item0{width:130px; border:solid 1px #ccc; float:left}
+#cartCheck .group0 .item1{width:306px; height:132px; float:left; padding:0 5px}
+#cartCheck .group0 .item1 .member0{height:92px; border-bottom:dotted 1px #ccc;}
+#cartCheck .group0 .item1 .member0 h2{font-weight:bold; color:#666; font-size:13px}
+#cartCheck .group0 .item1 .member0 p{margin:10px 0}
+#cartCheck .group0 .item1 .member0 span{color:#C00; font-weight:bold;}
+#cartCheck .group0 .item1 .member1{padding-top:10px;}
+#cartCheck .group0 .item1 .member1 a{width:110px; height:30px; background-image:url(../images/allbt.png); text-align:center; color:#fff; font-size:14px; font-weight:bold; line-height:1.9}
+#cartCheck .group0 .item1 .member1 .close{background-position:0 -211px}
+#cartCheck .group0 .item1 .member1 .settlement{background-position:0 -172px}
+#cartCheck .group1{padding:10px; background-color:#eee}
+#cartCheck .group1 h5{margin-left:10px; margin-bottom:3px; font-size:13px; font-weight:bold; color:#666}
+#cartCheck .group1 .item0{border:solid 1px #ccc; background-color:#fff; overflow:hidden; zoom:1}
+#cartCheck .group1 .item0 .member0 a{width:7px; height:7px; background:url(../images/dot1.png) no-repeat; margin:0px 2px;}
+#cartCheck .group1 .item0 .member0 a.selected{background:url(../images/dot0.png) no-repeat;}
+#cartCheck .group1 .item0 .member0{padding:10px 212px;}
+#cartCheck .group1 .item0 .member1{width:392px; float:left; overflow:hidden; position:relative; padding-bottom:10px}
+#cartCheck .group1 .item0 .member1 ul{overflow:hidden; zoom:1; position:relative}
+#cartCheck .group1 .item0 .member1 li{width:120px; text-align:center; margin-right:16px; float:left}
+#cartCheck .group1 .item0 .member1 li img{border:1px solid #ccc; margin-bottom:3px}
+#cartCheck .group1 .item0 .member1 li .adText{margin-bottom:3px}
+#cartCheck .prev{float:left; width:27px;  margin-top:48px}
+#cartCheck .prev a{display:none; width:17px; height:61px; background:url(../images/prevwx.png) no-repeat;}
+#cartCheck .prev a:hover{background:url(../images/prevxz.png) no-repeat;}
+#cartCheck .next{float:left; width:27px;  margin-top:48px}
+#cartCheck .next a{width:17px; height:61px; margin-left:10px; background:url(../images/nextwx.png) no-repeat;}
+#cartCheck .next a:hover{background:url(../images/nextxz.png) no-repeat;}
+/*所有评价(comments.html)*/
+#goodsInfo .title{height:29px; background:url(../images/showbg.png) 0 -406px no-repeat; font-size:14px; color:#fff; line-height:2; text-indent:10px}
+#goodsInfo .group{border:solid 1px #BA1F23; border-top:none}
+#goodsInfo .group p{padding:5px 8px}
+#goodsInfo .goodsName{overflow:hidden; zoom:1}
+#goodsInfo .goodsName a{line-height:1.5}
+#goodsInfo .goodsName span{float:left; line-height:1.5}
