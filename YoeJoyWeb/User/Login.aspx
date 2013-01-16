@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
-        data-appid="100346020" data-redirecturi="http://www.ue96.com/Default.aspx"></script>
+        data-appid="100346020" data-redirecturi="<%=AuthticationForQQURL %>"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div id="login_global" class="clear">
@@ -101,12 +101,53 @@
             }
 
             var from = YoeJoy.Site.Utility.GetQueryString("from");
+            var loginHandlerURL = "../Service/UserLogin.aspx";
+            var registerHandlerURL = "../Service/UserRegister.aspx";
 
             //QQ 登录
             QC.Login({
-                btnId: "qqLoginBtn"	//插入按钮的节点id
+                btnId: "qqLoginBtn"
             }, function (reqData, opts) {
-            }, function (reqData,opts) { });
+                var paras = {};
+
+                QC.api("get_user_info", paras).success(function (s) {
+                    var name = "cb_" + s.data.nickname;
+                    var password = "cb" + name;
+                    var extern = "autoLogin";
+                    //预先登录，不存在则注册
+                    $.post(loginHandlerURL, { "name": name, "pass": password, "extern": extern }, function (data) {
+                        var result = YoeJoy.Site.Utility.GetJsonStr(data);
+                        if (result.IsSuccess) {
+                            if (from == null || from == undefined || from == '') {
+                                window.location.href = "../Default.aspx";
+                            }
+                            else {
+                                window.location.href = from;
+                            }
+                        }
+                        else {
+                            if (result.Msg == "用户不存在") {
+                                var email = name + "@qq.com";
+                                $.post(registerHandlerURL, { "name": name, "pass1": password, "pass2": password, "email": email }, function (data) {
+                                    var result = YoeJoy.Site.Utility.GetJsonStr(data);
+                                    if (result.IsSuccess) {
+                                        window.location.href = "MyProfile.aspx";
+                                    }
+                                    else {
+                                        alert(result.Msg);
+                                    }
+                                });
+                            }
+                            else {
+                                alert(result.Msg);
+                            }
+                        }
+                    });
+                }).error(function (f) { alert("获取用户信息失败！"); }).complete(function (c) {
+                });
+            }, function (opts) {//注销成功
+                alert('QQ登录 注销成功');
+            });
 
             //刷新验证码
             $("#btnRefreshCaptcha").click(function (event) {
@@ -116,7 +157,6 @@
 
             //用户登录
             $("#loginTab #btnLogin").click(function () {
-                var registerHandlerURL = "../Service/UserLogin.aspx";
                 var name = $("#txtID").val();
                 var password = $("#txtPass").val();
                 var extern = "empty";
@@ -133,7 +173,7 @@
                     YoeJoy.Site.Cookie.AddCookie("name", name, 7 * 24);
                 }
 
-                $.post(registerHandlerURL, { "name": name, "pass": password, "extern": extern }, function (data) {
+                $.post(loginHandlerURL, { "name": name, "pass": password, "extern": extern }, function (data) {
                     var result = YoeJoy.Site.Utility.GetJsonStr(data);
                     if (result.IsSuccess) {
                         if (from == null || from == undefined || from == '') {
@@ -152,7 +192,6 @@
 
             //用户注册
             $("#registerTable #btnRegister").click(function () {
-                var registerHandlerURL = "../Service/UserRegister.aspx";
                 var name = $("#txtRegisterName").val();
                 var pass1 = $("#password").val();
                 var pass2 = $("#password1").val();

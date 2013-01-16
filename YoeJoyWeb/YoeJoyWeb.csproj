@@ -817,6 +817,7 @@
     <Content Include="Service\GetProductListItem.aspx" />
     <Content Include="Service\GetSearch1ProductListItem.aspx" />
     <Content Include="Service\GetSearch2ProductListItem.aspx" />
+    <Content Include="Service\qc_callback.html" />
     <Content Include="Service\ShoppingCartService.aspx" />
     <Content Include="Service\UserLogin.aspx" />
     <Content Include="Service\UserRegister.aspx" />
