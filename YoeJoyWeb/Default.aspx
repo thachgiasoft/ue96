@@ -9,23 +9,67 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftTopModule" runat="server">
     <uc1:CategoryNavigation ID="CategoryNavigation1" runat="server" />
-    <div style="margin-top: 360px;">
+    <div style="margin-top: 422px;">
         <uc2:OnlineStaticAD ID="ADBelowNavigation" ADPositionID="2" ADCSSClass="ad" Width="208"
             Height="80" runat="server" />
     </div>
-    <div class="panic">
-        <h3>
-            <em></em><strong><b>限时抢购</b><span>Panic-Bu ying</span></strong> <i></i>
-        </h3>
-        <%=PanicBuyingHTML%>
+    <div id="weibo">
+        <h3 class="title">
+            会员互动</h3>
+        <div class="group">
+            <h4>
+                新浪微博</h4>
+            <dl>
+                <dt>
+                    <img src="../static/images/logotemp.png" width="67" /></dt>
+                <dd>
+                    <p>
+                        <em>Ue96攸怡商城</em><span>V</span></p>
+                    <p>
+                        <a href="javascript:void(0);">+加关注</a></p>
+                </dd>
+            </dl>
+            <div class="external">
+                <p>
+                    微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容微博内容</p>
+            </div>
+        </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightTopModule" runat="server">
-    <a href="javascript:void(0);">
-        <img src="static/images/help2.png" width="192" height="74" /></a>
+    <div id="security">
+        <h3 class="title">
+            服务与保障</h3>
+        <ul>
+            <li class="col1">
+                <p>
+                    <strong>正品行货 满299免运费</strong></p>
+                <p>
+                    <span>免运费限江浙沪</span></p>
+            </li>
+            <li class="col2">
+                <p>
+                    <strong>48小时价格保护</strong></p>
+                <p>
+                    <span>降价可退差额</span></p>
+            </li>
+            <li class="col3">
+                <p>
+                    <strong>24小时7天 随时接听</strong></p>
+                <p>
+                    <span>贴心服务</span></p>
+            </li>
+            <li class="col4">
+                <p>
+                    <strong>7天无理由退货</strong></p>
+                <p>
+                    <span>15天换货</span></p>
+            </li>
+        </ul>
+    </div>
     <dl id="notes">
-        <dt><a class="adone sel" href="#"><span>公告</span> </a><a class="adtwo" href="#"><span>
-            动态</span> </a></dt>
+        <dt><a class="adone sel" href="#"><span>公告<i></i></span> </a><a class="adtwo" href="#">
+            <span>动态<i></i></span> </a></dt>
         <dd>
             <p style="display: block;">
                 <%=HomeWebBulletinListHTML %>
@@ -97,29 +141,23 @@
                                 礼品卡惠集中营</a>
         </dd>
     </dl>
+    <div id="panic">
+        <h3>
+            限时抢购</h3>
+        <div class="scrollItem">
+            <%=PanicBuyingHTML%>
+            <span class="prev scrollbt"><a href="javascript:void(0);"></a></span><span class="next scrollbt">
+                <a href="javascript:void(0);"></a></span>
+        </div>
+    </div>
     <dl class="Promotions">
-        <dt><a class="prom" href="#">
-            <img alt="图标" src="static/images/szj.png" width="8" height="8" />
-            <b>商品促销</b> <span>promotions</span> </a><a class="more" href="#">
-                <%--更多&gt;&gt; --%></a> </dt>
+        <dt><a href="#"><b>新品上市</b></a><a href="#"><b>促销商品</b></a><a href="#"><b>会员特享</b></a><a
+            href="#"><b>猜你喜欢</b></a> </dt>
         <dd>
             <%=PromoHTML %>
+            <%=InComingProducts %>
         </dd>
     </dl>
-    <dl class="Promotions">
-        <!--新品上市-->
-        <dt><a class="prom" href="#">
-            <img alt="图标" src="static/images/szj.png" width="8" height="8" />
-            <b>新品上市</b> <span>promotions</span> </a><a class="more" href="#">
-                <%--更多&gt;&gt; --%></a> </dt>
-        <dd>
-            <%=InComingProducts%>
-        </dd>
-    </dl>
-    <div style="margin-top: 7px;" class="band">
-        <span>品牌旗舰店</span>
-        <%=HomeBrandsHTML %>
-    </div>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="SiteNavModule" runat="server">
 </asp:Content>
@@ -138,7 +176,7 @@
             <a class="next" href="javascript:void(0)"></a>
             <div style="width: 3600px;" class="group">
                 <div class="item">
-                    <img src="static/images/spb3.jpg" width="100">
+                    <img src="static/images/ipevo_logo.png" width="100">
                     <ul>
                         <li><a href="http://www.ue96.com/pages/product.aspx?c1=2&amp;c2=620&amp;c3=625&amp;pid=29498">
                             <img style="margin-top: 60px;" src="static/images/1a.png" width="253" height="265"></a></li>
@@ -184,22 +222,24 @@
         <div class="ThreeRow">
             <div class="bigLeft">
                 <div class="It">
-                    <a class="Header" href="#">
-                        <img src="static/images/it.png" /></a>
-                    <uc2:OnlineStaticAD ID="C1LeftAD1" ADPositionID="6" Width="208" Height="278" ADCSSClass="Header"
-                        runat="server" />
-                    <p style="height: 66px; background-color: rgb(51, 0, 204);">
-                    </p>
-                    <p>
-                        <a href="#">IT相关导购文</a></p>
-                    <p>
-                        <a href="#">IT相关导购文</a></p>
-                    <p>
-                        <a href="#">IT相关导购文</a></p>
-                    <p>
-                        <a href="#">IT相关导购文</a></p>
-                    <p>
-                        <a href="#">IT相关导购文</a></p>
+                    <h3>
+                        <a class="Header" href="#">
+                            <img src="static/images/it.png" /></a>
+                    </h3>
+                    <div class="group">
+                        <uc2:OnlineStaticAD ID="C1LeftAD1" ADPositionID="6" Width="208" Height="278" ADCSSClass="Header"
+                            runat="server" />
+                        <p>
+                            <a href="http://www.ue96.com/Pages/SubProductList2.aspx?c1=232&amp;c2=271">酷炫才是潮人必备大杀器</a></p>
+                        <p>
+                            <a href="http://www.ue96.com/Pages/SubProductList2.aspx?c1=232&amp;c2=397">那些匪夷所思的好玩意儿</a></p>
+                        <p>
+                            <a href="http://www.ue96.com/Pages/SubProductList2.aspx?c1=232&amp;c2=376">生活就是要讲究品质才行</a></p>
+                        <p>
+                            <a href="http://www.ue96.com/Pages/SubProductList2.aspx?c1=232&amp;c2=539">和“烦躁”“压力”“忧郁”说北北</a></p>
+                        <p>
+                            <a href="http://www.ue96.com/Pages/SubProductList2.aspx?c1=232&amp;c2=233">快把枯燥的上班变成享受</a></p>
+                    </div>
                 </div>
                 <%=CategoryProductsOneHTML%>
             </div>
@@ -211,10 +251,11 @@
                 </div>
                 <div class="discus">
                     <h2 id="phone1">
-                        <span><a class="sel" href="#">用户评论</a></span> <span><a href="#">销量排行</a></span>
+                        <%--<span><a class="sel" href="#">用户评论</a></span>--%>
+                        <span><a href="#" class="sel">销量排行</a></span>
                     </h2>
                     <div id="phoneCon1">
-                        <%=CategoryProductsHotCommentedOneHTML%>
+                        <%--<%=CategoryProductsHotCommentedOneHTML%>--%>
                         <%=CategoryProductBestSaledOneHTML%>
                     </div>
                 </div>
@@ -223,22 +264,24 @@
         <div style="margin-top: 10px;" class="ThreeRow">
             <div class="bigLeft">
                 <div class="It">
-                    <a class="Header" href="#">
-                        <img src="static/images/home.png"></a>
-                    <uc2:OnlineStaticAD ID="C1LeftAD2" ADPositionID="7" ADCSSClass="Header" Width="208"
-                        Height="278" runat="server" />
-                    <p style="height: 66px; background-color: rgb(51, 0, 204);">
-                    </p>
-                    <p>
-                        <a href="#">IT相关导购文</a></p>
-                    <p>
-                        <a href="#">IT相关导购文</a></p>
-                    <p>
-                        <a href="#">IT相关导购文</a></p>
-                    <p>
-                        <a href="#">IT相关导购文</a></p>
-                    <p>
-                        <a href="#">IT相关导购文</a></p>
+                    <h3>
+                        <a class="Header" href="#">
+                            <img src="static/images/home.png"></a>
+                    </h3>
+                    <div class="group">
+                        <uc2:OnlineStaticAD ID="C1LeftAD2" ADPositionID="7" ADCSSClass="Header" Width="208"
+                            Height="278" runat="server" />
+                        <p>
+                            <a href="Pages/BrandProductList1.aspx?bid=24">澳洲顶级抗衰老护肤品</a></p>
+                        <p>
+                            <a href="pages/dg01.aspx">绵羊油并不是羊的脂肪</a></p>
+                        <p>
+                            <a href="pages/dg02.aspx">美容达人必备护肤品</a></p>
+                        <p>
+                            <a href="pages/dg03.aspx">把脸洗干净了再谈护肤</a></p>
+                        <p>
+                            <a href="pages/dg04.aspx">重回固体时代</a></p>
+                    </div>
                 </div>
                 <%=CategoryProductsTwoHTML%>
             </div>
@@ -250,13 +293,428 @@
                 </div>
                 <div class="discus">
                     <h2 id="phone2">
-                        <span><a class="sel" href="#">用户评论</a></span> <span><a href="#">销量排行</a></span>
+                        <%--<span><a class="sel" href="#">用户评论</a></span>--%>
+                        <span><a href="#">销量排行</a></span>
                     </h2>
                     <div id="phoneCon2">
-                        <%=CategoryProductsHotCommentedTwoHTML%>
+                        <%--<%=CategoryProductsHotCommentedTwoHTML%>--%>
                         <%=CategoryProductBestSaledTwoHTML%>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="centerAdWrapper">
+            <a class="ad1" href="#">
+                <img src="../static/images/ad3.jpg"></a><a class="ad1" href="#"><img src="../static/images/ad02.jpg"></a>
+        </div>
+        <div id="scheme" class="ThreeRow">
+            <div class="bigLeft">
+                <div class="It">
+                    <h3>
+                        出行解决方案</h3>
+                    <div class="group">
+                        <a class="ad" href="product.html">
+                            <img src="../static/images/tsj.jpg" width="206" height="290"></a>
+                    </div>
+                </div>
+                <div class="sort">
+                    <ul id="sort2" class="sortHeader">
+                        <li><a href="#">分类</a></li>
+                        <li><a href="#">分类</a></li>
+                        <li><a href="#">分类</a></li>
+                        <li><a href="#">分类</a></li>
+                    </ul>
+                    <div class="main">
+                        <div class="sort2Con">
+                            <ul class="product sortContent">
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sort2Con">
+                            <ul class="product sortContent">
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                2end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sort2Con">
+                            <ul class="product sortContent">
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                3end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sort2Con">
+                            <ul class="product sortContent">
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                4end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>
+                                            <a href="#">
+                                                <img alt="产品图片" src="../static/images/product.jpg" width="100" height="100"></a></h3>
+                                        <p>
+                                            <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                                                商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                                        <p>
+                                            <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span>
+                                        </p>
+                                        <p class="price">
+                                            <b>¥1500</b><span>¥500</span></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="band">
+                        <span>品牌旗舰店</span>
+                        <%=HomeBrandsHTML%>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h3>
+                    个性解决方案</h3>
+                <a href="product.html">
+                    <img src="../static/images/ddys.jpg" width="274" height="291"></a>
+                <div>
+                    <em>主题晚宴</em><span>解决方案</span></div>
             </div>
         </div>
     </div>
@@ -267,14 +725,14 @@
     <script type="text/javascript">
         $(function () {
 
-            $("#panicContentt").children("div[class='panicContent']").each(function (index) {
+            $("#panicBuyContents").children("li").each(function (index) {
                 var $this = $(this);
                 var startTime = new Date();
                 var $endTime = $this.children(".time").children("input").val();
                 $endTime = $endTime.replace(/\-/g, '/');
                 $endTime = Date.parse($endTime);
                 var remainSecond = (($endTime - startTime.getTime()) / 1000);
-                var $timeDiv = $this.children("h2[class='time']");
+                var $timeDiv = $this.children("h4[class='time']");
                 var InterValObj = window.setInterval(function () {
                     if (remainSecond > 0) {
                         remainSecond = remainSecond - 1;

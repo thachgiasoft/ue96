@@ -344,11 +344,11 @@ namespace YoeJoyHelper
             string shoppingCartHTMLWrapper1 = String.Format(@"<div id='chart'>
         <span>购物车:<b><a href='{0}Shopping/ShoppingCart.aspx'>{1}</a></b> 件
         </span>
-        <img alt='购物车' src='../static/images/gwcbt0.png' width='39' height='32' />
-        <a href='{2}Shopping/ShoppingCart.aspx'>结算</a>
+        <a class='chartBt' href='javascript:void(0);'></a>
+        <a class='js' href='{2}Shopping/ShoppingCart.aspx'>结算</a>
     </div>
     <div id='chartContent'>
-        <img alt='背景' src='../static/images/gwctop.png' width='374' height='18' />
+        <h5><span></span></h5>
         <div id='myShoppingCart' class='shopping'>", siteBaseURL, productCount, siteBaseURL);
 
 

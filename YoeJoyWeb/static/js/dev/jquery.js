@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$(document).ready(function() {		
+	scrollLoad();
     focues();
 	notes();	
 	chart();
@@ -17,6 +18,40 @@ $(document).ready(function() {
 	classNav();
 	adItemShow();
 });
+$(window).load(function(e) {
+	$('#bg').addClass('allDom');
+});
+//屏载组件
+function scrollLoad(){	
+	var _top,j=0;	
+	var im=$('.imgshow');
+	var _len=im.length;
+	var topArr=new Array;		
+	var scrollShow=function(){
+		if(j==0)
+		{
+			for(var i=0; i<_len; i++)
+				  {
+					  topArr[i]=Math.floor(im.eq(i).position().top);
+				  }	
+		}	
+		_top=$(window).height()+$(document).scrollTop();
+		if(_top>topArr[0])
+		{
+			im.eq(j).find('img').attr('src',function(){
+				return $(this).attr('data-src');
+			});
+			topArr.splice(0,1);	
+			j+=1;
+		}	
+	}
+	var ss=setInterval(scrollShow,300);
+	setTimeout(function(){clearInterval(ss);},10000);
+	$(window).scroll(function(){
+		ss=setInterval(scrollShow,300);
+		setTimeout(function(){clearInterval(ss);},10000);
+	});
+}
 //大类页主广告滚动脚本
 function adItemShow(){
 	var bt=$('#adShow .btItem a');
@@ -50,13 +85,28 @@ var getQueryString=function(name){
 //内页导航伸缩组件
 function classNav() {
     var className = $('.listOut h3');
-	var classID=getQueryString('c3');
-	var cName=$('.listOut input').filter(function(index) {
-        return $(this).val()==classID;
-    });
-	cName.parents('li').addClass('sel');
+	var classID,cName;
+	var fName=window.location.pathname;
+	if(fName.search('SubProductList1')!==-1)
+	{
+		$('.listOut li').addClass('sel');
+	}else
+	{
+		if(fName.search('SubProductList2')!==-1)
+		{
+			classID=getQueryString('c2');
+		}else
+		if(fName.search('SubProductList3')!==-1)
+		{
+			classID=getQueryString('c3');
+		}
+		cName=$('.listOut input').filter(function(index) {
+			return $(this).val()==classID;
+		});
+		cName.parents('li').addClass('sel');	
+	}
     className.click(function () {
-		var p=$(this).next('p');
+		var p=$(this).nextAll('p');
         var _display = p.css('display');
 		var li=$(this).parent('li');
         if (_display == 'block') {
@@ -261,12 +311,12 @@ function processChart(){
 function auLabel(){
 	var num=0;
 	var num2=0;
-	var timeout=1000;
-	var phone1=$('#phone1 a');
-	var phonecon1=$('#phoneCon1 dl');
+	var timeout=2000;
+	var phone1=$('#bigclass1 #phone a');
+	var phonecon1=$('#bigclass1 #phoneCon dl');
 	
-	var phone2=$('#phone2 a');
-	var phonecon2=$('#phoneCon2 dl');
+	var phone2=$('#bigclass2 #phone a');
+	var phonecon2=$('#bigclass2 #phoneCon dl');
 	var set=window.setInterval(au,timeout);
 	
 	phone1.eq(0).addClass('sel');
@@ -321,43 +371,27 @@ function auLabel(){
 }
 
 function pro() {
-    var $sort1 = $("#content").children(".ThreeRow").eq(0).children(".bigLeft").children(".sort").children("ul[class='sortHeader']");
-    var $sort2 = $("#content").children(".ThreeRow").eq(1).children(".bigLeft").children(".sort").children("ul[class='sortHeader']");
-
-    $sort1.attr({ "id": "sort1" });
-    $sort2.attr({ "id": "sort2" });
-
-    $sort1.children("li").eq(0).children("a").eq(0).attr({ "class": "sel" });
-    $sort2.children("li").eq(0).children("a").eq(0).attr({ "class": "sel" });
-
-    var $list1 = $("#content").children(".ThreeRow").eq(0).children(".bigLeft").children(".sort").children("div[class='main']");
-    var $list2 = $("#content").children(".ThreeRow").eq(1).children(".bigLeft").children(".sort").children("div[class='main']");
-
-    $list1.children("div").eq(0).siblings("div").css({ "display": "none" });
-    $list2.children("div").eq(0).siblings("div").css({ "display": "none" });
-
-    $list1.children("div").eq(0).css({ "display": "block" });
-    $list2.children("div").eq(0).css({ "display": "block" });
-
-    var sort1 = $('#sort1 li a');
-    var sort1Con = $('.sort1Con');
-    var sort2 = $('#sort2 li a');
-    var sort2Con = $list2.children("div[class='sort1Con']");
-
-    sort1.hover(function () {
-        var i = sort1.index(this);
-        sort1.removeClass('sel');
-        sort1.eq(i).addClass('sel');
-        sort1Con.eq(i).show().siblings().hide();
-    }, function () { });
-
-
-    sort2.hover(function () {
-        var i = sort2.index(this);
-        sort2.removeClass('sel');
-        sort2.eq(i).addClass('sel');
-        sort2Con.eq(i).show().siblings().hide();
-    }, function () { });
+	var menu1=$('#content .ThreeRow:eq(0) .sortHeader li');
+	var content1=$('#content .ThreeRow:eq(0) .main .sort1Con');
+	var menu2=$('#content .ThreeRow:eq(1) .sortHeader li');
+	var content2=$('#content .ThreeRow:eq(1) .main .sort1Con');
+	var menu3=$('#scheme .sortHeader li');
+	var content3=$('#scheme .main .sort2Con');	
+	menu1.eq(0).addClass('selected');
+	content1.eq(0).addClass('selected');	
+	menu2.eq(0).addClass('selected');
+	content2.eq(0).addClass('selected');
+	menu3.eq(0).addClass('selected');
+	content3.eq(0).addClass('selected');
+	menu1.mousemove(function(){
+		selectBox($(this),content1);
+	});
+	menu2.mousemove(function(){
+		selectBox($(this),content2);
+	});
+	menu3.mousemove(function(){
+		selectBox($(this),content3);
+	});
 }
 
 function seachBox(){
@@ -375,8 +409,7 @@ function seachBox(){
 }
 
 
-function sorts(){
-	
+function sorts(){	
 	var sorts=$('#ItemSortCon');
 	var sortsContent=$('.classMenu');
 	var span=$('#ItemSort span b');
@@ -408,31 +441,30 @@ function sorts(){
 
 
 function chart(){
-	var char=$('#count img');
+	var char=$('#count .chartBt');
 	var charf=$('#count');
 	var charContent=$('#chartContent');
-	var car=$('#chart img');
+	var car=$('#chart .chartBt');
 	
 	char.hover(function(){
 		charContent.css('display','block');
-		car.attr({'src':'images/gwcbt1.png'});
+		car.addClass('sel');
 	},function(){
 	});
 	
 	charf.hover(function(){
 	},function(){
 		charContent.css('display','none');
-		car.attr({'src':'images/gwcbt0.png'});
+		car.removeClass('sel');
 	});
 	
 	charContent.hover(function(){
 		charContent.show();
-		car.attr({'src':'images/gwcbt1.png'});
+		car.addClass('sel');
 	},function(){
 		charContent.hide();	
-		car.attr({'src':'images/gwcbt0.png'});
-	});
-	
+		car.removeClass('sel');
+	});	
 }
 
 
@@ -442,18 +474,20 @@ function Meun2(){
 	var hovers=$('#Menu .hover');
 	var liHover=$('.liHover');
 	var mem=$('.Listcontent dt .mem span');	
-	var c1,_end;
+	var c1,ca,_end;
 	var mLen=hovers.length;
 	var mHeight=65*mLen+3;
 	var cName=Menu.attr('class');
 	for(var i=0; i<mLen; i++)
 	{
 		c1=hovers.eq(i).find('.ListMain h2').text();
+		ca=hovers.eq(i).find('.ListMain h2 a').attr('href');
 		_end=c1.indexOf('>');
 		c1=c1.substring(1,_end);
-		mem.eq(i).text(c1+'频道');
+		c1="<a href='"+ca+"'>"+c1+"频道</a>";
+		mem.eq(i).html(c1);
 	}
-	$('#Menu .hover:gt(3)').hide();
+	$('#Menu .hover:gt(4)').hide();
 	$('.classMenu .hover').show();
 	hovers.eq(0).children('.liHover').css('border-top-width',0);
 	hovers.eq(0).children('.liHover').css('padding-top',2);
@@ -469,8 +503,8 @@ function Meun2(){
 		focusNum.css('visibility','visible');
 		if(cName!=='classMenu')
 		{
-		    $('#Menu .hover:gt(3)').hide();
-		    $('.lbg').animate({height:'263'});
+		    $('#Menu .hover:gt(4)').hide();
+		    $('.lbg').animate({height:'328'});
 		}
 	});
 	hovers.hover(function(){
@@ -478,16 +512,7 @@ function Meun2(){
 		$(this).find('.liHover').addClass('hov');
 		$(this).find('.Listcontent').show();
 	},function(){
-		if(navigator.userAgent.indexOf("MSIE")>0){
-			$(this).find('.Listcontent').hide(0.1);
-			
-			if(navigator.userAgent.indexOf("MSIE")>=6.0){
-				$(this).find('.Listcontent').hide();
-			}
-		}
-		else{
-			$(this).find('.Listcontent').hide();	
-		}
+			$(this).find('.Listcontent').hide();
 	});
 }
 
@@ -594,10 +619,10 @@ function notes(){
 		a.removeClass('sel');
 		
 		if($(this).attr('class')=='adtwo'){
-			$(this).addClass('sell');
+			$(this).addClass('sel');
 		}
 		else if($(this).attr('class')=='adone'){
-			$(this).next().removeClass('sell');
+			$(this).next().removeClass('sel');
 			$(this).addClass('sel');
 		}
 		
@@ -606,7 +631,7 @@ function notes(){
 	},function(){
 		
 		if($(this).attr('class')=='adtwo'){
-			$(this).removeClass('sell');
+			$(this).removeClass('sel');
 		}
 		if($(this).attr('class')=='adone'){
 			$(this).removeClass('sel');

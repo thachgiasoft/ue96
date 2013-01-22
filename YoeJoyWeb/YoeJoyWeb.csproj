@@ -337,6 +337,13 @@
     <Compile Include="Shopping\PreCheckOut.aspx.designer.cs">
       <DependentUpon>PreCheckOut.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Shopping\ResultFromAlipay.aspx.cs">
+      <DependentUpon>ResultFromAlipay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shopping\ResultFromAlipay.aspx.designer.cs">
+      <DependentUpon>ResultFromAlipay.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Shopping\ShoppingCart.aspx.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -797,6 +804,7 @@
     <Content Include="Controls\UserProfiler.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Shopping\log\log.txt" />
     <Content Include="Pages\Article.aspx" />
     <Content Include="Pages\BrandProductList1.aspx" />
     <Content Include="Pages\Product.aspx" />
@@ -827,11 +835,13 @@
     <Content Include="Shopping\Comfirm.aspx" />
     <Content Include="Shopping\Pay-alipay3.aspx" />
     <Content Include="Shopping\PreCheckOut.aspx" />
+    <Content Include="Shopping\ResultFromAlipay.aspx" />
     <Content Include="Shopping\ShoppingCart.aspx" />
     <Content Include="static\css\base.css" />
     <Content Include="static\css\class.css" />
     <Content Include="static\css\grounp.css" />
     <Content Include="static\css\head.css" />
+    <Content Include="static\css\header2.css" />
     <Content Include="static\css\help.css" />
     <Content Include="static\css\layout.css" />
     <Content Include="static\css\login.css" />
@@ -931,6 +941,7 @@
     <Content Include="static\images\footico3.png" />
     <Content Include="static\images\footico4.png" />
     <Content Include="static\images\footico5.png" />
+    <Content Include="static\images\foottext.png" />
     <Content Include="static\images\gg1.gif" />
     <Content Include="static\images\gg1.jpg" />
     <Content Include="static\images\gg2.jpg" />
@@ -985,12 +996,21 @@
     <Content Include="static\images\hov3.png" />
     <Content Include="static\images\hssg.png" />
     <Content Include="static\images\hy2.gif" />
+    <Content Include="static\images\image001.jpg" />
+    <Content Include="static\images\image0011.jpg" />
+    <Content Include="static\images\image002.jpg" />
+    <Content Include="static\images\image003.jpg" />
+    <Content Include="static\images\image004.jpg" />
+    <Content Include="static\images\image005.jpg" />
     <Content Include="static\images\indexbg - 副本 %282%29.png" />
     <Content Include="static\images\indexbg - 副本 %283%29.png" />
+    <Content Include="static\images\indexbg - 赂卤卤戮 %282%29.png" />
+    <Content Include="static\images\indexbg - 赂卤卤戮 %283%29.png" />
     <Content Include="static\images\indexbg.png" />
     <Content Include="static\images\indexbgs.png" />
     <Content Include="static\images\indexline.gif" />
     <Content Include="static\images\invoice.jpg" />
+    <Content Include="static\images\ipevo_logo.png" />
     <Content Include="static\images\it.png" />
     <Content Include="static\images\jing.png" />
     <Content Include="static\images\jointIco.png" />
@@ -1008,6 +1028,7 @@
     <Content Include="static\images\logo.gif" />
     <Content Include="static\images\logob.jpg" />
     <Content Include="static\images\logoe.png" />
+    <Content Include="static\images\logotemp.png" />
     <Content Include="static\images\markes1.jpg" />
     <Content Include="static\images\markesTri.jpg" />
     <Content Include="static\images\men.png" />
@@ -1058,6 +1079,7 @@
     <Content Include="static\images\qq.jpg" />
     <Content Include="static\images\qrjz.jpg" />
     <Content Include="static\images\qy1.gif" />
+    <Content Include="static\images\recommend.png" />
     <Content Include="static\images\reddot.gif" />
     <Content Include="static\images\registerbg.gif" />
     <Content Include="static\images\registerbt.png" />
@@ -1072,6 +1094,7 @@
     <Content Include="static\images\searchbg.png" />
     <Content Include="static\images\searchbg0.png" />
     <Content Include="static\images\searchbt.png" />
+    <Content Include="static\images\searchbt0.png" />
     <Content Include="static\images\shenqing.jpg" />
     <Content Include="static\images\shops.jpg" />
     <Content Include="static\images\shops2.jpg" />
@@ -1081,6 +1104,7 @@
     <Content Include="static\images\sina-ico.gif" />
     <Content Include="static\images\sina-ico.jpg" />
     <Content Include="static\images\sina.jpg" />
+    <Content Include="static\images\solution.png" />
     <Content Include="static\images\sortbg.gif" />
     <Content Include="static\images\sp %281%29.jpg" />
     <Content Include="static\images\sp.jpg" />
@@ -1104,6 +1128,7 @@
     <Content Include="static\images\step4.png" />
     <Content Include="static\images\sub.png" />
     <Content Include="static\images\submit.png" />
+    <Content Include="static\images\succ.gif" />
     <Content Include="static\images\szj.png" />
     <Content Include="static\images\td.jpg" />
     <Content Include="static\images\td.png" />
@@ -1116,6 +1141,7 @@
     <Content Include="static\images\time.png" />
     <Content Include="static\images\timebg.png" />
     <Content Include="static\images\tj.JPG" />
+    <Content Include="static\images\top.gif" />
     <Content Include="static\images\top.jpg" />
     <Content Include="static\images\top.png" />
     <Content Include="static\images\topp.png" />

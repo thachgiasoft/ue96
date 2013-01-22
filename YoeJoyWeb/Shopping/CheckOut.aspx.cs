@@ -816,6 +816,7 @@ namespace YoeJoyWeb.Shopping
                             {
                                 if (Util.TrimIntNull(dr["Quantity"].ToString()) > LimitedQty)
                                 {
+                                    var a = Util.TrimIntNull(dr["Quantity"].ToString());
                                     string msg = Util.TrimNull(drPB["productname"]) + "，每天限购一次，每次限购" +
                                                  Util.TrimIntNull(drPB["limitedqty"].ToString()) +
                                                  "个<br />请回到 <a href='ShoppingCart.aspx'>购物车</a> 修改限购商品！";

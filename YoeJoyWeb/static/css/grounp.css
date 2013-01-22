@@ -109,8 +109,10 @@
 .aboutGrounp{margin-top:10px; border:#ccc solid 1px; overflow:hidden;zoom:1;}
 .aboutGrounp .l{width:78%;}
 .aboutGrounp .r{ background:#f1f1f1; width:22%;}
-.aboutGrounp .l h5{background-color:#f67b13; color:#fff; height:36px; font-size:16px; font-weight:bold; line-height:2.2; padding-left:10px}
-.aboutGrounp .l{height:100px; background:url(../images/gpBg.png) 30px 36px no-repeat}
+.aboutGrounp .l h5{font-size:0}
+.aboutGrounp .l h5 em{display:block; padding-left:10px; background-color:#f67b13; color:#fff; height:36px; font-size:16px; font-weight:bold; line-height:2.2}
+.aboutGrounp .l h5 span{font-size:0; width:13px; height:10px; background:url(../images/gpBg.png) no-repeat; margin-left:30px}
+.aboutGrounp .l{height:100px}
 .poirt{text-align:center; border-left:#ccc solid 1px; padding:25px 0; line-height:25px;}
 .poirt a{ margin-top:3px;}
 .poirt span{display:block;padding:8px 0;}

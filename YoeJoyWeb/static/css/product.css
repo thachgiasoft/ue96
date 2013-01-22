@@ -187,7 +187,7 @@
 #cartCheck .prev a{display:none; width:17px; height:61px; background:url(../images/prevwx.png) no-repeat;}
 #cartCheck .prev a:hover{background:url(../images/prevxz.png) no-repeat;}
 #cartCheck .next{float:left; width:27px;  margin-top:48px}
-#cartCheck .next a{width:17px; height:61px; margin-left:10px; background:url(../images/nextwx.png) no-repeat;}
+#cartCheck .next a{width:17px; height:61px; margin-left:10px; background:url(../images/nextwx.png) no-repeat; display:none}
 #cartCheck .next a:hover{background:url(../images/nextxz.png) no-repeat;}
 /*所有评价(comments.html)*/
 #goodsInfo .title{height:29px; background:url(../images/showbg.png) 0 -406px no-repeat; font-size:14px; color:#fff; line-height:2; text-indent:10px}

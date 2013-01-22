@@ -16,12 +16,45 @@ namespace YoeJoyWeb.Controls
 {
     public partial class UserProfiler : System.Web.UI.UserControl
     {
-        private static readonly string profileHeaderTxtWithoutLogin =@"<h6>
-        [&nbsp;<a href='"+YoeJoyConfig.SiteBaseURL+@"User/Login.aspx?from={0}'> 登录 </a>&nbsp;]&nbsp;&nbsp;&nbsp; [&nbsp;<a href='User/Login.aspx?act=register'>
-            注册新用户 </a>&nbsp;]
-    </h6>";
+
+        private static readonly string profileHeaderTxtWithoutLogin = @"<a href='" + YoeJoyConfig.SiteBaseURL + @"User/Login.aspx?from={0}'> 登录 </a>|<a href='User/Login.aspx?act=register'>
+             免费注册 </a>";
+
         private static readonly string profileHeaderTxtWithLogin = @"<h6>
         &nbsp;欢迎 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp{0}&nbsp;</h6>";
+
+        /// <summary>
+        /// 我的攸怡账户页面
+        /// </summary>
+        protected static string MyProfileURL
+        {
+            get
+            {
+                return String.Concat(YoeJoyConfig.SiteBaseURL, "User/MyProfile.aspx");
+            }
+        }
+
+        /// <summary>
+        /// 帮助中心页面
+        /// </summary>
+        protected static string HelprCenterURL
+        {
+            get
+            {
+                return String.Concat(YoeJoyConfig.SiteBaseURL, "help/help.aspx");
+            }
+        }
+
+        /// <summary>
+        /// 我的历史记录
+        /// </summary>
+        protected static string MyHistoryURL
+        {
+            get
+            {
+                return String.Concat(YoeJoyConfig.SiteBaseURL, "User/MyHistory.aspx");
+            }
+        }
 
         protected string ProfilerHeadHTML { get; set; }
         protected void Page_Load(object sender, EventArgs e)
@@ -35,7 +68,7 @@ namespace YoeJoyWeb.Controls
                 }
                 else
                 {
-                    ProfilerHeadHTML =String.Format(profileHeaderTxtWithoutLogin,Context.Request.RawUrl.GetUrlEncodeStr());
+                    ProfilerHeadHTML = String.Format(profileHeaderTxtWithoutLogin, Context.Request.RawUrl.GetUrlEncodeStr());
                 }
             }
         }

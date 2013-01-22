@@ -215,7 +215,7 @@ h2.titles a{ float:right; color:#09C;}
 .myaddress td{padding:6px 10px; border-top:#ccc solid 1px;}
 .myaddress td a{margin-right:5px;}
 
-.NewAddressContent{background:#f3f3f3; border:#ccc solid 1px; padding:10px 15px;}
+.NewAddressContent{background:#f3f3f3; border:#ccc solid 1px; padding:10px 15px; display:none;}
 .NewAddressContent span,NewAddressContent label,NewAddressContent input,NewAddressContent em,NewAddressContent a{vertical-align:middle;}
 .NewAddressContent span{margin-left:8px;}
 .NewAddressContent em{padding:0 3px;}

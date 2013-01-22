@@ -726,7 +726,6 @@ namespace YoeJoyHelper
                 {
                     string productLink = String.Format("/Pages/Product.aspx?c1={0}&c2={1}&c3={2}&pid={3}", product.C1SysNo, product.C2SysNo, product.C3SysNo, product.ProductSysNo);
                     string innerHTML = @"<li>
-                                    <div>
                                         <h3>
                                             <a href='{0}'>
                                                 <img alt='产品图片' src='{1}' width='140' height='140'/></a></h3>
@@ -736,7 +735,6 @@ namespace YoeJoyHelper
                                         <p> <span class='adText'>
                                          {5}</span> </p>
                                         <p class='price'><b>¥{6}</b><span>¥{7}</span></p>
-                                    </div>
                                 </li>";
                     string imgURL = String.Concat(imageVitualPath, product.ImgPath);
                     strb.Append(String.Format(innerHTML, productLink, imgURL, productLink, product.ProductBriefName, product.ProductBriefName, product.ProductPromotionWord, product.Price, product.BaiscPrice));
@@ -867,18 +865,17 @@ namespace YoeJoyHelper
             if (products != null)
             {
                 string emptyInventoryItemHTML = @"<li>
-                            <img alt='{0}' src='{1}' width='90' height='90'>
-                            <a class='name' title='{2}' href='{3}'>{4}</a>
-                            <span class='adText'>{5}</span>
-                            <p class='price'>
-                                <b>¥{6}</b><span>¥{7}</span><a class='bt1' href='javascript:void(0)'>立即购买</a></p>
-                        </li>";
+              <h5 align='center'><a href='{0}'><img alt='{1}' src='{2}' width='100' height='100'></a></h5>
+              <p><a class='name' title='{3}' href='{4}'>{5}</a>
+              <span class='adText'>{6}</span></p>
+              <p class='price'><b>¥{7}</b><span>¥{8}</span><a class='bt1' href='javascript:void(0);'>立即购买</a></p>
+            </li>";
 
                 foreach (C1WeeklyBestSaledProduct product in products)
                 {
                     string thumbImg = YoeJoyConfig.ImgVirtualPathBase + product.ImgPath;
                     string deeplink = YoeJoyConfig.SiteBaseURL + "Pages/Product.aspx?c1=" + c1SysNo + "&c2=" + c2SysNo + "&c3=" + c3SysNo + "&pid=" + product.ProductSysNo;
-                    strb.Append(String.Format(emptyInventoryItemHTML, product.ProductBriefName, thumbImg, product.ProductBriefName, deeplink, product.ProductBriefName, product.ProductPromotionWord, product.Price, product.BaiscPrice));
+                    strb.Append(String.Format(emptyInventoryItemHTML,deeplink,product.ProductBriefName, thumbImg, product.ProductBriefName, deeplink, product.ProductBriefName, product.ProductPromotionWord, product.Price, product.BaiscPrice));
                 }
                 strb.Append("</ul>");
                 c3BestSaledProductHTML = strb.ToString();
@@ -992,12 +989,12 @@ namespace YoeJoyHelper
                                     <b>¥{5}</b><span>¥{6}</span></p>
                             </dd>";
 
-                for (int i = 0; i <products.Count; i++)
+                for (int i = 0; i < products.Count; i++)
                 {
                     var product = products[i];
                     string thumbImg = YoeJoyConfig.ImgVirtualPathBase + product.ImgPath;
                     string deeplink = YoeJoyConfig.SiteBaseURL + "Pages/Product.aspx?c1=" + product.C1SysNo + "&c2=" + product.C2SysNo + "&c3=" + product.C3SysNo + "&pid=" + product.ProductSysNo;
-                    strb.Append(String.Format(emptyInventoryItemHTML,(i+1),thumbImg, deeplink, product.ProductBriefName, product.ProductPromotionWord, product.Price, product.BaiscPrice));
+                    strb.Append(String.Format(emptyInventoryItemHTML, (i + 1), thumbImg, deeplink, product.ProductBriefName, product.ProductPromotionWord, product.Price, product.BaiscPrice));
                 }
 
                 strb.Append("</dl>");
@@ -1094,7 +1091,7 @@ namespace YoeJoyHelper
                     FrontDsiplayProduct product = products[i];
                     string thumbImg = imageBasePath + product.ImgPath;
                     string deeplink = YoeJoyConfig.SiteBaseURL + "Pages/Product.aspx?c1=" + product.C1SysNo + "&c2=" + product.C2SysNo + "&c3=" + product.C3SysNo + "&pid=" + product.ProductSysNo;
-                    strb.Append(String.Format(c1LastedDisCountProductItemHTML, deeplink,product.ProductBriefName,thumbImg, product.ProductBriefName, deeplink, product.ProductBriefName, product.ProductPromotionWord, product.Price, product.BaiscPrice));
+                    strb.Append(String.Format(c1LastedDisCountProductItemHTML, deeplink, product.ProductBriefName, thumbImg, product.ProductBriefName, deeplink, product.ProductBriefName, product.ProductPromotionWord, product.Price, product.BaiscPrice));
                 }
                 strb.Append("</div>");
                 searchHotCommentedProductsHTML = strb.ToString();

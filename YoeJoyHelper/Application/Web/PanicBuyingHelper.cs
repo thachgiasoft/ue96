@@ -41,26 +41,33 @@ namespace YoeJoyHelper
             if (panicProducts != null)
             {
                 string imageVitualPath = YoeJoyConfig.ImgVirtualPathBase;
-                StringBuilder strb = new StringBuilder("<div id='panicContentt' class='panicContentt'>");
+                StringBuilder strb = new StringBuilder("<ul id='panicBuyContents'>");
                 foreach (PanicBuyingProductModelForHome panic in panicProducts)
                 {
-                    string liTemplate = @"<div class='panicContent'>
-                <h2 class='time'>
-                    <span>剩余 </span>&nbsp;<img alt='钟' src='static/images/time.png' width='15' height='18'/>
-                    <b>23</b> <em>小时</em> <b>55</b> <em>分</em> <b>33</b> <em>秒</em>
-                     <input type='hidden' class='buttonEndTime' value='{0}'/>
-                </h2>
-                <a class='phone' href='{1}'>
-                    <img alt='商品图片' src='{2}' width='100' height='100'/></a> 
-                    <a class='name' href='{3}' title='{4}'>{5}</a>
-                    <span class='adText'>{6}</span>
-                    <p class='price'><b>¥{7}</b><span>¥{8}</span></p>
-            </div>";
+                    string liTemplate = @"<li>
+                    <h4 class='time'>
+                        <span>还剩</span>
+                        <img alt='钟' src='../static/images/time.png' width='15' height='18'/>
+                        <b>23</b> <em>小时</em> <b>55</b> <em>分</em> <b>33</b> <em>秒</em>
+                        <input type='hidden' class='buttonEndTime' value='{0}'/>
+                    </h4>
+                    <a href='{1}'>
+                        <img alt='商品图片' src='{2}' width='100' height='100' /></a>
+                    <div class='group'>
+                        <a class='name' title='{3}' href='{4}'>
+                            {5}</a> <span class='adText'>{6}</span>
+                        <p class='price'>
+                            <b>¥{7}</b><span>¥{8}</span></p>
+                        <em>库存：</em><span class='inventory'><b></b></span> <a class='buying' href='{9}'>
+                            立即抢购</a>
+                    </div>
+                </li>";
+
                     string imgURL = String.Concat(imageVitualPath, panic.CoverImg);
-                    string deeplink=YoeJoyConfig.SiteBaseURL+"Pages/Product.aspx?c1="+panic.C1SysNo+"&c2="+panic.C2SysNo+"&c3="+panic.C3SysNo+"&pid="+panic.ProductSysNo;
-                    strb.Append(String.Format(liTemplate, panic.EndTime.ToString("MM/dd/yyyy HH:mm:ss"), deeplink, imgURL, deeplink,panic.BriefName,panic.BriefName, panic.PromotionWord, panic.ProductPrice,panic.BaiscPrice));
+                    string deeplink = YoeJoyConfig.SiteBaseURL + "Pages/Product.aspx?c1=" + panic.C1SysNo + "&c2=" + panic.C2SysNo + "&c3=" + panic.C3SysNo + "&pid=" + panic.ProductSysNo;
+                    strb.Append(String.Format(liTemplate, panic.EndTime.ToString("MM/dd/yyyy HH:mm:ss"), deeplink, imgURL, panic.BriefName, deeplink, panic.BriefName, panic.PromotionWord, panic.ProductPrice, panic.BaiscPrice,deeplink));
                 }
-                strb.Append("</div>");
+                strb.Append("</ul>");
                 HomePanicHTML = strb.ToString();
             }
             return HomePanicHTML;

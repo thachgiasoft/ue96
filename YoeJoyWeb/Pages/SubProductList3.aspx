@@ -19,9 +19,9 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="SiteNavModule" runat="server">
     <div id="breadNav">
         <p>
-            您在：<a href="../Default.aspx">首页</a>〉<a id='c1NavLink' href="javascript:void(0);"></a>〉<a id="c2NavLink" href="javascript:void(0);"></a>〉
-            <span id="c2NavLink"></span>
-            </p>
+            您在：<a href="../Default.aspx">首页</a>〉<a id='c1NavLink' href="javascript:void(0);"></a>〉<a
+                id="c2NavLink" href="javascript:void(0);"></a>〉 <span id="c2NavLink"></span>
+        </p>
     </div>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="LeftBigModule" runat="server">
@@ -32,14 +32,52 @@
     <div class="mix">
         <div class="l_module">
             <uc2:SubCategoryNavigation ID="SubCategoryNavigation1" runat="server" />
+            <dl id="Discount">
+                <dt>
+                    <h3 class="title">
+                        清库产品</h3>
+                </dt>
+                <dd>
+                    <h2>
+                        <a href="product.html">
+                            <img src="../static/images/sps1.jpg"></a></h2>
+                    <p>
+                        <a class="name" title="宏碁i5 独显 4G内存 直降400低价疯抢中！" href="product.html">宏碁i5 独显 4G内存 直降400低价疯抢中！</a>
+                        <em class="price"><b>¥1500</b><span>¥500</span></em>
+                    </p>
+                </dd>
+                <dd>
+                    <h2>
+                        <a href="product.html">
+                            <img src="../static/images/sps1.jpg"></a></h2>
+                    <p>
+                        <a class="name" title="宏碁i5 独显 4G内存 直降400低价疯抢中！" href="product.html">宏碁i5 独显 4G内存 直降400低价疯抢中！</a>
+                        <em class="price"><b>¥1500</b><span>¥500</span></em>
+                    </p>
+                </dd>
+                <dd>
+                    <h2>
+                        <a href="product.html">
+                            <img src="../static/images/sps1.jpg"></a></h2>
+                    <p>
+                        <a class="name" title="宏碁i5 独显 4G内存 直降400低价疯抢中！" href="product.html">宏碁i5 独显 4G内存 直降400低价疯抢中！</a>
+                        <em class="price"><b>¥1500</b><span>¥500</span></em>
+                    </p>
+                </dd>
+                <dd>
+                    <h2>
+                        <a href="product.html">
+                            <img src="../static/images/sps1.jpg"></a></h2>
+                    <p>
+                        <a class="name" title="宏碁i5 独显 4G内存 直降400低价疯抢中！" href="product.html">宏碁i5 独显 4G内存 直降400低价疯抢中！</a>
+                        <em class="price"><b>¥1500</b><span>¥500</span></em>
+                    </p>
+                </dd>
+            </dl>
             <div id="hotComments" class="l_class area">
                 <div class="title">
-                    <div class="mem0">
-                    </div>
-                    <h3>
+                    <h3 class="title">
                         产品热评</h3>
-                    <div class="mem1">
-                    </div>
                 </div>
                 <%=C3HotCommentProductHTML%>
             </div>
@@ -48,16 +86,29 @@
             <!--热卖推荐Begin-->
             <div id="recommend">
                 <div class="group">
+                    <img class="pTitle" src="../static/images/recommend.png">
                     <%=C3BestSaledProductHTML%>
-                    <ul class="title">
-                        <li>热</li>
-                        <li>卖</li>
-                        <li>推</li>
-                        <li>荐</li>
-                    </ul>
                 </div>
             </div>
             <!--热卖推荐End-->
+            <div id="groupBuy">
+                <h3 class="title">
+                    团购</h3>
+                <div class="group">
+                    <h5 align="center">
+                        <a href="#">
+                            <img src="../static/images/dishes.jpg" width="100"></a></h5>
+                    <p>
+                        <a class="name" href="#">商品名称商品名称商品名称商品名称商品名称商品名称 </a>
+                    </p>
+                    <p class="join">
+                        <a href="Grounp2.html">参团</a><em>¥1000</em><span>市场价:2000</span></p>
+                    <p class="item">
+                        <em class="time"><span>还剩</span><strong>10</strong><span>天</span><strong>10</strong><span>小时</span></em>
+                        <b class="number"><span>余</span><strong>125</strong><span>份</span></b>
+                    </p>
+                </div>
+            </div>
             <!--筛选条件Begin-->
             <div id="screening">
                 <div class="title">
@@ -100,7 +151,7 @@
             var c2 = YoeJoy.Site.Utility.GetQueryString("c2");
             var c3 = YoeJoy.Site.Utility.GetQueryString("c3");
 
-            var $c1Name = $("#foodImport").children("h2").eq(0).children("b").eq(0).html();
+            var $c1Name = $("#foodImport").children("h4").html();
             $("#breadNav").children("p").children("a").eq(1).html($c1Name);
             $("#breadNav").children("p").children("a").eq(1).click(function (event) {
                 window.location.href = $("#siteBaseURL").val() + "Pages/SubProductList1.aspx?c1=" + c1;

@@ -1,0 +1,29 @@
+/*大类菜单*/
+#ItemSortCon{margin-top:2px;}
+.lbg{margin-top:3px;}
+#Menu{position:absolute;width:208px;}
+#Menu .header{ display:none;}
+#Menu .Listcontent{top:-1px;}
+.classMenu{display:none;}
+
+.ItemSort1{background:url(../images/hov2.png) no-repeat left top;}
+.ItemSort{background:url(../images/hov3.png) no-repeat left top;}
+#ItemSort{ font-weight:bold; color:#FFF; font-size:14px; text-align:center;}
+#ItemSort span{ padding:56px 0 7px 0;}
+#ItemSort span b{ width:15px;}
+
+/*大类菜单*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

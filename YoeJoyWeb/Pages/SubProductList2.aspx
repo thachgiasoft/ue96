@@ -25,8 +25,26 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="LeftBigModule" runat="server">
     <div class="left">
         <uc2:SubCategoryNavigation ID="SubCategoryNavigation1" runat="server" />
+        <div id="classBrand">
+            <h3 class="title">
+                品牌专卖店</h3>
+            <ul>
+                <li><a href="productslist.html">
+                    <img src="../static/images/pp4.gif"></a></li>
+                <li><a href="productslist.html">
+                    <img src="../static/images/pp1.gif"></a></li>
+                <li><a href="productslist.html">
+                    <img src="../static/images/pp2.gif"></a></li>
+                <li><a href="productslist.html">
+                    <img src="../static/images/pp3.gif"></a></li>
+                <li><a href="productslist.html">
+                    <img src="../static/images/pp5.gif"></a></li>
+                <li><a href="productslist.html">
+                    <img src="../static/images/pp2.gif"></a></li>
+            </ul>
+        </div>
         <dl class="ranking">
-            <dt><i></i><b>本周销量排行</b><strong></strong></dt>
+            <dt><h3 class="title">本周销量排行</h3></dt>
             <dd>
                 <%=C2WeeklyBestSaledProductsHTML%>
             </dd>
@@ -41,10 +59,30 @@
                 <img src="http://www.ue96.com/up/products/ad09.jpg">
             </a>
             <%--<%=C2SlideAdHTML%>--%>
-            <dl id="Discount">
+            <%--<dl id="Discount">
                 <dt><i></i><b>清库产品</b><strong></strong></dt>
                 <%=C2EmptyInventoryProductsHTML%>
-            </dl>
+            </dl>--%>
+            <div id="limit">
+                <h3>
+                    限时抢购</h3>
+                <h4>
+                    <span>剩余</span>
+                    <img alt="钟" src="../static/images/time.png" width="15" height="18">
+                    <b>23</b> <em>小时</em> <b>55</b> <em>分</em> <b>33</b> <em>秒</em>
+                </h4>
+                <a class="photo" href="#">
+                    <img alt="商品图片" src="../static/images/sp.jpg" width="80" height="80"></a>
+                <p>
+                    <a class="name" title="商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end" href="product.html">
+                        商品名称商品品名称商品品名称商品名称商品名称商品名称商品名称商品商品名称end</a></p>
+                <p>
+                    <span class="adText">促销促销促销促销品名称商品品名称商品品名称商品销促销促销促销促销end</span></p>
+                <h5>
+                    <em class="price" align="right"><b>¥1500</b><span>¥2500</span></em> <a class="buying"
+                        href="process1.html">立即抢购</a>
+                </h5>
+            </div>
         </div>
         <%=C2ProductsDisplayHTML%>
     </div>
@@ -67,7 +105,7 @@
             var c1 = YoeJoy.Site.Utility.GetQueryString("c1");
             var c2 = YoeJoy.Site.Utility.GetQueryString("c2");
             var siteBaseURL = $("#siteBaseURL").val().toString()
-            var $c1Name = $("#foodImport").children("h2").eq(0).children("b").eq(0).html();
+            var $c1Name = $("#foodImport").children("h4").html();
             $("#position").children("span[id='c1']").children("b").children("a").html($c1Name);
             $("#position").children("span[id='c1']").children("b").children("a").click(function (event) {
                 window.location.href = siteBaseURL + "Pages/SubProductList1.aspx?c1=" + c1;

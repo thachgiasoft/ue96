@@ -44,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alipay\AlipayConfig.cs" />
+    <Compile Include="Alipay\AlipayCore.cs" />
+    <Compile Include="Alipay\AlipayNotify.cs" />
+    <Compile Include="Alipay\AlipaySubmit.cs" />
+    <Compile Include="Alipay\MD5.cs" />
     <Compile Include="Application\Data\CacheObj.cs" />
     <Compile Include="Application\Data\JsonContentTransfomer.cs" />
     <Compile Include="Application\Data\SharedCacheObj.cs" />

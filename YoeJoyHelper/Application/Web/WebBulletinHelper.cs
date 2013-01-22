@@ -32,8 +32,7 @@ namespace YoeJoyHelper
             {
                 foreach (string key in list.Keys)
                 {
-                    strb.Append(string.Format(@"<a href='./news.aspx?nid={0}' target='_self''>
-                    <img alt='图标' src='static/images/szj.png' width='8' height='8'/>{1}</a>", key, list[key]));
+                    strb.Append(string.Format(@"<a href='./news.aspx?nid={0}' target='_self'>{1}</a>", key, list[key]));
                 }
             }
             homeWebBulletinListHTML = strb.ToString();

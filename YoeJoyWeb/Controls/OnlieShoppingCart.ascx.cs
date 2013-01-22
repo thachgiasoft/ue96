@@ -28,11 +28,11 @@ namespace YoeJoyWeb.Controls
         protected static string EmptyShoppingCartHTML = @"<div id='chart'>
         <span>购物车:<b><a href='javascript:void(0);'>0</a></b> 件
         </span>
-        <img alt='购物车' src='../static/images/gwcbt0.png' width='39' height='32'>
-        <a href='javascript:void(0);''>结算</a>
+        <a class='chartBt' href='javascript:void(0);'></a>
+        <a class='js' href='javascript:void(0);'>结算</a>
     </div><div id='chartContent'>
-        <img alt='背景' src='../static/images/gwctop.png' width='374' height='18'>
-        <div id='myShoppingCart' class='shopping'>您的购物车中还没有商品，赶紧选购吧！</div>
+        <h5><span></span></h5>
+        <div id='myShoppingCart' class='shopping'>您的购物车中还没有商品，快去选购吧！</div>
     </div>";
 
         protected string OnlieShoppingCartHTML { get; set; }

@@ -14,6 +14,8 @@ using Icson.Objects.Sale;
 using Icson.BLL.Sale;
 using Icson.Objects.Finance;
 using Icson.BLL.Finance;
+using Com.Alipay;
+using YoeJoyHelper;
 
 namespace YoeJoyWeb.Shopping
 {
@@ -91,44 +93,47 @@ namespace YoeJoyWeb.Shopping
 
         protected void btnPayNow_Click(object sender, EventArgs e)
         {
-            //业务参数赋值；
-            //string out_trade_no = lblSOSysNo.Text.Trim();
-            //string gateway = "https://www.alipay.com/cooperate/gateway.do?";	//'支付接口
-            //string service = "create_direct_pay_by_user";
-            //string partner = "2088201431035302";		//partner		合作伙伴ID			保留字段
-            //string sign_type = "MD5";
-            //string subject = lblSOID.Text;	//subject		商品名称
-            //string body = lblSOID.Text; //Request.QueryString["miaos"];T_body.Text;		//body			商品描述    
-            //string payment_type = "1";                  //支付类型	
-            //string total_fee = lblSOAmt.Text.Trim(); // Request.QueryString["prices"]; T_total_fee.Text;                      //总金额					0.01～50000.00
-            //string show_url = "www.MMMbuy.cn";
-            //string seller_email = "lucy_jin@baby1one.com.cn";             //卖家账号
-            //string key = "mrmzlsg539hwtaitc1lvcfxq4wcollag";              //partner账户的支付宝安全校验码
-            //string return_url = "http://www.MMMbuy.cn/Account/AccountCenter.aspx"; //服务器通知返回接口
-            //string notify_url = "http://www.MMMbuy.cn/shopping/payresultfromAlipay3.aspx"; //服务器通知返回接口
-
-            //string aliay_url = CreatUrl(
-            //    gateway,
-            //    service,
-            //    partner,
-            //    sign_type,
-            //    out_trade_no,
-            //    subject,
-            //    body,
-            //    payment_type,
-            //    total_fee,
-            //    show_url,
-            //    seller_email,
-            //    key,
-            //    return_url,
-            //    notify_url
-            //    );
+            
 
             //假支付环节
             //调试支付时，请去掉一下两行代码的注释
             //string resultURL = "payresultfromAlipay4.aspx?id=" + soSysNo + "&total_fee=5745.60";
 
             //Response.Redirect(resultURL);
+
+            //业务参数赋值；
+            string out_trade_no = lblSOSysNo.Text.Trim();
+            string subject = lblSOID.Text;	//subject		商品名称
+            string body = lblSOID.Text; //Request.QueryString["miaos"];T_body.Text;		//body			商品描述    
+            string payment_type = "1";                  //支付类型	
+            string total_fee = lblSOAmt.Text.Trim(); // Request.QueryString["prices"]; T_total_fee.Text;                      //总金额					0.01～50000.00
+            string show_url = YoeJoyConfig.SiteBaseURL;
+            string notify_url = String.Concat(YoeJoyConfig.SiteBaseURL, YoeJoyConfig.AlipayNotifyURL);
+            string return_url = String.Concat(YoeJoyConfig.SiteBaseURL, YoeJoyConfig.AlipayReturnURL);
+            string seller_email = YoeJoyConfig.AlipaySellerEmailAddress;
+            //string anti_phishing_key = Submit.Query_timestamp();
+            string anti_phishing_key = String.Empty;
+            string exter_invoke_ip = String.Empty;
+
+            SortedDictionary<string, string> sParaTemp = new SortedDictionary<string, string>();
+            sParaTemp.Add("partner", Config.Partner);
+            sParaTemp.Add("_input_charset", Config.Input_charset.ToLower());
+            sParaTemp.Add("service", "create_direct_pay_by_user");
+            sParaTemp.Add("payment_type", payment_type);
+            sParaTemp.Add("notify_url", notify_url);
+            sParaTemp.Add("return_url", return_url);
+            sParaTemp.Add("seller_email", seller_email);
+            sParaTemp.Add("out_trade_no", out_trade_no);
+            sParaTemp.Add("subject", subject);
+            sParaTemp.Add("total_fee", total_fee);
+            sParaTemp.Add("body", body);
+            sParaTemp.Add("show_url", show_url);
+            sParaTemp.Add("anti_phishing_key", anti_phishing_key);
+            sParaTemp.Add("exter_invoke_ip", exter_invoke_ip);
+
+            //建立请求
+            string sHtmlText = Submit.BuildRequest(sParaTemp, "get", "确认");
+            Response.Write(sHtmlText);
         }
 
         public static string GetMD5(string s)

@@ -157,7 +157,7 @@ namespace YoeJoyHelper
                 if (c1Info.SysNo == c1SysNo)
                 {
                     string c1Name = c1Info.C1Name.Trim();
-                    strb.Append(String.Concat("<h2><i></i><b id='c1Name'>", c1Name, "</b><strong></strong></h2>", "<input type='hidden' value='", c1SysNo, "'/>"));
+                    strb.Append(String.Concat("<h4 id='c1Name' class='title'>", c1Name, "</h4>", "<input type='hidden' value='", c1SysNo, "'/>"));
                     strb.Append(@"<ul class='listOut'>");
 
                     foreach (Category2Info c2Info in c2List.Keys)

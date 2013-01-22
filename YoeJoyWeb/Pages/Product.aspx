@@ -751,29 +751,29 @@
 
         function ReCartBindHoverEvent() {
 
-            var char = $('#count img');
+            var char = $('#count .chartBt');
             var charf = $('#count');
             var charContent = $('#chartContent');
-            var car = $('#chart img');
+            var car = $('#chart .chartBt');
 
             char.hover(function () {
                 charContent.css('display', 'block');
-                car.attr({ 'src': '../static/images/gwcbt1.png' });
+                car.addClass('sel');
             }, function () {
             });
 
             charf.hover(function () {
             }, function () {
                 charContent.css('display', 'none');
-                car.attr({ 'src': '../static/images/gwcbt0.png' });
+                car.removeClass('sel');
             });
 
             charContent.hover(function () {
                 charContent.show();
-                car.attr({ 'src': '../static/images/gwcbt1.png' });
+                car.addClass('sel');
             }, function () {
                 charContent.hide();
-                car.attr({ 'src': '../static/images/gwcbt0.png' });
+                car.removeClass('sel');
             });
         };
 

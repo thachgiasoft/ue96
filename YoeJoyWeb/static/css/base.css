@@ -1,21 +1,34 @@
 @charset "utf-8";
 *{margin:0; padding:0; line-height:none;}
-body {font-family:Helvetica, Tahoma, Arial,\5b8b\4f53, sans-serif; font-size:12px;color:#555}
+body {font-family:Helvetica, Tahoma, Arial,\5b8b\4f53, sans-serif; font-size:12px}
 a,span,font,b,em,strong,label,i,citi{display:inline-block;}
+a{blr:expression(this.onFocus=this.blur()); /* IE Opera */ outline:none; /* FF Opera */ } 
+a:focus{ -moz-outline-style: none; /* FF */ }
 i{font-style:normal;}
 strong{ font-weight:normal;}
 em{ font-style:normal;}
 h1,h2,h3,h4,h5,h6{font-size:12px; font-weight:normal;}
 li{list-style:none;}
-a{color:#555; text-decoration:none;}
+a{color:#000; text-decoration:none;}
 a:hover{color:#FF0000;}
 a img{border:none;}
 .num{width:18px; height:18px; border:solid 1px #ccc; text-align:center; margin:0px 2px; vertical-align:middle}
 .sub,.add{width:15px; height:15px; border:solid 1px #ccc; text-align:center; vertical-align:middle; line-height:1.2; background-color:#fff; margin:0px 2px}
-
-.ItemSort1{background:url(../images/hov2.png) no-repeat left top;}
-.ItemSort{background:url(../images/hov3.png) no-repeat left top;}
-
+.title{height:29px; background-color:#f5f5f5; font-weight:bold; text-indent:11px; line-height:2.4; border:solid 1px #ccc; border-bottom:none; border-radius:5px 5px 0 0; letter-spacing:1px}
+#fastHead{width:1200px; height:26px; margin:0 auto; background:url(../images/indexline.gif) 0 -265px repeat-x; position:relative}
+#fastHead h6{display:inline-block}
+#fastHead span{height:100%; color:#777; background:url(../images/indexbgs.png) -163px -336px no-repeat; padding-left:45px; line-height:2.2}
+#fastHead span strong{margin-right:10px}
+#fastHead em{position:absolute; right:0; height:26px}
+#fastHead a{margin:0 10px; color:#777}
+#fastHead a:hover{color:#CE2027}
+#fastHead em b{width:45px; height:26px; vertical-align:middle;  background:url(../images/indexbgs.png) 0 -336px no-repeat}
+#ItemSortCon{margin-top:14px}
+.ItemSort1{background:url(../images/hov2.png) no-repeat left top}
+.ItemSort{background:url(../images/hov3.png) no-repeat left top}
+#ItemSort{text-align:center; height:71px}
+#ItemSort span{font-weight:bold; color:#FFF; font-size:14px; padding-top:47px;}
+#ItemSort span b{width:15px;}
 .ThreeRow{width:1200px; margin:0 auto; overflow:hidden; zoom:1}
 .left,.middle{float:left}
 .right{float:right}
@@ -31,43 +44,39 @@ a img{border:none;}
 
 #content{width:1200px; margin:0 auto;}
 
-#logo{width:1200px; margin:0 auto; margin-top:25px; position:relative;zoom:1; height:50px}
-#logo dt{ width:100%; text-align:center; position:absolute; top:5px}
-#logo dd{width:17%; position:absolute;right:0}
-#logo dd h6{height:28px; line-height:28px; padding-left:24px; width:150px;}
-#logo dd p{text-align:right}
-#logo dd p a{border-right:solid #ccc 1px; padding:0 8px}
+#logo{width:1200px; margin:0 auto; margin-top:20px; position:relative;zoom:1; height:60px}
+#logo dt{width:100%; text-align:center; position:absolute}
+#logo dt a{margin-left:94px}
 
-.allDom{background:url(../images/top.jpg) repeat-x 0 78px; visibility:visible}
+.allDom{background:url(../images/top.gif) repeat-x 0 106px}
 .top{ background:url(../images/indexbg.png) no-repeat 0 0}
 .clear{overflow:hidden; zoom:1}
 
-#Search{padding-top:21px; margin-bottom:4px}
-#Search dt{height:32px; margin-bottom:1px; padding-left:18px;}
-#Search dt a{font-size:16px; font-weight:bold; color:#fff; width:70px; height:32px; line-height:2.1; text-align:center; background:url(../images/headerBG.png) 68px -43px no-repeat}
-#Search dt a:hover{background-position:-16px -28px}
+#Search{padding-top:18px; margin-bottom:3px}
+#Search dt{height:29px; margin-bottom:3px; padding-left:18px; position:relative; z-index:1}
+#Search dt a{font-size:14px; font-weight:bold; letter-spacing:2px; color:#fff; width:70px; height:30px; line-height:2.2; text-align:center; background:url(../images/headerBG.png) 68px -38px no-repeat; margin-left:-2px}
+#Search dt a:hover{background-position:-16px -28px; position:relative; z-index:100}
 #Search dd{overflow:hidden; zoom:1}
-
 #HotWord{float:left; margin-left:10px; margin-top:7px;}
-#SearchBox{float:right;overflow:hidden; zoom:1; padding-top:1px;}
-
+#SearchBox{float:right;overflow:hidden; zoom:1}
 #SearchBox input,#SearchBox button{ float:left;border:none; background:none;}
+#SearchBox p{width:387px; height:30px;background:url(../images/searchbg.png) no-repeat left center;}
+#SearchBox p.sel{background:url(../images/searchbg0.png) no-repeat left center; border:none}
+#SearchBox input{width:321px; height:22px;line-height:2.2; padding:0 9px; margin-top:3px;color:#555;}
+#SearchBox button{width:48px; margin-left:-2px; margin-top:2px; height:26px;background:url(../images/searchbt.png) no-repeat center center; cursor:pointer}
+#SearchBox p.sel button{background:url(../images/searchbt0.png) no-repeat center center}
 
-#SearchBox p{width:389px; height:24px;background:url(../images/searchbg.png) no-repeat left center;}
-#SearchBox p.sel{background:url(../images/searchbg0.png) no-repeat left center; border:none;}
-
-#SearchBox input{width:380px; height:18px;line-height:18px;margin-right:0px; padding-left:9px; margin-top:3px;color:#555;}
-#SearchBox button{width:48px; margin-left:-49px;height:23px;background:url(../images/searchbt.png) no-repeat center center;}
-
-#count{ position:relative;zoom:1; z-index:5; margin-top:1px;}
-#chart{overflow:hidden; zoom:1;}
-#chart span,#chart img,#chart a{float:left; color:#FFF;}
-#chart img{margin-top:2px;}
-#chart span{background:url(../images/headerbg.png) no-repeat; height:19px; padding-left:28px; width:77px; margin-top:10px; margin-left:10px}
-#chart span b{color:#FC0;}
-#chart a{background:url(../images/headerbg.png) 27px -25px no-repeat; padding-right:8px; margin-top:10px; margin-left:5px;}
-#chart span b a{padding:0; margin:0; float:none}
-#chartContent{position:absolute; right:0; top:34px; width:372px; border:rgb(249,170,61) solid 2px; background:#fff; display:none}
+#count{position:relative;zoom:1; z-index:5}
+#chart{height:30px}
+#chart span,#chart a{color:#FFF}
+#chart span{background:url(../images/headerbg.png) -187px 2px no-repeat; padding-top:5px; height:25px; padding-left:28px; width:74px; margin-left:10px}
+#chart span b{color:#FC0; padding:0 2px}
+#chart .chartBt{width:39px; height:30px; background:url(../images/headerBG.png) -90px 0 no-repeat; vertical-align:top}
+#chart .chartBt.sel{background-position:-139px 0}
+#chart .js{background:url(../images/headerbg.png) 27px -17px no-repeat; width:24px; height:30px; line-height:30px; padding-right:9px}
+#chartContent{position:absolute; right:0; top:29px; width:372px; border:#06B9D1 solid 2px; background:#fff; display:none}
+#chartContent h5{height:16px; background-color:#06B9D1; font-size:0}
+#chartContent span{width:12px; height:12px; background:url(../images/indexbgs.png) -47px -134px no-repeat; margin-top:1px; margin-left:311px}
 
 .shopping{overflow:hidden;zoom:1; margin:0 10px; padding:10px 0;}
 .shopping .l{overflow:hidden; zoom:1}
@@ -83,30 +92,32 @@ a img{border:none;}
 .payNow .r{text-align:center;}
 .payNow .r a{margin-top:15px;}
 
-#ServiceLine{margin:3px 0 3px 10px; line-height:18px}
-#ServiceLine span{ background:url(../images/telphone.jpg) no-repeat left 0px; margin-top:3px; padding-left:22px;}
-#ServiceLine font{background:url(../images/qq.jpg) no-repeat 1px center; padding-left:22px; margin-top:3px; font-size:12px;}
+#ServiceLine{margin:5px 0 3px 10px; line-height:20px}
+#ServiceLine h5{background:url(../images/indexBgs.png) -190px -37px no-repeat; margin-top:1px; padding-left:22px}
+#ServiceLine h5 span{font-size:14px; font-weight:bold; vertical-align:middle; margin-left:3px}
+#ServiceLine a{margin-right:5px}
+#ServiceLine a img{vertical-align:text-bottom; border:none; margin-right:3px}
 
 #Menu{position:absolute; margin-top:-1px; z-index:5}
-#Menu .header{display:block;height:86px;background:url(../images/hov.png) no-repeat left top; width:208px}
-.lbg{background:url(../images/allclassbg1.gif) repeat-y left #fff;  padding-top:2px; padding-bottom:-2px; width:208px; height:263px; overflow:hidden}
+#Menu .header{display:block;height:86px;background:url(../images/hov.png) no-repeat left bottom; width:208px}
+.lbg{background:url(../images/allclassbg1.gif) repeat-y left #fff;  padding-top:2px; padding-bottom:-2px; width:208px; height:328px; overflow:hidden}
 .classMenu .lbg{height:auto}
 .rbg{background:url(../images/indexbgs.png) no-repeat top left;height:10px; font-size:0; width:208px}
 
-#MeunList{margin-left:8px; margin-right:7px}
+#MeunList{margin-left:4px; margin-right:2px}
 #MeunList .liHover{ position:relative;overflow:hidden;z-index:7;height:64px;_height:63px;margin-top:-2px; margin-right:0px;border:hidden 2px; padding:2px; margin-left:1px}
 
-.ListMain{border-bottom:dotted #ccc 1px; margin-left:8px; padding-bottom:5px; margin-right:9px; overflow:hidden; height:59px; *height:58px}
+.ListMain{border-bottom:dotted #ccc 1px; margin-left:4px; padding-bottom:5px; margin-right:9px; overflow:hidden; height:59px; *height:58px}
 .ListMain h2{font-weight: bold;font-size:14px; margin-left:6px; padding-top:5px; position:relative}
-.ListMain h2 span{font-size:14px; width:10px; color:#33984C}
+.ListMain h2 span{font-size:14px; width:10px; color:#CE2027}
 .ListMain h2 i{position:absolute; right:0; font-family:"微软雅黑"; font-size:12px; color:#E2BD9C}
 .ListMain p{overflow:hidden;zoom:1; padding-top:4px; overflow:hidden; height:32px; margin-left:12px;}
 .ListMain p a{border-right:red solid 1px; font-family:\5b8b\4f53; float:left; padding:0 5px; margin-bottom:4px; line-height:1.2; white-space:nowrap}
 
 #MeunList .hover{height:68px; *height:69px; *margin-bottom:-6px}
-#MeunList .hov{padding:0 2px 0 2px; border:rgb(209,65,0) solid 2px; border-left:none; border-right:none; background:#FBEEE1;}
+#MeunList .hov{padding:0 2px 0 2px; border:#CE2027 solid 2px; border-left:none; border-right:none; background:#FBEEE1}
 
-.Listcontent{width:638px; position:absolute; background-color:#F3F3F3; border:rgb(209,65,0) 2px solid; overflow:hidden; zoom:1; top:84px; left:199px; display:none; z-index:6; opacity:0.9; filter:alpha(opacity=90)}
+.Listcontent{width:638px; position:absolute; background-color:#F3F3F3; border:#CE2027 2px solid; overflow:hidden; zoom:1; top:84px; left:204px; display:none; z-index:6; opacity:0.9; filter:alpha(opacity=90)}
 .Listcontent dt,.Listcontent dd{float:left}
 .Listcontent dt{border-right:#CCC solid 1px; width:450px; background:#FBEEE1}
 .Listcontent dt .mem span{background-color:#043506; font-family:'黑体'; font-size:15px; font-weight:bold; padding:5px 10px; margin:20px}
@@ -124,40 +135,42 @@ a img{border:none;}
 .recomment h2{color:#c00; font-size:14px; font-weight:bold; padding-bottom:5px;}
 .recomment p a{margin-right:15px; margin-bottom:1px}
 
-#focus{overflow:hidden; height:277px; position:relative}
+#focus{overflow:hidden; height:339px; position:relative}
 #focus a{display:block; text-align:center;}
-#focus dt img{height:277px; width:100%;}
+#focus dt img{height:342px; width:100%;}
 #focus dt a{display:none;}
-#focus dd{overflow:hidden;zoom:1; position:absolute; top:251px; width:100%}
-#focus dd a{float:left; width:20%; background:#666; color:#000; height:26px; line-height:2.1}
-#focus dd a.sel{ background:#F00; color:#FFF;}
+#focus dd{overflow:hidden;zoom:1; position:absolute; top:309px; width:100%}
+#focus dd a{float:left; width:20%; background:#666; color:#000; height:30px; line-height:2.5}
+#focus dd a.sel{ background:#CE2027; color:#FFF;}
 
 #position{width:1200px; margin:0 auto; margin-bottom:10px; border-bottom:#ccc solid 1px; padding-bottom:5px; clear:both;zoom:1; padding:8px 0;}	
 #position span,#position b{color:#666; padding-right:7px;}
 #position b{font-weight:bold; font-size:14px;}
-
-#footer{width:1200px; position:relative; margin:0 auto; margin-top:10px}
-#Guide{overflow:hidden; zoom:1; height:150px; border:#CCC solid 1px; border-top:#900 solid 2px}
+#footBar{background-color:#06B9D1; margin-top:35px; margin-bottom:10px}
+#footBar .group{width:1202px; margin:0 auto; border-left:solid 3px #fff; overflow:hidden; zoom:1}
+#footBar .group img{margin:6px 0 0 10px}
+#footer{background-color:#961A1D}
+#Guide{width:1200px; margin:0 auto; position:relative; overflow:hidden; zoom:1; height:212px}
 #Guide li{float:left; width:19%; height:100%;}
 #Guide a.guidePic{height:100%; background:#f1f3f2;}
 #Guide a.guidePic img{ margin-top:20px;}
 
-.guideDesc{padding-top:18px; margin-left:65px;}
-.guideDesc h2{ font-weight:bold;}
+.guideDesc{padding-top:18px; margin-left:65px; color:#fff}
+.guideDesc h2{font-weight:bold; }
 .guideDesc h2 img{vertical-align:middle; margin-right:5px;}
 .guideDesc p{border-left:dotted 1px #ccc; margin-left:10px; margin-top:10px;}
-.guideDesc p a{display:block; padding-left:10px; line-height:18px;}
-#topp{position:absolute; right:8px; top:2px}
+.guideDesc p a{display:block; padding-left:10px; line-height:18px; color:#fff}
+#topp{position:absolute; right:8px}
 
-#footMsg{text-align:left; padding:10px 0; margin-bottom:10px; margin-left:25px;}
-.minLogo{padding-right:8px}
+#footMsg{width:1200px; margin:0 auto; text-align:left; padding:10px 0; margin-bottom:10px}
+.minLogo{padding-right:8px; padding-left:25px}
 #footMsg span{text-align:left}
 #footMsg .menu{border-left:#ccc solid 1px}
 #footMsg span a{padding:0 8px; border-right:#ccc solid 1px}
-#footMsg span em{color:#999;padding:5px 0 0 8px}
+#footMsg span em{color:#999;padding:5px 0 0 8px; line-height:1.5}
 
 .name,.adText{height:34px; display:block; text-align:left; line-height:1.4; overflow:hidden}
-.name{color:#436581; margin-top:5px}
+.name{color:#436581}
 .name:hover{text-decoration:underline}
 .adText{color:#999; margin-bottom:8px}
 .price{text-align:center}

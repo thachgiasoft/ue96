@@ -1,49 +1,58 @@
 @charset "utf-8";
 /*大类菜单*/
-#ItemSortCon{margin-top:1px;}
-#Menu{position:absolute;width:208px;}
+#Menu{position:absolute; width:208px;}
 #Menu .header{display:none}
-#Menu .Listcontent{top:-1px;}
+#Menu .Listcontent{top:-2px;}
 .classMenu{display:none;}
-.lbg{margin-top:1px}
-.ItemSort1{background:url(../images/hov2.png) no-repeat left top;}
-.ItemSort{background:url(../images/hov3.png) no-repeat left top;}
-#ItemSort{text-align:center;}
-#ItemSort span{font-weight:bold; color:#FFF; font-size:14px; padding:56px 0 7px 0;}
-#ItemSort span b{ width:15px;}
+.lbg{height:0}
+.rbg{margin-top:-2px}
+/*清库产品*/
+#Discount{width:208px; border-bottom:solid 1px #ccc; margin-top:10px}
+#Discount dd{overflow:hidden; zoom:1; border-bottom:dotted #ccc 1px;border-left: solid 1px #CCC; border-right: solid 1px #CCC; padding:2px 0 1px 0}
+#Discount dd img{vertical-align:middle}
+#Discount dd h2,#Discount dd p{float:left;}
+#Discount dd h2{width:35%; text-align:center;}
+#Discount dd p{width:60%}
+#Discount dd .name{margin-bottom:3px; margin-top:2px}
 /*产品热评*/
-#hotComments{overflow:hidden}
-#hotComments .title div{width:30px; height:27px}
-#hotComments .title h3{width:148px; height:24px; background-color:#bb1f23; color:#5D7887; padding-top:3px; background-color:#E6E7E8}
-#hotComments .title .mem0{background:url(../images/showbg.png) 0px -160px no-repeat}
-#hotComments .title .mem1{background:url(../images/showbg.png) -40px -160px no-repeat}
-#hotComments .border_b{height:12px; background:url(../images/showbg.png) 0px -197px no-repeat}
-#hotComments .group{background-color:#F3F3F3; padding:0px 10px; margin-bottom:-1px}
+#hotComments{overflow:hidden; border-bottom:solid 1px #ccc}
+#hotComments .group{background-color:#FaFafa; padding:0px 10px; border:solid 1px #ccc; border-top:none; border-bottom:none; margin-bottom:-1px}
 #hotComments .group .item{overflow:hidden; zoom:1; padding:5px 0px; border-bottom:dotted 1px #ccc}
 #hotComments .group .item .photo{float:left; border:solid 1px #ccc; margin-right:5px}
 #hotComments .group .item div{float:left; width:121px; clear:right}
 #hotComments .group .item .adText{margin-bottom:3px}
 #hotComments .group .item .price{text-align:right; margin-bottom:3px}
 /*热卖推荐样式*/
-#recommend{border:solid 1px #F9AA3D}
-#recommend .group{border:solid 3px #F9EFE3; overflow:hidden; zoom:1}
-#recommend .group .title{width:36px; height:86px; background-color:#BE1E2D; text-align:center; padding-top:10px; float:left; margin-left:1px}
-#recommend .group .title li{font-size:14px; font-weight:bold; color:#fff}
-#recommend .group .item{overflow:hidden; zoom:1; margin:3px 0px; float:left}
-#recommend .group .item li{float:left; overflow:hidden; zoom:1; width:294px; padding:0 9px}
-#recommend .group .item li img{float:left}
-#recommend .group .item li .adText{margin-bottom:3px}
-#recommend .group .item li .price{text-align:left; position:relative; zoom:1; margin-bottom:5px}
-#recommend .group .item li .price a{ position:absolute; right:0}
+#recommend{border:solid 1px #F9AA3D; width:778px; float:left; margin-bottom:10px}
+#recommend .group{border:solid 3px #F9EFE3; height:226px; position:relative; zoom:1}
+#recommend .group .pTitle{position:absolute}
+#recommend .group .item{overflow:hidden; zoom:1; width:762px; padding:9px 0 0 15px}
+#recommend .group .item li{float:left; width:170px; padding-right:20px}
+#recommend .group .item li p{margin-top:10px}
+#recommend .group .item li .price{text-align:left; position:relative; zoom:1; height:23px}
+#recommend .group .item li .bt1{position:absolute; right:0}
+/*团购*/
+#groupBuy{width:190px; float:right}
+#groupBuy .group{border:solid 1px #ccc; border-top:none; height:201px; padding:2px 4px 0 4px}
+#groupBuy .group p{margin-top:2px}
+#groupBuy .group .join{width:186px; height:35px; background:url(../images/indexBgs.png) 0 -16px no-repeat; padding-top:4px}
+#groupBuy .join a{color:#fff; text-align:center; width:37px; height:22px; line-height:2.2; letter-spacing:2px; margin-right:10px}
+#groupBuy .join a:hover{color:#CE2027}
+#groupBuy .join em{color:#fff; font-size:18px; font-weight:bold; margin-right:5px; vertical-align:middle}
+#groupBuy .join span{color:#fff}
+#groupBuy .item{position:relative; zoom:1}
+#groupBuy .time strong{font-size:16px; font-weight:bold; color:#CE2027}
+#groupBuy .number{position:absolute; right:0; font-weight:100}
+#groupBuy .number strong{font-size:14px; font-weight:bold; color:#D87600}
 /*筛选条件*/
-#screening{margin-top:10px; border-top:solid 2px #F9AA3D}
+#screening{border-top:solid 2px #F9AA3D; clear:left}
 #screening *{line-height:18px}
-#screening .title{background-color:#f8f8f8; border:solid 1px #ccc; border-top:none; font-size:14px; color:#BE1E2D; padding:7px 0 7px 10px; font-weight:bold;}
-#screening .title span{margin-left:10px; color:#555}
+#screening .hTitle{background-color:#f5f5f5; border:solid 1px #ccc; border-top:none; font-size:14px; color:#BE1E2D; padding:7px 0 7px 10px; font-weight:bold;}
+#screening .hTtitle span{margin-left:10px; color:#555}
 #screening .attr{padding:10px; padding-bottom:5px; border-bottom:dotted 1px #ccc; border-left:solid 1px #ccc; border-right:solid 1px #ccc}
 #screening .attr em{width:100px; text-align:right; font-weight:bold}
-#screening .attr strong{width:824px; position:relative; right:0; vertical-align:top}
-#screening .attr span{margin:0 18px; margin-bottom:5px; width:100px; vertical-align:top}
+#screening .attr strong{width:832px; vertical-align:top}
+#screening .attr span{margin:0 18px; margin-bottom:5px; width:100px}
 #screening .attr a{padding:0 2px; color:#069}
 #screening .attr a.selected{background-color:#CC0000; color:#fff;}
 #screening .more{border-top:solid 1px #ccc; margin-top:-1px}
@@ -54,11 +63,11 @@
 /*商品列表*/
 #showList{margin-top:10px; border:solid 1px #ccc; border-top:solid 3px #BE1E2D; width:980px;}
 #showList .sort{height:36px; background-color:#F7F8F8; border-bottom:solid 1px #ccc}
-#showList .sort .item0{overflow:hidden; zoom:1; margin-top:6px; padding-left:15px}
+#showList .sort .item0{float:left; clear:right; margin-top:6px; padding-left:15px}
 #showList .sort .item0 div{float:left}
 #showList .sort .item0 select{border:solid 1px #ccc; height:24px}
-#showList .sort .item0 ul{overflow:hidden; zoom:1; margin-top:2px; padding-left:20px}
-#showList .sort .item0 li{padding:3px 10px; float:left; font-size:12px; border:solid 1px #ccc; margin-right:5px; cursor:pointer; cursor:hand}
+#showList .sort .item0 ul{overflow:hidden; zoom:1; float:left; margin-left:30px}
+#showList .sort .item0 li{padding:2px 10px; float:left; font-size:12px; border:solid 1px #ccc; margin-right:5px; cursor:pointer; cursor:hand}
 #showList .sort .item0 li a:hover{text-decoration:underline}
 #showList .sort .item0 li.selected{background-color:#BE1E2D}
 #showList .sort .item0 li.selected a{color:#fff; font-weight:bold}

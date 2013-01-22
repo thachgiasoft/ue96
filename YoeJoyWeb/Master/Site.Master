@@ -19,12 +19,14 @@
     <script type="text/javascript" src="../static/js/dev/Yoejoy.Site.js"></script>
     <script type="text/javascript" src="../static/js/dev/jquery.scrollLoading-min.js"></script>
 </head>
-<body id="bg">
+<body class="allDom" id="bg">
     <form runat="server">
+    <div id="fastHead">
+        <uc1:UserProfiler ID="UserProfiler1" runat="server" />
+    </div>
     <dl id="logo">
         <dt><a href="#">
-            <img alt="logo" src="../static/images/logo.gif" /></a></dt>
-        <uc1:UserProfiler ID="UserProfiler1" runat="server" />
+            <img alt="logo" src="../static/images/logotemp.png" /></a></dt>
     </dl>
     <div class="ThreeRow top">
         <%=LeftTopDivTag%>
@@ -34,7 +36,16 @@
     <div class="right">
         <uc2:OnlieShoppingCart ID="OnlieShoppingCart1" runat="server" />
         <div id="ServiceLine">
-            <span>400-808-9196&nbsp;(9:30~18:30)</span> <font>9914838&nbsp;(9:30~22:00)</font>
+            <h5>
+                <em>24H热线:</em><span>400-808-9196</span></h5>
+            <p>
+                <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1848886002&amp;site=qq&amp;menu=yes"
+                    target="_blank">
+                    <img title="点击这里给我发消息" border="0" alt="点击这里给我发消息" src="http://wpa.qq.com/pa?p=2:1848886002:45" />客服小U</a>
+                <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2589760220&amp;site=qq&amp;menu=yes"
+                    target="_blank">
+                    <img title="点击这里给我发消息" border="0" alt="点击这里给我发消息" src="http://wpa.qq.com/pa?p=2:2589760220:45" />客服小E</a>
+            </p>
         </div>
         <asp:ContentPlaceHolder ID="RightTopModule" runat="server">
         </asp:ContentPlaceHolder>
@@ -72,30 +83,30 @@
 
             function ReCartBindHoverEvent() {
 
-                var char = $('#count img');
+                var char = $('#count .chartBt');
                 var charf = $('#count');
                 var charContent = $('#chartContent');
-                var car = $('#chart img');
+                var car = $('#chart .chartBt');
 
                 char.hover(function () {
                     charContent.css('display', 'block');
-                    car.attr({ 'src': '../static/images/gwcbt1.png' });
+                    car.addClass('sel');
                 }, function () {
                 });
 
                 charf.hover(function () {
                 }, function () {
                     charContent.css('display', 'none');
-                    car.attr({ 'src': '../static/images/gwcbt0.png' });
+                    car.removeClass('sel');
                 });
 
                 charContent.hover(function () {
                     charContent.show();
-                    car.attr({ 'src': '../static/images/gwcbt1.png' });
+                    car.addClass('sel');
                 }, function () {
                     charContent.hide();
-                    car.attr({ 'src': '../static/images/gwcbt0.png' });
-                });
+                    car.removeClass('sel');
+                });	
             };
 
             function DeleteShoppingCartItem(sender) {
@@ -146,12 +157,22 @@
     </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="ScriptContent" runat="server">
     </asp:ContentPlaceHolder>
+    <div id="footBar">
+        <div class="group">
+            <img src="../static/images/foottext.png">
+            <div id="SearchBox">
+                <p>
+                    <input value="数码产品" type="text">
+                    <button>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
     <div id="footer">
         <ul id="Guide">
             <a id="topp" href="#">
                 <img src="../static/images/topp.png"></a>
-            <li><a class="guidePic" href="#">
-                <img src="../static/images/guide.jpg"></a> </li>
             <li>
                 <div class="guideDesc">
                     <h2>
@@ -193,16 +214,16 @@
                 </div>
             </li>
         </ul>
-        <div id="footMsg">
-            <span class="minLogo">
-                <img src="../static/images/logob.jpg"></span> <span class="menu"><a href="http://www.ue96.com/Default.aspx">
-                    商城首页</a> <a href="http://www.ue96.com/help/help04.aspx">关于攸怡</a> <a href="http://www.ue96.com/User/MyProfileDetail.aspx">
-                        我的账户</a> <a href="http://www.ue96.com/help/help.aspx">服务中心</a> <a href="mailto:contact@joyoplan.com">
-                            联系我们</a>
-                    <br>
-                    <em>联系热线: 400-808-9196 E-Mail: contact@joyoplan.com<br>
-                        沪ICP备09017990号</em> </span>
-        </div>
+    </div>
+    <div id="footMsg">
+        <span class="minLogo">
+            <img src="../static/images/logob.jpg"></span> <span class="menu"><a href="http://www.ue96.com/Default.aspx">
+                商城首页</a> <a href="http://www.ue96.com/help/help04.aspx">关于攸怡</a> <a href="http://www.ue96.com/User/MyProfileDetail.aspx">
+                    我的账户</a> <a href="http://www.ue96.com/help/help.aspx">服务中心</a> <a href="mailto:contact@joyoplan.com">
+                        联系我们</a>
+                <br>
+                <em>联系热线: 400-808-9196 E-Mail: contact@joyoplan.com<br>
+                    沪ICP备09017990号</em> </span>
     </div>
     </form>
 </body>
