@@ -1,11 +1,4 @@
 @charset "utf-8";
-/*大类菜单*/
-#Menu{position:absolute; width:208px;}
-#Menu .header{display:none}
-#Menu .Listcontent{top:-2px;}
-.classMenu{display:none;}
-.lbg{height:0}
-.rbg{margin-top:-2px}
 /*清库产品*/
 #Discount{width:208px; border-bottom:solid 1px #ccc; margin-top:10px}
 #Discount dd{overflow:hidden; zoom:1; border-bottom:dotted #ccc 1px;border-left: solid 1px #CCC; border-right: solid 1px #CCC; padding:2px 0 1px 0}
@@ -47,12 +40,11 @@
 /*筛选条件*/
 #screening{border-top:solid 2px #F9AA3D; clear:left}
 #screening *{line-height:18px}
-#screening .hTitle{background-color:#f5f5f5; border:solid 1px #ccc; border-top:none; font-size:14px; color:#BE1E2D; padding:7px 0 7px 10px; font-weight:bold;}
-#screening .hTtitle span{margin-left:10px; color:#555}
+#screening .title{border-radius:0; line-height:30px}
 #screening .attr{padding:10px; padding-bottom:5px; border-bottom:dotted 1px #ccc; border-left:solid 1px #ccc; border-right:solid 1px #ccc}
 #screening .attr em{width:100px; text-align:right; font-weight:bold}
-#screening .attr strong{width:832px; vertical-align:top}
-#screening .attr span{margin:0 18px; margin-bottom:5px; width:100px}
+#screening .attr strong{width:824px; position:relative; right:0; vertical-align:top}
+#screening .attr span{margin:0 18px; margin-bottom:5px; width:100px; vertical-align:top}
 #screening .attr a{padding:0 2px; color:#069}
 #screening .attr a.selected{background-color:#CC0000; color:#fff;}
 #screening .more{border-top:solid 1px #ccc; margin-top:-1px}
@@ -79,9 +71,10 @@
 #showList .list li:hover .group{border:solid 1px #F9F9E6}
 #showList .list li .photo{text-align:center}
 #showList .list li .mem0{overflow:hidden; zoom:1; padding-right:5px; margin-bottom:5px}
-#showList .list li .mem0 p{float:left; width:50%}
+#showList .list li .mem0 p{float:left; width:35%}
+#showList .list li .mem0 .price{width:65%; text-align:left}
 #showList .list li .botton{overflow:hidden; zoom:1}
-#showList .list li .botton .ck{display:block; width:60px; height:15px; padding:5px 10px; background-color:#D63C3C; border:solid 1px #ccc; color:#fff; text-align:center; line-height:15px}
+#showList .list li .botton .ck{display:block; width:60px; height:15px; padding:5px 10px; background-color:#CE2027; border:solid 1px #ccc; color:#fff; text-align:center; line-height:15px}
 #showList .list li.show1 .botton .ck{margin:0px auto}
 #showList .list li.show2 .botton .ck{float:left}
 #showList .list li .botton .ck:hover{text-decoration:underline}

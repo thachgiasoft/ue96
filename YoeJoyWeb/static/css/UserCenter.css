@@ -1,25 +1,21 @@
-#logo{width:1019px; margin:0 auto; margin-top:25px}
-#logo dd{width:210px;}
-#logo dd h6{margin-left:7px}
-.two1{ display:none;}
-.guidePic{ width:220px;}
-.guidePic img{width:100%;}
-
-.top{ background:url(../images/headBg2.png) no-repeat 0 3px}
-.ThreeRow{width:1019px; margin:0 auto;overflow:hidden; zoom:1;}
+#logo{width:1019px}
+.two1{ display:none}
+.top{ background:url(../images/indexbg2.png) no-repeat}
+.ThreeRow{width:1019px}
 .middle{ width:595px; margin-left:10px;}
-.bigRight{width:801px;float:right;}
-#footer{width:1019px; margin:0 auto;}
-#HotWord{float:left; _margin-left:3px; margin-top:5px;}
-#count{ position:relative;zoom:1; z-index:5}
+.bigRight{width:801px}
+#HotWord{_margin-left:3px; margin-top:5px;}
+#footBar .group{width:1021px}
+#Guide{width:1014px; padding-left:5px}
+#Guide li{width:125px; padding-left:44px}
+#footMsg{width:1019px}
 
-#position img{margin-right:5px; margin-bottom:-2px;}
 #LeftBar{border:#ccc solid 1px; border-top:none;}
 #LeftBar dt{background:url(../images/dt.jpg) repeat-x center center; font-size:14px; font-weight:bold; color:#000; line-height:28px; height:28px; border-bottom:#ccc solid 1px; border-top:#ccc solid 1px;}
-#LeftBar dt h1{background:url(../images/myyoe1.png) no-repeat center center; color:#fff; font-size:14px; font-weight:bold; padding-left:10px;}
+#LeftBar dt h1{background:url(../images/helpBg.png) no-repeat; color:#fff; font-size:14px; font-weight:bold; padding-left:18px; height:30px}
 #LeftBar dt h1 a{color:#fff;}
-#LeftBar dt span{background:url(../images/dt_span.jpg) no-repeat left center; margin-left:13px; padding-left:18px;}
-#LeftBar dd{line-height:25px; height:25px; margin:0 20px; border-bottom:dotted 1px #ccc;}
+#LeftBar dt span{margin-left:18px}
+#LeftBar dd{line-height:30px; height:30px; margin:0 20px; border-bottom:dotted 1px #ccc;}
 #LeftBar dd.last{border:none;}
 
 #myInfo{background-color:#F7F7F7; overflow:hidden; zoom:1;padding:10px; border:solid 1px #ccc; margin-bottom:10px}
@@ -332,25 +328,3 @@ h2.titles a{ float:right; color:#09C;}
 
 .toushu .two a.shenqing{ position:relative; left:290px;}
 .toushu .two a.shenqing img{border:none;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

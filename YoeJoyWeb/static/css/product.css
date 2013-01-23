@@ -1,16 +1,4 @@
 @charset "utf-8";
-/*大类菜单*/
-#ItemSortCon{margin-top:1px;}
-#Menu{position:absolute;width:208px;}
-#Menu .header{display:none}
-#Menu .Listcontent{top:-1px;}
-.classMenu{display:none;}
-.lbg{margin-top:1px}
-.ItemSort1{background:url(../images/hov2.png) no-repeat left top;}
-.ItemSort{background:url(../images/hov3.png) no-repeat left top;}
-#ItemSort{text-align:center;}
-#ItemSort span{font-weight:bold; color:#FFF; font-size:14px; padding:56px 0 7px 0;}
-#ItemSort span b{width:15px;}
 /*商品购买信息区(product.html)*/
 #buyArea{overflow:hidden; zoom:1; position:relative; margin-bottom:5px}
 #buyArea h1{font-size:21px; font-weight:bold; color:#000; clear:both; margin-bottom:6px}
@@ -36,7 +24,7 @@
 #buyArea .smallPhoto li img{ width:58px; height:58px; border:solid 1px #ccc; margin:0px 3px 3px 3px}
 #buyArea .smallPhoto li a:hover img{border:solid 4px #F9AA3D; border-top:none; margin:1px 0px 0px 0px}
 #buyArea .buyInfo{float:left; color:#555; width:595px}
-#buyArea .buyInfo hr{border-top:dotted 1px #ccc; margin-bottom:10px; size:0}
+#buyArea .buyInfo hr{border:none; border-top:dotted 1px #ccc; margin-bottom:10px}
 #buyArea .buyInfo .yprice,.tglb .yprice{text-decoration:line-through}
 #buyArea .buyInfo p{padding-left:15px; margin-bottom:10px}
 #buyArea .buyInfo .yyj{font-size:26px; font-weight:bold; line-height:1; color:#ED1C24; vertical-align:middle; }
@@ -54,7 +42,7 @@
 #buyArea .buyApp div h5{ padding:0px 15px 10px 15px}
 #buyArea .buyApp label{padding:3px; background-color:#fff; border:solid 2px #c1c1c1}
 #buyArea .buyApp label.selected{background-color:#ffffde; border:solid 2px #f89e3c}
-#buyArea .buyApp .bt6{margin-right:30px; padding-left:45px; width:106px}
+#buyArea .buyApp .bt7{margin-right:30px}
 #buyArea .buyApp .bt5{margin-right:30px}
 #buyArea .buyApp .link1{border-left:solid 1px #ccc; padding:0px 10px; line-height:1}
 /*猜你喜欢*/
@@ -69,13 +57,13 @@
 #record .group .price{text-align:left; padding-left:67px}
 /*浏览过的还看过*/
 #alsoSeen{border:solid 1px #ccc; margin-bottom:10px; border-top:1px solid #F9A93B}
-#alsoSeen .title{color:#666; background-color:#eee; padding:8px 11px; font-size:14px; font-weight:bold}
+#alsoSeen .title{color:#666; background-color:#eee; height:35px; padding:0 11px; font-size:14px; line-height:35px; font-weight:bold; border-radius:0; border:none}
 #alsoSeen .list{overflow:hidden; zoom:1; width:978px; padding:0 1px}
 #alsoSeen .list li{float:left; width:176px; padding:5px 9px 8px 9px; text-align:center}
 /*商品介绍菜单*/
-.introMenu{overflow:hidden; height:25px; background:url(../images/reddot.gif) 0px 23px repeat-x #fff; margin-bottom:10px; position:relative; z-index:100}
-.introMenu li{float:left; width:88px; height:23px; border-bottom:none; background:url(../images/showbg.png) -96px -252px no-repeat; font-size:12px; margin-right:5px; text-align:center; cursor:pointer; line-height:2.2; overflow:hidden}
-.introMenu .selected{background:url(../images/showbg.png) 0px -252px no-repeat; height:25px}
+.introMenu{overflow:hidden; height:30px; background:url(../images/reddot.gif) 0px 28px repeat-x #fff; margin-bottom:10px; position:relative; z-index:100}
+.introMenu li{float:left; width:84px; height:26px; border:solid 2px #ccc; border-bottom:none; border-radius:5px 5px 0 0; font-size:14px; margin-right:5px; text-align:center; background-color:#fff; cursor:pointer; line-height:26px; overflow:hidden}
+.introMenu .selected{height:28px; border-color:#CE2027}
 /*商品评价*/
 #introduce .group{display:none}
 #introduce .group.selected{display:block}
@@ -169,7 +157,7 @@
 #cartCheck .group0 .item1 .member0 p{margin:10px 0}
 #cartCheck .group0 .item1 .member0 span{color:#C00; font-weight:bold;}
 #cartCheck .group0 .item1 .member1{padding-top:10px;}
-#cartCheck .group0 .item1 .member1 a{width:110px; height:30px; background-image:url(../images/allbt.png); text-align:center; color:#fff; font-size:14px; font-weight:bold; line-height:1.9}
+#cartCheck .group0 .item1 .member1 a{width:110px; height:30px; background-image:url(../images/allbt.png); text-align:center; color:#fff; font-size:14px; font-weight:bold; line-height:30px}
 #cartCheck .group0 .item1 .member1 .close{background-position:0 -211px}
 #cartCheck .group0 .item1 .member1 .settlement{background-position:0 -172px}
 #cartCheck .group1{padding:10px; background-color:#eee}

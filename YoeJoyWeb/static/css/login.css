@@ -25,12 +25,12 @@
 #login_global{width:980px; margin:0 auto; border:solid 1px #ccc; position:relative; height:490px; margin-top:10px}
 #login_global input{line-height:1.8; padding-left:5px}
 #login_global .group{margin-top:15px}
-#login_global h3{height:27px; font-size:14px; font-weight:bold; padding-left:15px; line-height:1.9; border:solid 1px #ccc; border-top:none}
+#login_global h3{height:27px; font-size:14px; font-weight:bold; padding-left:15px; line-height:1.9; border:solid 1px #ccc; border-top:none; border-radius:0}
 #login_global .group em{font-size:14px; text-align:right}
 #login_global .group .input input{border:solid 1px #ccc; height:23px}
 #login_global .group .input input.selected{border:solid 1px #F90}
 .mastW{width:544px; position:absolute; left:-1px}
-.login h3{background-color:#5d7885; color:#fff}
+.login h3{background-color:#06B9D1; color:#fff}
 .login .group{padding-left:40px}
 .login .group p{padding:14px 0}
 .login .group p span{margin:0 15px 0 2px}
@@ -62,7 +62,7 @@
 .register .group .code img{margin:0 15px; vertical-align:middle}
 .register .group .button{padding-left:70px; margin-bottom:10px}
 .register .group .button input{width:187px; height:30px; background:url(../images/allbt.png) 0 -131px no-repeat; font-size:16px; font-weight:bold; color:#fff}
-.register .group textarea{width:100%; height:95px; overflow-y:scroll; resize:none}
+.register .group textarea{width:100%; height:95px; overflow-y:scroll; font-size:12px; text-indent:24px; resize:none}
 /*注册成功*/
 .moduel{width:980px; margin:0 auto; border:solid 1px #ccc; padding-bottom:5px; background:url(../images/succ.gif) no-repeat; margin-top:10px}
 #success{background-position:240px 40px}
@@ -81,13 +81,7 @@
 #activa{background-position:310px 40px}
 #activa .item0{width:275px}
 /*页尾*/
-#footer{width:980px}
-#Guide{overflow:hidden; zoom:1; border:#CCC solid 1px; border-top:#900 solid 2px; margin-top:10px; position:relative;zoom:1}
-#Guide li{float:left; width:24.9%}
-#Guide img.guidePic{width:100%; height:100%;}
-.guideDesc{padding-top:10px; margin-left:55px;}
-.guideDesc h2{ font-weight:bold;}
-.guideDesc h2 img{vertical-align:middle; margin-right:5px;}
-.guideDesc p{border-left:dotted 1px #ccc; margin-left:10px;}
-.guideDesc p a{display:block; padding-left:10px; line-height:18px;}
-#topp{position:absolute; right:8px; top:0;}
+#footBar .group{width:982px}
+#Guide{width:978px; padding:0 1px}
+#Guide li{width:122px; padding-left:41px}
+#footMsg{width:980px}

@@ -12,6 +12,7 @@ textarea{padding:2px}
 .clear{overflow:hidden; zoom:1}
 .l_module,.m_module,.r_module,.dgwz,.intlist{float:left;}
 .l_module{width:218px}
+.l_module .title h3{width:148px}
 .m_module{width:780px}
 #home .r_module{width:202px}
 .r_mix{float:right; width:982px}
@@ -64,9 +65,12 @@ textarea{border:solid 1px #ccc; vertical-align:top;}
 #breadNav p a{font-size:14px; font-weight:bold; margin-right:5px}
 #breadNav p a:hover{color:#c00}
 /*内页导航通用样式*/
-#foodImport{width:208px}
-#foodImport h4{background-color:#CE2027; color:#fff; height:30px; border:none; border-radius:5px 5px 0 0}
-.listOut{border:#CE2027 solid 2px; border-top:none; border-radius:0 0 5px 5px; width:204px}
+#foodImport h2{background:#F90; width:208px; font-size:14px; font-weight:bold; color:#000; overflow:hidden;zoom:1;}
+#foodImport h2 i,#foodImport h2 b,#foodImport h2 strong{float:left;}
+#foodImport h2 i{background: url(../images/showbg.png) 0px 0px no-repeat;width: 30px;height: 27px;}
+#foodImport h2 b{width: 148px;height: 25px;background-color: #F9AA3D;border-top: solid 2px #EF4100;color: black; line-height:1.8}
+#foodImport h2 strong{background: url(../images/showbg.png) -40px 0px no-repeat;width: 30px;height: 27px;}
+.listOut{border:#F00 solid 2px; border-top:none; border-radius:0 0 6px 6px; margin-top:-1px; width:204px}
 .listOut li{padding:0 10px}
 #foodImport li h3{ color:#666; font-weight:bold; font-size:14px; padding-top:7px; padding-bottom:5px; margin-left:10px; cursor:pointer; border-bottom:dotted 1px #ccc}
 #foodImport li p{overflow:hidden;zoom:1; margin:0 7px; padding-bottom:5px; display:none}

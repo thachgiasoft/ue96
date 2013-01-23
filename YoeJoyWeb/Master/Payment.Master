@@ -22,7 +22,7 @@
     <div id="ProcessHeader">
         <div id="banner">
             <a class="logo" href="#">
-                <img alt="logo" src="../static/images/logo.gif" width="243" height="50" /></a>
+                <img alt="logo" src="../static/images/logotemp.png" /></a>
             <div id="welcomeContent">
                 <p class="Myname">
                     <b>
@@ -53,12 +53,22 @@
     </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="ScriptContentPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>
+    <div id="footBar">
+        <div class="group">
+            <img src="../static/images/foottext.png">
+            <div id="SearchBox">
+                <p>
+                    <input value="数码产品" type="text">
+                    <button>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
     <div id="footer">
         <ul id="Guide">
             <a id="topp" href="#">
                 <img src="../static/images/topp.png"></a>
-            <li><a class="guidePic" href="#">
-                <img src="../static/images/guide.jpg"></a> </li>
             <li>
                 <div class="guideDesc">
                     <h2>
@@ -73,8 +83,9 @@
                     <h2>
                         <img src="../static/images/footico2.png">新手指南</h2>
                     <p>
-                        <a href="http://www.ue96.com/help/help01.aspx">会员注册</a> <a href="http://www.ue96.com/help/help09.aspx">订单状态</a> <a href="http://www.ue96.com/help/help05.aspx">服务协议</a>
-                        <a href="http://www.ue96.com/help/help06.aspx">隐私声明</a>
+                        <a href="http://www.ue96.com/help/help01.aspx">会员注册</a> <a href="http://www.ue96.com/help/help09.aspx">
+                            订单状态</a> <a href="http://www.ue96.com/help/help05.aspx">服务协议</a> <a href="http://www.ue96.com/help/help06.aspx">
+                                隐私声明</a>
                     </p>
                 </div>
             </li>
@@ -83,7 +94,8 @@
                     <h2>
                         <img src="../static/images/footico3.png">我的帐户</h2>
                     <p>
-                        <a href="http://www.ue96.com/User/MyProfile.aspx">我的攸怡</a> <a href="http://www.ue96.com/User/MyAddress.aspx">变更收货地址</a> <a href="http://www.ue96.com/User/MyOrder.aspx">我的订单记录</a>
+                        <a href="http://www.ue96.com/User/MyProfile.aspx">我的攸怡</a> <a href="http://www.ue96.com/User/MyAddress.aspx">
+                            变更收货地址</a> <a href="http://www.ue96.com/User/MyOrder.aspx">我的订单记录</a>
                     </p>
                 </div>
             </li>
@@ -92,23 +104,22 @@
                     <h2>
                         <img src="../static/images/footico4.png">客户服务中心</h2>
                     <p>
-                        <a href="http://www.ue96.com/help/help17.aspx">退换货政策</a> <a href="http://www.ue96.com/help/help11.aspx">商品运送说明</a> <a href="http://www.ue96.com/help/help15.aspx">支付方式</a>
+                        <a href="http://www.ue96.com/help/help17.aspx">退换货政策</a> <a href="http://www.ue96.com/help/help11.aspx">
+                            商品运送说明</a> <a href="http://www.ue96.com/help/help15.aspx">支付方式</a>
                     </p>
                 </div>
             </li>
         </ul>
-        <div id="footMsg">
-            <span class="minLogo">
-                <img src="../static/images/logob.jpg"></span> <span class="menu">
-				<a href="http://www.ue96.com/Default.aspx">商城首页</a>
-				<a href="http://www.ue96.com/help/help04.aspx">关于攸怡</a>
-				<a href="http://www.ue96.com/User/MyProfileDetail.aspx">我的账户</a>
-				<a href="http://www.ue96.com/help/help.aspx">服务中心</a>
-				<a href="mailto:contact@joyoplan.com">联系我们</a>
-                    <br>
-                    <em>联系热线: 400-808-9196  E-Mail: contact@joyoplan.com<br>
-                        沪ICP备09017990号</em> </span>
-        </div>
+    </div>
+    <div id="footMsg">
+        <span class="minLogo">
+            <img src="../static/images/logob.jpg"></span> <span class="menu"><a href="http://www.ue96.com/Default.aspx">
+                商城首页</a> <a href="http://www.ue96.com/help/help04.aspx">关于攸怡</a> <a href="http://www.ue96.com/User/MyProfileDetail.aspx">
+                    我的账户</a> <a href="http://www.ue96.com/help/help.aspx">服务中心</a> <a href="mailto:contact@joyoplan.com">
+                        联系我们</a>
+                <br>
+                <em>联系热线: 400-808-9196 E-Mail: contact@joyoplan.com<br>
+                    沪ICP备09017990号</em> </span>
     </div>
     </form>
 </body>

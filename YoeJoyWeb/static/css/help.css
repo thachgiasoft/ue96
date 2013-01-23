@@ -1,35 +1,26 @@
 @charset "utf-8";
-/*大类菜单*/
-#ItemSortCon{margin-top:1px;}
-#Menu{position:absolute;width:208px;}
-#Menu .header{display:none}
-#Menu .Listcontent{top:-1px;}
-.classMenu{display:none;}
-.lbg{margin-top:1px}
-.ItemSort1{background:url(../images/hov2.png) no-repeat left top;}
-.ItemSort{background:url(../images/hov3.png) no-repeat left top;}
-#ItemSort{text-align:center;}
-#ItemSort span{font-weight:bold; color:#FFF; font-size:14px; padding:56px 0 7px 0;}
-#ItemSort span b{ width:15px;}
-
 .fastMenu{border:solid 1px #ccc; border-top:none}
 .fastMenu li{margin-bottom:10px}
 .title{height:31px; background:url(../images/helpline.gif) repeat-x; border-top:solid 1px #ccc; font-size:15px; line-height:2; font-weight:bold; padding-left:10px}
 .fastMenu .mem{list-style:disc; margin-left:30px}
 .fastMenu .mem a{color:#36F}
 .fastMenu .mem a:hover{color:#c00}
-.r_mix .group{border:solid 1px #ccc; border-top:none}
+.r_mix .group{border:solid 1px #ccc; border-top:none; margin-bottom:10px}
 .r_mix .group .title{height:31px; background:url(../images/helpline.gif) 0 -35px repeat-x; font-size:15px; font-weight:bold; line-height:2; padding-left:10px}
 .process img{margin:30px 0}
+.helpClass{position:relative; overflow:hidden; padding-bottom:-1px}
 .helpClass dl{overflow:hidden; zoom:1; border-bottom:dotted 1px #ccc; margin:0 30px; padding:10px 0}
 .helpClass dt{float:left; padding:0 10px; background-color:#fff; color:#06C}
 .helpClass dd{float:left; padding:0 10px; border-right:solid 1px #ccc}
-.helpMenu{border:solid 1px #ccc; border-top:none}
-.helpMenu dl{padding-bottom:3px}
+.title{border:none; border-radius:0; border-top:solid 1px #ccc}
+.helpMenu{border-bottom:solid 1px #ccc}
+.helpMenu .title{ height:30px; background:url(../images/helpBg.png) no-repeat; color:#fff; border:none}
+.helpMenu dl{padding-bottom:3px; border-left:solid 1px #ccc; border-right:solid 1px #ccc}
 .helpMenu dt{height:30px; border-top:solid 1px #ccc; background:url(../images/helpline.gif) 0 -35px repeat-x}
-.helpMenu dt a{height:30px; width:186px; padding-left:20px; background:url(../images/liststyle.png) 7px -8px no-repeat; line-height:2.3}
-.helpMenu dt.selected a{font-weight:bold; color:#c00; background:url(../images/liststyle.png) 8px 11px no-repeat}
-.helpMenu dd{display:none}
-.helpMenu dd a{height:25px; width:186px; padding-left:20px; background:url(../images/liststyle.png) 8px -36px no-repeat; line-height:1.7}
+.helpMenu dt a{height:30px; width:186px; padding-left:20px; background:url(../images/liststyle.png) 7px -8px no-repeat; line-height:30px; font-size:14px}
+.helpMenu dt.selected a{font-weight:bold; color:#CE2027; background:url(../images/liststyle.png) 8px 11px no-repeat}
+.helpMenu dd{display:none; margin:6px 0}
+.helpMenu dd a{height:25px; width:184px; padding-left:20px; background:url(../images/liststyle.png) 8px -33px no-repeat; line-height:25px}
+.helpMenu dd a.sel{background-color:#C4333E; color:#fff}
 .helpDoc .doc{padding:10px 20px}
 .helpDoc .doc p{padding:2px 0}

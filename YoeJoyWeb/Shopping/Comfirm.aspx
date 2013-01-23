@@ -26,6 +26,12 @@
     <div id="content">
         <div id="process">
             <img src="../static/images/step2.png" />
+            <ul>
+                <li>1.查看购物车</li>
+                <li>2.核对订单信息</li>
+                <li>3.成功提交订单</li>
+                <li>4.评论商品</li>
+            </ul>
         </div>
         <div class="consigneeInfo">
             <h2 class="titles">

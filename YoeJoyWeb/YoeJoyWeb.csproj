@@ -941,6 +941,7 @@
     <Content Include="static\images\footico3.png" />
     <Content Include="static\images\footico4.png" />
     <Content Include="static\images\footico5.png" />
+    <Content Include="static\images\footico6.png" />
     <Content Include="static\images\foottext.png" />
     <Content Include="static\images\gg1.gif" />
     <Content Include="static\images\gg1.jpg" />
@@ -972,6 +973,7 @@
     <Content Include="static\images\heart.jpg" />
     <Content Include="static\images\help1.jpg" />
     <Content Include="static\images\help2.png" />
+    <Content Include="static\images\helpBg.png" />
     <Content Include="static\images\helpbt.png" />
     <Content Include="static\images\helpline.gif" />
     <Content Include="static\images\helpline.png" />
@@ -1007,6 +1009,7 @@
     <Content Include="static\images\indexbg - 赂卤卤戮 %282%29.png" />
     <Content Include="static\images\indexbg - 赂卤卤戮 %283%29.png" />
     <Content Include="static\images\indexbg.png" />
+    <Content Include="static\images\indexbg2.png" />
     <Content Include="static\images\indexbgs.png" />
     <Content Include="static\images\indexline.gif" />
     <Content Include="static\images\invoice.jpg" />
@@ -1130,6 +1133,7 @@
     <Content Include="static\images\submit.png" />
     <Content Include="static\images\succ.gif" />
     <Content Include="static\images\szj.png" />
+    <Content Include="static\images\tbg1.gif" />
     <Content Include="static\images\td.jpg" />
     <Content Include="static\images\td.png" />
     <Content Include="static\images\td1.jpg" />

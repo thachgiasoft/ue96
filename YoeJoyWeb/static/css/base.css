@@ -10,11 +10,21 @@ em{ font-style:normal;}
 h1,h2,h3,h4,h5,h6{font-size:12px; font-weight:normal;}
 li{list-style:none;}
 a{color:#000; text-decoration:none;}
-a:hover{color:#FF0000;}
+a:hover{color:#CE2027;}
 a img{border:none;}
 .num{width:18px; height:18px; border:solid 1px #ccc; text-align:center; margin:0px 2px; vertical-align:middle}
 .sub,.add{width:15px; height:15px; border:solid 1px #ccc; text-align:center; vertical-align:middle; line-height:1.2; background-color:#fff; margin:0px 2px}
 .title{height:29px; background-color:#f5f5f5; font-weight:bold; text-indent:11px; line-height:2.4; border:solid 1px #ccc; border-bottom:none; border-radius:5px 5px 0 0; letter-spacing:1px}
+/*内页导航通用样式*/
+#foodImport h4{background-color:#CE2027; color:#fff; height:30px; border:none; border-radius:5px 5px 0 0}
+.listOut{border:#CE2027 solid 2px; border-top:none; border-radius:0 0 5px 5px; width:204px}
+.listOut li{padding:0 10px}
+#foodImport li h3{ color:#666; font-weight:bold; font-size:14px; padding-top:7px; padding-bottom:5px; margin-left:10px; cursor:pointer; border-bottom:dotted 1px #ccc}
+#foodImport li p{overflow:hidden;zoom:1; margin:0 7px; padding-bottom:5px; display:none}
+#foodImport p a{display:block; padding:0 5px; float:left; border-right:#F63 solid 1px; margin-bottom:5px; white-space:nowrap}
+#foodImport li.sel{background-color:#f1e2ce}
+#foodImport li.sel h3{color:#BB1F23; border:none}
+#foodImport li.sel p{display:block; border-bottom:dotted 1px #ccc}
 #fastHead{width:1200px; height:26px; margin:0 auto; background:url(../images/indexline.gif) 0 -265px repeat-x; position:relative}
 #fastHead h6{display:inline-block}
 #fastHead span{height:100%; color:#777; background:url(../images/indexbgs.png) -163px -336px no-repeat; padding-left:45px; line-height:2.2}
@@ -78,7 +88,7 @@ a img{border:none;}
 #chartContent h5{height:16px; background-color:#06B9D1; font-size:0}
 #chartContent span{width:12px; height:12px; background:url(../images/indexbgs.png) -47px -134px no-repeat; margin-top:1px; margin-left:311px}
 
-.shopping{overflow:hidden;zoom:1; margin:0 10px; padding:10px 0;}
+.shopping{overflow:hidden;zoom:1; margin:0 10px; padding:7px 0 8px 0}
 .shopping .l{overflow:hidden; zoom:1}
 .shopping .l a{float:left; padding-left:5px}
 .shopping .l a img{border:#ccc solid 1px; width:30px; height:30px}
@@ -98,10 +108,9 @@ a img{border:none;}
 #ServiceLine a{margin-right:5px}
 #ServiceLine a img{vertical-align:text-bottom; border:none; margin-right:3px}
 
-#Menu{position:absolute; margin-top:-1px; z-index:5}
+#Menu{position:absolute; width:208px; margin-top:-1px; z-index:5}
 #Menu .header{display:block;height:86px;background:url(../images/hov.png) no-repeat left bottom; width:208px}
 .lbg{background:url(../images/allclassbg1.gif) repeat-y left #fff;  padding-top:2px; padding-bottom:-2px; width:208px; height:328px; overflow:hidden}
-.classMenu .lbg{height:auto}
 .rbg{background:url(../images/indexbgs.png) no-repeat top left;height:10px; font-size:0; width:208px}
 
 #MeunList{margin-left:4px; margin-right:2px}
@@ -143,7 +152,7 @@ a img{border:none;}
 #focus dd a{float:left; width:20%; background:#666; color:#000; height:30px; line-height:2.5}
 #focus dd a.sel{ background:#CE2027; color:#FFF;}
 
-#position{width:1200px; margin:0 auto; margin-bottom:10px; border-bottom:#ccc solid 1px; padding-bottom:5px; clear:both;zoom:1; padding:8px 0;}	
+#position{width:1177px; margin:0 auto; margin-bottom:10px; border-bottom:#ccc solid 1px; clear:both;zoom:1; padding:8px 0 8px 23px}	
 #position span,#position b{color:#666; padding-right:7px;}
 #position b{font-weight:bold; font-size:14px;}
 #footBar{background-color:#06B9D1; margin-top:35px; margin-bottom:10px}
@@ -151,23 +160,26 @@ a img{border:none;}
 #footBar .group img{margin:6px 0 0 10px}
 #footer{background-color:#961A1D}
 #Guide{width:1200px; margin:0 auto; position:relative; overflow:hidden; zoom:1; height:212px}
-#Guide li{float:left; width:19%; height:100%;}
+#Guide li{float:left; width:140px; height:100%; padding-left:60px}
 #Guide a.guidePic{height:100%; background:#f1f3f2;}
 #Guide a.guidePic img{ margin-top:20px;}
 
-.guideDesc{padding-top:18px; margin-left:65px; color:#fff}
-.guideDesc h2{font-weight:bold; }
-.guideDesc h2 img{vertical-align:middle; margin-right:5px;}
+.guideDesc{padding-top:30px; color:#fff}
+.guideDesc h5{font-weight:bold; height:25px; line-height:25px}
+.guideDesc h5 img{margin-right:5px; vertical-align:middle}
 .guideDesc p{border-left:dotted 1px #ccc; margin-left:10px; margin-top:10px;}
 .guideDesc p a{display:block; padding-left:10px; line-height:18px; color:#fff}
+.guideDesc p a:hover{color:#F49305}
 #topp{position:absolute; right:8px}
 
-#footMsg{width:1200px; margin:0 auto; text-align:left; padding:10px 0; margin-bottom:10px}
-.minLogo{padding-right:8px; padding-left:25px}
+#footMsg{width:1200px; margin:0 auto; text-align:left; padding:20px 0}
+.minLogo{padding-right:6px}
 #footMsg span{text-align:left}
 #footMsg .menu{border-left:#ccc solid 1px}
 #footMsg span a{padding:0 8px; border-right:#ccc solid 1px}
 #footMsg span em{color:#999;padding:5px 0 0 8px; line-height:1.5}
+#footMsg span em a{padding:0; border:none; color:#999}
+#footMsg span em a:hover{color:#CE2027}
 
 .name,.adText{height:34px; display:block; text-align:left; line-height:1.4; overflow:hidden}
 .name{color:#436581}
@@ -176,3 +188,8 @@ a img{border:none;}
 .price{text-align:center}
 .price b{color:#e21011; font-size:14px; font-weight:100; margin-right:10px}
 .price span{color:#666; text-decoration:line-through}
+
+#Menu.classMenu .header{display:none}
+#Menu.classMenu .Listcontent{top:-2px;}
+#Menu.classMenu{display:none;}
+#Menu.classMenu .rbg{margin-top:-1px}

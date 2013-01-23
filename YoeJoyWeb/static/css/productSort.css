@@ -1,10 +1,5 @@
+@charset "utf-8";
 /*大类菜单*/
-#Menu{position:absolute; width:208px;}
-#Menu .header{display:none}
-#Menu .Listcontent{top:-2px;}
-.classMenu{display:none;}
-.lbg{height:0}
-.rbg{margin-top:-2px}
 /*大类菜单end*/
 #adShow{float:left; width:780px; height:275px; overflow:hidden; position:relative}
 #adShow a{display:none}
@@ -13,7 +8,7 @@
 #adShow .btItem a{display:inline-block; width:29px; height:28px; background:url(../images/showbg.png) 1.5px -448.5px no-repeat; font-size:14px; font-weight:bold; color:#555; text-align:center; line-height:2}
 #adShow .btItem a.selected{background:url(../images/showbg.png) -35px -447px no-repeat; color:#BE1E2D}
 #limit{float:right; width:170px; height:273px; border:solid 1px #ccc; border-radius:5px 5px 0 0; padding:0 10px}
-#limit h3{width:141px; height:38px; font:"黑体"; font-size:16px; font-weight:bold; color:#987314; text-align:center; line-height:2.8; text-indent:15px; background:url(../images/indexbgs.png) -67px -293px no-repeat; margin-top:-2px; margin-left:15px; position:absolute}
+#limit h3{width:141px; height:38px; font:\9ED1\4F53; font-size:16px; font-weight:bold; color:#987314; text-align:center; line-height:2.8; text-indent:15px; background:url(../images/indexbgs.png) -67px -293px no-repeat; margin-top:-2px; margin-left:15px; position:absolute}
 #limit h4{margin-top:43px; margin-bottom:5px}
 #limit h4 span,.panicContentt h2 em,.panicContentt h2 b{padding:3px 0px;}
 #limit h4 span{margin-right:0px; color:#000;}
@@ -24,21 +19,11 @@
 #limit .price{text-align:left}
 #limit .price b{font-size:16px; font-weight:bold; color:#A0000C}
 #limit .buying{width:60px; height:23px; background:url(../images/allbt.png) -109px -31px no-repeat; text-align:center; color:#fff; font-weight:bold; line-height:1.9; position:absolute; right:0}
-/*内页导航通用样式*/
-#foodImport h4{background-color:#CE2027; color:#fff; height:30px; border:none; border-radius:5px 5px 0 0}
-.listOut{border:#CE2027 solid 2px; border-top:none; border-radius:0 0 5px 5px; width:204px}
-.listOut li{padding:0 10px}
-#foodImport li h3{ color:#666; font-weight:bold; font-size:14px; padding-top:7px; padding-bottom:5px; margin-left:10px; cursor:pointer; border-bottom:dotted 1px #ccc}
-#foodImport li p{overflow:hidden;zoom:1; margin:0 7px; padding-bottom:5px; display:none}
-#foodImport p a{display:block; padding:0 5px; float:left; border-right:#F63 solid 1px; margin-bottom:5px; white-space:nowrap}
-#foodImport li.sel{background-color:#f1e2ce}
-#foodImport li.sel h3{color:#BB1F23; border:none}
-#foodImport li.sel p{display:block; border-bottom:dotted 1px #ccc}
 
 .chocolate{clear:both; zoom:1; margin-top:10px}
-.chocolate h2{overflow:hidden; zoom:1; background:url(../images/minbg.jpg) repeat-x; height:25px}
-.chocolate h2 span{float:left; background:url(../images/showbg.png) no-repeat -80px -37px; width:93px; height:25px; color:#fff; font-weight:bold; font-size:14px; line-height:1.7; text-indent:5px}
-.chocolate h2 a{float:right; margin-top:3px; margin-right:8px;}
+.chocolate h2{background-color:#f5f5f5; border-bottom:solid 3px #CE2027; height:27px; position:relative}
+.chocolate h2 span{background:url(../images/tbg1.gif) right top no-repeat #CE2027; height:27px; color:#fff; font-weight:bold; font-size:14px; line-height:27px; text-indent:5px; padding-right:22px; letter-spacing:1px}
+.chocolate h2 a{position:absolute; right:8px; line-height:27px}
 
 .mainShow{overflow:hidden;zoom:1; border:#ccc solid 1px}
 .hot{float:right;width:192px}

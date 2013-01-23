@@ -4,7 +4,9 @@
 #NewAdressContent{display:none;}
 
 .addNewAdress{width:69px; height:20px; font-family:"黑体"; font-size:12px; background:url(../images/allbt.png) 0 -32px no-repeat; text-align:center; line-height:1.7}
-#process img{ width:100%;}
+#process{position:relative; zoom:1}
+#process ul{width:980px; position:absolute; top:0; overflow:hidden; zoom:1}
+#process ul li{float:left; width:25%; height:25px; line-height:25px; color:#fff; text-align:center; font-weight:bold}
 
 #ProcessHeader{ border-bottom:3px solid #ba2022; padding-top:10px; height:65px;}
 #banner{width:980px; margin:0 auto;}
@@ -75,24 +77,6 @@
 #comfirm .r strong{color:#ba2022; font-weight:bold; font-size:28px; vertical-align:middle;}
 #comfirm .r a{vertical-align:middle;}
 
-#footer{ width:980px;}
-#Guide{ overflow:hidden; zoom:1; height:150px; border:#CCC solid 1px; border-top:#900 solid 2px; margin-top:10px; position:relative;zoom:1;}
-#Guide li{float:left; width:19.9%; height:100%;}
-#Guide img.guidePic{width:100%; height:100%;}
-.guideDesc{padding-top:10px; margin-left:25px;}
-.guideDesc h2{ font-weight:bold;}
-.guideDesc h2 img{vertical-align:middle; margin-right:5px;}
-.guideDesc p{border-left:dotted 1px #ccc; margin-left:10px;}
-.guideDesc p a{display:block; padding-left:10px; line-height:18px;}
-#topp{position:absolute; right:8px; top:0;}
-
-
-#footMsg{ text-align:left;padding:10px 0; margin-bottom:30px; margin-left:25px;}
-.minLogo{padding-right:8px; padding-bottom:5px;}
-#footMsg span{text-align:left;}
-#footMsg span a{padding:0 8px; border-right:#ccc solid 1px;}
-#footMsg span em{color:#999;padding-bottom:5px; padding-top:5px;}
-
 #ProductDetail,#InvoiceInfo,#SentMethod,#PriceMethod,.consigneeInfo{border:#ccc solid 1px; border-bottom:#f48131 solid 2px; margin-top:10px; background:#FBF9F4;}
 h2.titles{background:url(../images/pxbg.png) repeat-x;border-bottom: solid 2px #E21D05; line-height:25px; height:25px;}
 h2.titles span{font-weight:bold; margin:0 7px; color:#000;}
@@ -155,7 +139,6 @@ h2.titles a{color:blue;}
 #modfiedGoods p b{color:#900; font-size:16px;}
 #modfiedGoods p{text-align:right;}
 #modfiedGoods a{ color:blue;}
-
 
 #submitBill{background:#fff; padding:10px; text-align:right;}
 #submitBill p{text-align:left;}
@@ -225,12 +208,6 @@ a.tiaoxing{display:block; color:#069; margin-top:10px;}
 .group2 .item1{text-align:right; overflow:hidden;}
 .group2 .item1 p{border-bottom:solid 1px #ccc; width:250px; float:right; padding-bottom:5px; font-size:14px; padding-right:10px; margin-bottom:10px}
 
-
-
-#Guide li{float:left; width:24.9%; height:100%;}
-.guideDesc{padding-top:10px; margin-left:55px;}
-
-
 #PriceMethod .choiced{background:none; border:none;}
 #PriceMethod .choiced p{ padding:10px 15px;}
 #PriceMethod .choiced p b{ font-weight:normal; color:red;}
@@ -245,3 +222,8 @@ a.tiaoxing{display:block; color:#069; margin-top:10px;}
 
 #BookStatus .submit,.submit{padding:0; width:120px; height:35px; text-align:center; line-height:2; background:url(../images/allbt.png) -67px -91px no-repeat; color:#fff; font-family:"黑体"; font-size:18px}
 .submit:hover{color:#FFC}
+
+#footBar .group{width:982px}
+#Guide{width:978px; padding:0 1px}
+#Guide li{width:122px; padding-left:41px}
+#footMsg{width:980px}
