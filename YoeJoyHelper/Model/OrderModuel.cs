@@ -17,6 +17,9 @@ using System.Data.Sql;
 
 namespace YoeJoyHelper.Model
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class OrderModuel
     {
         public string SysNo { get; set; }
