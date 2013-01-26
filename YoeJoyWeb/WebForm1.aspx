@@ -5,7 +5,7 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body id="111">
     <div id="highgoods2" class="area imgshow">
         <div class="item">
             <div class="slave0">
