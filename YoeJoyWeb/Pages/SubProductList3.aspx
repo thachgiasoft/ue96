@@ -75,10 +75,8 @@
                 </dd>
             </dl>
             <div id="hotComments" class="l_class area">
-                <div class="title">
                     <h3 class="title">
                         产品热评</h3>
-                </div>
                 <%=C3HotCommentProductHTML%>
             </div>
         </div>

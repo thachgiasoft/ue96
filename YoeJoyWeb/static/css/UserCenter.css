@@ -4,6 +4,7 @@
 .ThreeRow{width:1019px}
 .middle{ width:595px; margin-left:10px;}
 .bigRight{width:801px}
+#fastHead{width:1019px}
 #HotWord{_margin-left:3px; margin-top:5px;}
 #footBar .group{width:1021px}
 #Guide{width:1014px; padding-left:5px}
@@ -106,7 +107,7 @@ h2.titles a{ float:right; color:#09C;}
 .next{ float:right;}
 .next a{width:17px; height:61px; margin-left:10px; background:url(../images/nextwx.png) no-repeat;}
 .next a:hover{background:url(../images/nextxz.png) no-repeat;}
-#NumTitle{text-align:center; clear:both;}
+#NumTitle{text-align:center; clear:both; margin-bottom:8px}
 #NumTitle a{width:7px;height: 7px;margin: 0px 3px;background: url(../images/userBg.png) -40px 0px no-repeat;}
 #NumTitle a.sel{background: url(../images/userBg.png) -24px 0px no-repeat;}
 

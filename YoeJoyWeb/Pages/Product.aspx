@@ -786,7 +786,7 @@
 
             var $productBriefName = $("#productBriefName").val();
 
-            var $c1Name = $("#foodImport").children("h2").eq(0).children("b").eq(0).html();
+            var $c1Name = $("#foodImport").children("h4").html();
             $("#breadNav").children("p").children("a").eq(1).html($c1Name);
             $("#breadNav").children("p").children("a").eq(1).click(function (event) {
                 window.location.href = $("#siteBaseURL").val() + "Pages/SubProductList1.aspx?c1=" + c1;

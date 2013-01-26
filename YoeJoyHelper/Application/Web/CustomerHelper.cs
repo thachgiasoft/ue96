@@ -20,6 +20,10 @@ using Icson.BLL;
 using Icson.BLL.Online;
 using Icson.BLL.Basic;
 using Icson.BLL.Sale;
+using Icson.Objects.Finance;
+using Icson.BLL.Finance;
+using Icson.BLL.RMA;
+using System.Text;
 
 
 namespace YoeJoyHelper
@@ -573,6 +577,107 @@ namespace YoeJoyHelper
         public static void ClearCustomerBrowserHistoryProductsAll()
         {
             CookieUtil.SetDESEncryptedCookie(CookieUtil.Cookie_BrowseHistory, String.Empty);
+        }
+
+        public static string GetCustomOrderList(int customSysNo, int pageNum)
+        {
+            string orderListHTML = String.Empty;
+            int pageCount = int.Parse(YoeJoyConfig.MyOrderProductListPagedCount);
+            List<OrderModuel> orderList = OrderService.GetMyOrder(customSysNo, pageNum, pageCount);
+            if (orderList != null)
+            {
+                StringBuilder strb = new StringBuilder();
+
+                string tabRowHTMLTemplate = @"
+                             <tr class='orderList'>
+                                <td>
+                                	<img src='{0}'>
+                                </td>
+                                <td>
+                                	<p><a href='{1}'>{2}</a></p>
+                                    <p><b>¥{3}</b>X{4}</p>
+                                </td>
+                                <th>
+                                	<a class='reBuy' href='{5}'>再次购买</a><br>
+                                	<a class='reBuy' href='{6}'>发表评论</a>
+                                </th>
+                            </tr>";
+
+                foreach (var orderListItem in orderList)
+                {
+
+                    strb.Append(@"<table class='order' cellSpacing='0' cellPadding='0'><tbody>");
+
+                    string orderDetailDeeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "MyOrderDetail.aspx?ID=", orderListItem.SysNo);
+                    string orderUpdateDeeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "MyOrderDetail.aspx?action=update&ID=", orderListItem.SysNo);
+                    string orderCancelDeeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "MyOrderDetail.aspx?action=cancel&ID=", orderListItem.SysNo);
+
+                    bool IsNet = (orderListItem.IsNet == (int)AppEnum.YNStatus.Yes) ? true : false;
+                    bool IsPayWhenRecv = (orderListItem.IsPayWhenEcv == (int)AppEnum.YNStatus.Yes) ? true : false;
+
+                    strb.Append("<tr><th class='orderNum' rowSpan='3'>");
+
+                    strb.Append("<p>订单编号：<a href='" + orderDetailDeeplink + "'>" + orderListItem.SysNo + "</a></p>");
+                    strb.Append("<p>订购日期：" + orderListItem.OrderDate.ToString("yyyy-mm-dd") + "</p>");
+                    if (IsNet)
+                    {
+                        strb.Append("<p>付款方式：在线支付</p>");
+                    }
+                    if (IsPayWhenRecv)
+                    {
+                        strb.Append("<p>订单总计：¥" + orderListItem.TotalCash.ToString("#####0.00") + "</p>");
+                    }
+                    strb.Append("<p>使用积分：" + orderListItem.PointPay + "</p>");
+                    strb.Append("<p>可获积分：" + orderListItem.Pointamt + "</p>");
+                    strb.Append("<p><a href='" + orderDetailDeeplink + "'>订单详情</a></p>");
+
+                    strb.Append("</th><td colSpan='3'><h2 class='ordertitlts'>");
+                    strb.Append(AppEnum.GetSOStatus(Util.TrimIntNull(orderListItem.Status)));
+                    strb.Append("<span class='r'>");
+
+                    bool isPayed = NetPayManager.GetInstance().IsPayed(orderListItem.SysNo);
+
+                    if (orderListItem.Status == (int)AppEnum.SOStatus.Origin && !isPayed)
+                    {
+                        strb.Append("<a href='MyOrderDetail.aspx?action=cancel&ID=" + orderListItem.SysNo + "'>作废订单</a>");
+                        strb.Append("<a href='MyOrderDetail.aspx?action=update&ID=" + orderListItem.SysNo + "'>修改订单</a>");
+                    }
+                    if (orderListItem.Status == (int)AppEnum.SOStatus.Origin || orderListItem.Status == (int)AppEnum.SOStatus.WaitingPay || orderListItem.Status == (int)AppEnum.SOStatus.WaitingManagerAudit)
+                    {
+                        if (Util.TrimNull(orderListItem.PagementPage) != AppConst.StringNull && !isPayed && Util.TrimIntNull(orderListItem.IsNet) == (int)AppEnum.YNStatus.Yes)
+                        {
+                            strb.Append("<a href='../Shopping/" + Util.TrimNull(orderListItem.PagementPage) + "?id=" + orderListItem.SysNo + "&sono=" + orderListItem.SoId + "&soamt=" + orderListItem.TotalCash.ToString("#####0.00") + "'>支付货款</a>");
+                        }
+                    }
+
+                    DataTable dt = RMARequestManager.GetInstance().GetRMABySO(orderListItem.SysNo);
+                    if (dt != null)
+                    {
+                        strb.Append("<a href='../Account/RMAQuery.aspx?Type=single&ID=" + orderListItem.SysNo + "'>查看返修信息</a>");
+                    }
+                    strb.Append( "<a href='MyOrderDetail.aspx?ID=" + orderListItem.SysNo + "'>查看订单明细</a>");
+                    if (Util.TrimNull(orderListItem.Memo) != String.Empty)
+                    {
+                        strb.Append("<tr><td height=25px align=right bgcolor=#E7F9F9>备注信息：</td><td colspan=5 bgcolor=#ffffff>" + orderListItem.Memo + "</td></tr>");
+                    }
+                    strb.Append(" </span></h2></td>");
+                    strb.Append("</tr>");
+
+                    if (orderListItem.ProductList != null)
+                    {
+                        foreach (var productListItem in orderListItem.ProductList)
+                        {
+                            string deeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "Pages/Product.aspx?c1=", productListItem.C1SysNo, "&c2=", productListItem.C2SysNo, "&c3=", productListItem.C3SysNo, "&pid=", productListItem.ProductSysNo);
+                            string image=String.Concat(YoeJoyConfig.ImgVirtualPathBase,productListItem.ImgPath);
+                            strb.Append(String.Format(tabRowHTMLTemplate,image,deeplink,productListItem.ProductBriefName,productListItem.Cost,productListItem.Quantity,deeplink,deeplink));
+                        }
+                    }
+
+                    strb.Append("</tbody></table>");
+                }
+                orderListHTML = strb.ToString();
+            }
+            return orderListHTML;
         }
 
     }
