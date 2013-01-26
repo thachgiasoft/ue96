@@ -866,6 +866,65 @@ namespace YoeJoyHelper.Model
   {0}
   and p.C3SysNo={1}";
 
+
+
+        
+
+        public  static string getSysno(string arrtibutionFilterSqlCmd, string attribution2IdStr)
+        {
+            string sqlcom = string.Empty;
+            string searchesql = string.Empty;
+          
+            if (arrtibutionFilterSqlCmd != "")
+            {//修改Bug，就是查询一次。然后去符合筛选项最多的外键，再根据关系去查出需要的主键。就OK了。
+                string SQLNo = string.Format(GetProductSysno, arrtibutionFilterSqlCmd);
+                DataTable datea = new SqlDBHelper().ExecuteQuery(SQLNo);
+                int SYScount = 0;
+                List<int> proSYSNO = new List<int>();
+                DataTable da = null;
+                int count = int.Parse(datea.Rows[0]["maxoidCount"].ToString());
+                string[] cot = attribution2IdStr.Split(',');
+                if (cot.Count() == 1)
+                {
+                    string SQLProductname = string.Format(GetProductname, arrtibutionFilterSqlCmd, count);
+                    da = new SqlDBHelper().ExecuteQuery(SQLProductname);
+
+                    SYScount = da.Rows.Count;
+                }
+                else
+                {
+                    if (count > 1)
+                    {
+                        string SQLProductname = string.Format(GetProductname, arrtibutionFilterSqlCmd, count);
+                        da = new SqlDBHelper().ExecuteQuery(SQLProductname);
+
+                        SYScount = da.Rows.Count;
+                    }
+                }
+
+                if (SYScount > 0)
+                {
+
+                    for (int i = 0; i < SYScount; i++)
+                    {
+                        proSYSNO.Add(int.Parse(da.Rows[i]["ProductSysNo"].ToString()));
+
+                    }
+                }
+                string SYSNO = string.Empty;
+                for (int y = 0; y < proSYSNO.Count(); y++)
+                {
+
+                    SYSNO += proSYSNO[y].ToString() + ",";
+                }
+                searchesql = SYSNO.Remove(SYSNO.Length - 1);
+                sqlcom = "and p.SYSNO in ( " + searchesql + " )";
+               
+               
+             
+            }
+            return sqlcom;
+        }
         /// <summary>
         /// 获取分页的商品列表
         /// </summary>
@@ -904,52 +963,15 @@ namespace YoeJoyHelper.Model
 
 
 
-            string sqlcom = string.Empty;
-            string searchesql = string.Empty;
+            
             try
             {
 
-                if (arrtibutionFilterSqlCmd != "")
-                {//修改Bug，就是查询一次。然后去符合筛选项最多的外键，再根据关系去查出需要的主键。就OK了。
-                    string SQLNo = string.Format(GetProductSysno, arrtibutionFilterSqlCmd);
-                    DataTable datea = new SqlDBHelper().ExecuteQuery(SQLNo);
-                    List<int> productsSYSNO = new List<int>();
-                    int count = datea.Rows.Count;
-                    if (count > 0)
-                    {
+            string sqlcom= getSysno(arrtibutionFilterSqlCmd, attribution2IdStr);
 
-                        for (int i = 0; i < count; i++)
-                        {
-                            productsSYSNO.Add(int.Parse(datea.Rows[i]["maxoidCount"].ToString()));
+            
 
-                        }
-                    }
-                    for (int t = 0; t < productsSYSNO.Count(); t++)
-                    {
-                        string SQLProductname = string.Format(GetProductname, arrtibutionFilterSqlCmd, productsSYSNO[t]);
-                        DataTable da = new SqlDBHelper().ExecuteQuery(SQLProductname);
-                        List<int> proSYSNO = new List<int>();
-                        int SYScount = da.Rows.Count;
-                        if (SYScount > 0)
-                        {
-
-                            for (int i = 0; i < SYScount; i++)
-                            {
-                                proSYSNO.Add(int.Parse(da.Rows[i]["ProductSysNo"].ToString()));
-
-                            }
-                        }
-                        string SYSNO = string.Empty;
-                        for (int y = 0; y < proSYSNO.Count(); y++)
-                        {
-
-                            SYSNO += proSYSNO[y].ToString() + ",";
-                        }
-                        searchesql = SYSNO.Remove(SYSNO.Length - 1);
-                        sqlcom = "and p.SYSNO in ( " + searchesql + " )";
-                    }
-
-                }
+                
 
                 string sqlCmd = String.Format(getPagedProductListItemsSqlCmdTemplate, pagedCount, c3SysNo, startIndex, sqlcom, c3SysNo, orderByStr1, order, orderByStr, order);
                 DataTable data = new SqlDBHelper().ExecuteQuery(sqlCmd);
@@ -992,11 +1014,14 @@ namespace YoeJoyHelper.Model
         /// <returns></returns>
         public static int GetPagedProductListItemTotalCount(int c3SysNo, string attribution2IdStr)
         {
-            string arrtibutionFilterSqlCmd = String.Empty;
+         
+            string arrtibutionFilterSqlCmd = string.Empty;
             if (attribution2IdStr != null)
             {
-                arrtibutionFilterSqlCmd = "and pa2.Attribute2OptionSysNo in ( " + attribution2IdStr + " )";
+                arrtibutionFilterSqlCmd = " Attribute2OptionSysNo in ( " + attribution2IdStr + " )";
             }
+           arrtibutionFilterSqlCmd=  getSysno(arrtibutionFilterSqlCmd, attribution2IdStr);
+
             string sqlCmd = String.Format(getProductListItemTotalCountSqlCmdTemplate, arrtibutionFilterSqlCmd, c3SysNo);
             try
             {
@@ -1081,15 +1106,13 @@ namespace YoeJoyHelper.Model
     {
         private static readonly string getSearch1C3NamesSqlCmdTemplate = @"select distinct p.C1SysNo,p.C2SysNo,p.C3SysNo,c3.C3Name from Product p 
  left join Category3 c3 on p.C3SysNo=c3.SysNo
- left join Brand b on p.C1SysNo=b.C1SysNo
  where p.Status=1
  and c3.Status=0
- and (p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%') or b.BrandName like ('%{2}%') {3})";
+ and (p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%')  {2})";
 
         private static readonly string getSearch1C3ProductTotalCountSqlCmdTemplate = @"select COUNT(distinct p.SysNo)as totalCount from Product p
-left join Brand b on p.C1SysNo=b.C1SysNo
  where p.Status=1 and 
-(p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%') or b.BrandName like ('%{2}%') {3})";
+(p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%')  {3})";
 
         //        private static readonly string getSearch1ProductsSqlCmdTemplate = @"select distinct p.SysNo,p.ProductName,p.PromotionWord,CONVERT(float,pp.CurrentPrice) as price,pimg.product_limg,p.C1SysNo,p.C2SysNo,p.C3SysNo,p.BriefName,CONVERT(float,pp.BasicPrice) as baiscPrice,p.IsCanPurchase,p.CreateTime,pp.LimitedQty from Product p
         //  left join Product_Price pp on p.SysNo=pp.ProductSysNo
@@ -1102,7 +1125,6 @@ left join Brand b on p.C1SysNo=b.C1SysNo
         private static readonly string getSearch1ProductsSqlCmdTemplate = @"select distinct p.SysNo,p.ProductName,p.PromotionWord,CONVERT(float,pp.CurrentPrice) as price,pimg.product_limg,p.C1SysNo,p.C2SysNo,p.C3SysNo,p.BriefName,CONVERT(float,pp.BasicPrice) as baiscPrice,p.IsCanPurchase,p.CreateTime,pp.LimitedQty from Product p
   left join Product_Price pp on p.SysNo=pp.ProductSysNo
   left join Product_Images pimg on p.SysNo=pimg.product_sysNo 
-  left join Brand b on p.C1SysNo=b.C1SysNo
   where p.Status=1  
   and (pimg.orderNum=1 and pimg.status=1) 
   and (p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%')  {3}) {4} {5}";
@@ -1110,7 +1132,6 @@ left join Brand b on p.C1SysNo=b.C1SysNo
 
         private static readonly string getSearchC1SysNo = @"select top 1 p.C1SysNo from Product p
  left join Category1 c1 on p.C1SysNo=c1.SysNo
- left join Brand b on p.C1SysNo=b.C1SysNo
  where p.Status=1 
  and c1.Status=0
  and (p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%') or b.BrandName like ('%{2}%') {3})";
@@ -1128,10 +1149,10 @@ left join Brand b on p.C1SysNo=b.C1SysNo
             {
                 for (int i = 1; i < keyWordsArray.Length; i++)
                 {
-                    childSearchSqlCmd += String.Format(" or p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%') or b.BrandName like ('%{2}%') ", keyWordsArray[i].Trim(), keyWordsArray[i].Trim(), keyWordsArray[i].Trim());
+                    childSearchSqlCmd += String.Format(" or p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%')  ", keyWordsArray[i].Trim(), keyWordsArray[i].Trim());
                 }
             }
-            string sqlCmd = String.Format(getSearch1C3NamesSqlCmdTemplate, keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), childSearchSqlCmd);
+            string sqlCmd = String.Format(getSearch1C3NamesSqlCmdTemplate, keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), childSearchSqlCmd);
             try
             {
                 DataTable data = new SqlDBHelper().ExecuteQuery(sqlCmd);
