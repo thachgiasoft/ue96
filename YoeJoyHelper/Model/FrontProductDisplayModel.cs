@@ -882,7 +882,7 @@ namespace YoeJoyHelper.Model
                 int SYScount = 0;
                 List<int> proSYSNO = new List<int>();
                 DataTable da = null;
-                int count = int.Parse(datea.Rows[0]["maxoidCount"].ToString());
+                int count = Convert.ToInt32(datea.Rows[0]["maxoidCount"].ToString());
                 string[] cot = attribution2IdStr.Split(',');
                 if (cot.Count() == 1)
                 {
@@ -917,9 +917,15 @@ namespace YoeJoyHelper.Model
 
                     SYSNO += proSYSNO[y].ToString() + ",";
                 }
-                searchesql = SYSNO.Remove(SYSNO.Length - 1);
-                sqlcom = "and p.SYSNO in ( " + searchesql + " )";
-               
+                if (SYSNO == "")
+                {
+                    sqlcom = "and p.SYSNO in ( " + 0 + " )";
+                }
+                else
+                {
+                    searchesql = SYSNO.Remove(SYSNO.Length - 1);
+                    sqlcom = "and p.SYSNO in ( " + searchesql + " )";
+                }
                
              
             }
@@ -1108,11 +1114,11 @@ namespace YoeJoyHelper.Model
  left join Category3 c3 on p.C3SysNo=c3.SysNo
  where p.Status=1
  and c3.Status=0
- and (p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%')  {2})";
+ and ( p.BriefName like ('%{0}%') or p.PromotionWord like ('%{1}%'）or  p.PromotionWord like ('%{0}%')or  p.BriefName like ('%{1}%') )";
 
         private static readonly string getSearch1C3ProductTotalCountSqlCmdTemplate = @"select COUNT(distinct p.SysNo)as totalCount from Product p
  where p.Status=1 and 
-(p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%')  {3})";
+( p.BriefName like ('%{0}%') or p.PromotionWord like ('%{1}%') or  p.PromotionWord like ('%{0}%')or p.BriefName like ('%{1}%') )";
 
         //        private static readonly string getSearch1ProductsSqlCmdTemplate = @"select distinct p.SysNo,p.ProductName,p.PromotionWord,CONVERT(float,pp.CurrentPrice) as price,pimg.product_limg,p.C1SysNo,p.C2SysNo,p.C3SysNo,p.BriefName,CONVERT(float,pp.BasicPrice) as baiscPrice,p.IsCanPurchase,p.CreateTime,pp.LimitedQty from Product p
         //  left join Product_Price pp on p.SysNo=pp.ProductSysNo
@@ -1145,14 +1151,7 @@ namespace YoeJoyHelper.Model
         {
             string childSearchSqlCmd = String.Empty;
             string[] keyWordsArray = keyWords.Split(' ');
-            if (keyWordsArray.Length > 1)
-            {
-                for (int i = 1; i < keyWordsArray.Length; i++)
-                {
-                    childSearchSqlCmd += String.Format(" or p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%')  ", keyWordsArray[i].Trim(), keyWordsArray[i].Trim());
-                }
-            }
-            string sqlCmd = String.Format(getSearch1C3NamesSqlCmdTemplate, keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), childSearchSqlCmd);
+            string sqlCmd = String.Format(getSearch1C3NamesSqlCmdTemplate, keyWordsArray[0].Trim(), keyWordsArray[1].Trim(), keyWordsArray[0].Trim(), keyWordsArray[1].Trim());
             try
             {
                 DataTable data = new SqlDBHelper().ExecuteQuery(sqlCmd);
@@ -1192,14 +1191,8 @@ namespace YoeJoyHelper.Model
         {
             string childSearchSqlCmd = String.Empty;
             string[] keyWordsArray = keyWords.Split(' ');
-            if (keyWordsArray.Length > 1)
-            {
-                for (int i = 1; i < keyWordsArray.Length; i++)
-                {
-                    childSearchSqlCmd += String.Format(" or p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%') or b.BrandName like ('%{2}%') ", keyWordsArray[i].Trim(), keyWordsArray[i].Trim(), keyWordsArray[i].Trim());
-                }
-            }
-            string sqlCmd = String.Format(getSearch1C3ProductTotalCountSqlCmdTemplate, keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), childSearchSqlCmd);
+
+            string sqlCmd = String.Format(getSearch1C3ProductTotalCountSqlCmdTemplate, keyWordsArray[0].Trim(), keyWordsArray[1].Trim(), keyWordsArray[0].Trim(), keyWordsArray[1].Trim());
             try
             {
                 DataTable data = new SqlDBHelper().ExecuteQuery(sqlCmd);
@@ -1338,21 +1331,19 @@ namespace YoeJoyHelper.Model
     {
         private static readonly string getSearch2ProductListItemTotalCountSqlCmdTemplate = @"select COUNT(distinct p.SysNo)as totalCount from Product p
   left join Product_Attribute2 pa2 on p.SysNo=pa2.ProductSysNo
-  left join Brand b on p.C1SysNo=b.C1SysNo
   where p.Status=1
   {0}
-  and (p.PromotionWord like ('%{1}%') or p.BriefName like ('%{2}%') or b.BrandName like ('%{3}%') {4})
-  and p.C3SysNo={5}";
+  and (p.PromotionWord like ('%{1}%') or p.BriefName like ('%{2}%')  {3})
+  and p.C3SysNo={4}";
 
         private static readonly string getSearch2C3ProductsSqlCmdTemplate = @"select distinct p.SysNo,p.ProductName,p.PromotionWord,CONVERT(float,pp.CurrentPrice) as price,pimg.product_limg,p.C1SysNo,p.C2SysNo,p.C3SysNo,p.BriefName,CONVERT(float,pp.BasicPrice) as baiscPrice,p.IsCanPurchase,p.CreateTime,pp.LimitedQty from Product p
   left join Product_Price pp on p.SysNo=pp.ProductSysNo
   left join Product_Images pimg on p.SysNo=pimg.product_sysNo 
-  left join Brand b on p.C1SysNo=b.C1SysNo
   where p.Status=1  
   and (pimg.orderNum=1 and pimg.status=1) 
   {0}
-  and (p.PromotionWord like ('%{1}%') or p.BriefName like ('%{2}%') or b.BrandName like ('%{3}%') {4})
-  and p.C3Sysno={5} {6} {7}";
+  and (p.PromotionWord like ('%{1}%') or p.BriefName like ('%{2}%')  {3})
+  and p.C3Sysno={4} {5}";
 
         /// <summary>
         /// 获得满足search2条件的商品总数
@@ -1374,10 +1365,10 @@ namespace YoeJoyHelper.Model
             {
                 for (int i = 1; i < keyWordsArray.Length; i++)
                 {
-                    childSearchSqlCmd += String.Format(" or p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%') or b.BrandName like ('%{2}%') ", keyWordsArray[i].Trim(), keyWordsArray[i].Trim(), keyWordsArray[i].Trim());
+                    childSearchSqlCmd += String.Format(" or p.PromotionWord like ('%{0}%') or p.BriefName like ('%{1}%') ) ", keyWordsArray[i].Trim(), keyWordsArray[i].Trim());
                 }
             }
-            string sqlCmd = String.Format(getSearch2ProductListItemTotalCountSqlCmdTemplate, arrtibutionFilterSqlCmd, keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), childSearchSqlCmd, c3SysNo);
+            string sqlCmd = String.Format(getSearch2ProductListItemTotalCountSqlCmdTemplate, arrtibutionFilterSqlCmd, keyWordsArray[0].Trim(),  keyWordsArray[0].Trim(), childSearchSqlCmd, c3SysNo);
             try
             {
                 DataTable data = new SqlDBHelper().ExecuteQuery(sqlCmd);
@@ -1440,7 +1431,7 @@ namespace YoeJoyHelper.Model
                         break;
                     }
             }
-            string sqlCmd = String.Format(getSearch2C3ProductsSqlCmdTemplate, arrtibutionFilterSqlCmd, keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), childSearchSqlCmd, c3SysNo, orderByStr, order);
+            string sqlCmd = String.Format(getSearch2C3ProductsSqlCmdTemplate, arrtibutionFilterSqlCmd, keyWordsArray[0].Trim(), keyWordsArray[0].Trim(), childSearchSqlCmd, c3SysNo, orderByStr, order);
             try
             {
                 DataTable data = new SqlDBHelper().ExecuteQuery(sqlCmd);
