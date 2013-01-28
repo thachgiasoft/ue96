@@ -579,6 +579,12 @@ namespace YoeJoyHelper
             CookieUtil.SetDESEncryptedCookie(CookieUtil.Cookie_BrowseHistory, String.Empty);
         }
 
+        /// <summary>
+        /// 获得用户的订单列表
+        /// </summary>
+        /// <param name="customSysNo"></param>
+        /// <param name="pageNum"></param>
+        /// <returns></returns>
         public static string GetCustomOrderList(int customSysNo, int pageNum)
         {
             string orderListHTML = String.Empty;
