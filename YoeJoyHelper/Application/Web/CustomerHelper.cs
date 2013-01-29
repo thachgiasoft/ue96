@@ -23,7 +23,6 @@ using Icson.BLL.Sale;
 using Icson.Objects.Finance;
 using Icson.BLL.Finance;
 using Icson.BLL.RMA;
-using System.Text;
 
 
 namespace YoeJoyHelper
@@ -637,9 +636,9 @@ namespace YoeJoyHelper
                     strb.Append("<p>可获积分：" + orderListItem.Pointamt + "</p>");
                     strb.Append("<p><a href='" + orderDetailDeeplink + "'>订单详情</a></p>");
 
-                    strb.Append("</th><td colSpan='3'><h2 class='ordertitlts'>");
+                    strb.Append("</th><td colSpan='3'><h2 class='ordertitlts'><span class='l'><b>");
                     strb.Append(AppEnum.GetSOStatus(Util.TrimIntNull(orderListItem.Status)));
-                    strb.Append("<span class='r'>");
+                    strb.Append("</b></span><span class='r'>");
 
                     bool isPayed = NetPayManager.GetInstance().IsPayed(orderListItem.SysNo);
 

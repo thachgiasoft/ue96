@@ -14,8 +14,6 @@ using Icson.BLL.Online;
 using Icson.BLL.Sale;
 using Icson.BLL.Finance;
 using Icson.BLL.RMA;
-using System.Data;
-using System.Data.Sql;
 
 namespace YoeJoyHelper.Model
 {
