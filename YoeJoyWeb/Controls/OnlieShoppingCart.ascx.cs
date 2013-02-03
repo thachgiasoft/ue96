@@ -60,7 +60,7 @@ namespace YoeJoyWeb.Controls
                 }
                 else
                 {
-                    OnlieShoppingCartHTML = CustomerHelper.GetCustomerShoppingCart(ht);
+                    OnlieShoppingCartHTML = CustomerHelper.GetCustomerShoppingCartShortCuts(ht);
                 }
             }
             else

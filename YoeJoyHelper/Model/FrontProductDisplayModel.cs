@@ -26,7 +26,15 @@ namespace YoeJoyHelper.Model
         public string ProductPromotionWord { get; set; }
         public string ProductBriefName { get; set; }
         public bool IsCanPurchase { get; set; }
+        /// <summary>
+        /// 限购数量
+        /// </summary>
         public int LimitQty { get; set; }
+        /// <summary>
+        /// 可用库存
+        /// </summary>
+        public int AvailableQty { get; set; }
+        public float Weight { get; set; }
     }
 
     /// <summary>

@@ -303,11 +303,11 @@ namespace YoeJoyHelper
         }
 
         /// <summary>
-        /// 获得用户的购物车
+        /// 获得用户的购物车的快捷方式（页面头部）
         /// </summary>
         /// <param name="ht"></param>
         /// <returns></returns>
-        public static string GetCustomerShoppingCart(Hashtable ht)
+        public static string GetCustomerShoppingCartShortCuts(Hashtable ht)
         {
             int productCount = 0;
             float productTotalPrice = 0;
@@ -326,18 +326,21 @@ namespace YoeJoyHelper
                                 href='{3}'>{4}</a><b>￥{5}</b>
                     </p>
                     <div class='r'>
-                        <a class='sub' href='javascript:void(0)'>-</a>
-                        <input class='num' maxlength='3' value='1' type='text'/>
-                        <a class='add' href='javascript:void(0)'>+</a>
-                        <p onClick='javascript:DeleteShoppingCartItem(this);'>
-                            删除 <input type='hidden' value='{6}'/></p>
+                        <a class='sub' href='javascript:void(0)' onClick='javascript:YoeJoy.Site.ShoppingCart.ShortCuts.DecreaseItemNum(this);'>-</a>
+                        <input class='num' maxlength='3' value='{6}' type='text'/>
+                        <a class='add' href='javascript:void(0)' onClick='javascript:YoeJoy.Site.ShoppingCart.ShortCuts.IncreaseItemNum(this);'>+</a>
+                        <input type='hidden' class='limitQty' value='{7}'/>
+                        <input type='hidden' class='availableQty' value='{8}'/>
+                        <p onClick='javascript:YoeJoy.Site.ShoppingCart.ShortCuts.DeleteCartItem(this);'>
+                            删除 <input type='hidden' value='{9}'/></p>
                     </div>";
 
                 foreach (FrontDsiplayProduct product in products)
                 {
                     string deeplink = YoeJoyConfig.SiteBaseURL + "Pages/Product.aspx?c1=" + product.C1SysNo + "&c2=" + product.C2SysNo + "&c3=" + product.C3SysNo + "&pid=" + product.ProductSysNo;
                     string image = YoeJoyConfig.ImgVirtualPathBase + product.ImgPath;
-                    strb.Append(String.Format(liHTML, deeplink, product.ProductBriefName, image, deeplink, product.ProductBriefName, product.Price, product.ProductSysNo));
+                    int productQty=((CartInfo)ht[int.Parse(product.ProductSysNo)]).Quantity;
+                    strb.Append(String.Format(liHTML, deeplink, product.ProductBriefName, image, deeplink, product.ProductBriefName, product.Price,productQty,product.LimitQty, product.AvailableQty, product.ProductSysNo));
                     productTotalPrice += float.Parse(product.Price);
                 }
 
@@ -571,7 +574,7 @@ namespace YoeJoyHelper
         }
 
         /// <summary>
-        /// 清除用户的所有cookie
+        /// 清除用户的所有的浏览记录
         /// </summary>
         public static void ClearCustomerBrowserHistoryProductsAll()
         {
@@ -613,9 +616,9 @@ namespace YoeJoyHelper
 
                     strb.Append(@"<table class='order' cellSpacing='0' cellPadding='0'><tbody>");
 
-                    string orderDetailDeeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "MyOrderDetail.aspx?ID=", orderListItem.SysNo);
-                    string orderUpdateDeeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "MyOrderDetail.aspx?action=update&ID=", orderListItem.SysNo);
-                    string orderCancelDeeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "MyOrderDetail.aspx?action=cancel&ID=", orderListItem.SysNo);
+                    string orderDetailDeeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "User/MyOrderDetail.aspx?ID=", orderListItem.SysNo);
+                    string orderUpdateDeeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "User/MyOrderDetail.aspx?action=update&ID=", orderListItem.SysNo);
+                    string orderCancelDeeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "User/MyOrderDetail.aspx?action=cancel&ID=", orderListItem.SysNo);
 
                     bool IsNet = (orderListItem.IsNet == (int)AppEnum.YNStatus.Yes) ? true : false;
                     bool IsPayWhenRecv = (orderListItem.IsPayWhenEcv == (int)AppEnum.YNStatus.Yes) ? true : false;
@@ -660,7 +663,7 @@ namespace YoeJoyHelper
                     {
                         strb.Append("<a href='../Account/RMAQuery.aspx?Type=single&ID=" + orderListItem.SysNo + "'>查看返修信息</a>");
                     }
-                    strb.Append( "<a href='MyOrderDetail.aspx?ID=" + orderListItem.SysNo + "'>查看订单明细</a>");
+                    strb.Append("<a href='MyOrderDetail.aspx?ID=" + orderListItem.SysNo + "'>查看订单明细</a>");
                     if (Util.TrimNull(orderListItem.Memo) != String.Empty)
                     {
                         strb.Append("<tr><td height=25px align=right bgcolor=#E7F9F9>备注信息：</td><td colspan=5 bgcolor=#ffffff>" + orderListItem.Memo + "</td></tr>");
@@ -673,8 +676,8 @@ namespace YoeJoyHelper
                         foreach (var productListItem in orderListItem.ProductList)
                         {
                             string deeplink = String.Concat(YoeJoyConfig.SiteBaseURL, "Pages/Product.aspx?c1=", productListItem.C1SysNo, "&c2=", productListItem.C2SysNo, "&c3=", productListItem.C3SysNo, "&pid=", productListItem.ProductSysNo);
-                            string image=String.Concat(YoeJoyConfig.ImgVirtualPathBase,productListItem.ImgPath);
-                            strb.Append(String.Format(tabRowHTMLTemplate,image,deeplink,productListItem.ProductBriefName,productListItem.Cost,productListItem.Quantity,deeplink,deeplink));
+                            string image = String.Concat(YoeJoyConfig.ImgVirtualPathBase, productListItem.ImgPath);
+                            strb.Append(String.Format(tabRowHTMLTemplate, image, deeplink, productListItem.ProductBriefName, productListItem.Cost, productListItem.Quantity, deeplink, deeplink));
                         }
                     }
 

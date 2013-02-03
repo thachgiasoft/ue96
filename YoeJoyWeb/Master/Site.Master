@@ -72,59 +72,6 @@
         </dl>
         <script type="text/javascript">
 
-            function RefreshOnlineShoppingCart() {
-                var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=view&random=" + Math.random();
-                //var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=view";
-                $.get(shoppingCartServiceURL, function (data) {
-                    $("#count").empty().append(data);
-                    ReCartBindHoverEvent();
-                });
-            };
-
-            function ReCartBindHoverEvent() {
-
-                var char = $('#count .chartBt');
-                var charf = $('#count');
-                var charContent = $('#chartContent');
-                var car = $('#chart .chartBt');
-
-                char.hover(function () {
-                    charContent.css('display', 'block');
-                    car.addClass('sel');
-                }, function () {
-                });
-
-                charf.hover(function () {
-                }, function () {
-                    charContent.css('display', 'none');
-                    car.removeClass('sel');
-                });
-
-                charContent.hover(function () {
-                    charContent.show();
-                    car.addClass('sel');
-                }, function () {
-                    charContent.hide();
-                    car.removeClass('sel');
-                });	
-            };
-
-            function DeleteShoppingCartItem(sender) {
-                var $this = $(sender);
-                var deleteHandlerBaseURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=delete";
-                var productSysNo = $this.children("input").val();
-                var params = "pid=" + productSysNo;
-                $.post(deleteHandlerBaseURL, params, function (data) {
-                    var result = YoeJoy.Site.Utility.GetJsonStr(data);
-                    if (result.IsSuccess) {
-                        RefreshOnlineShoppingCart();
-                    }
-                    else {
-                        alert(result.Msg);
-                    }
-                });
-            };
-
             $(function () {
                 $("#btnSearch").click(function (event) {
                     var keyWords = $("#txtSearch").val();

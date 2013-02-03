@@ -67,13 +67,13 @@ namespace YoeJoyWeb.Service
         {
             get
             {
-                if (Request["qtp"] == null)
+                if (Request["qty"] == null)
                 {
                     return 1;
                 }
                 else
                 {
-                    return int.Parse(Request["qtp"].ToString().Trim());
+                    return int.Parse(Request["qty"].ToString().Trim());
                 }
             }
         }
@@ -135,6 +135,19 @@ namespace YoeJoyWeb.Service
                                         Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
                                         break;
                                     }
+                                //更新购物车商品数量
+                                case "update":
+                                    {
+                                        CartInfo cart = new CartInfo();
+                                        newHt = CartManager.GetInstance().GetCartHash();
+                                        cart = (CartInfo)newHt[ProductSysNo];
+                                        cart.Quantity = ProductQty;
+                                        CartManager.GetInstance().UpdateCart(cart);
+                                        msg = "修改成功";
+                                        result = true;
+                                        Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
+                                        break;
+                                    }
                                 //默认什么都不做
                                 default:
                                     {
@@ -154,15 +167,13 @@ namespace YoeJoyWeb.Service
                             {
                                 ht = newHt;
                             }
-
                             if (ht == null || ht.Count == 0)
                             {
-
                                 Response.Write(emptyShoppingCartHTML);
                             }
                             else
                             {
-                                Response.Write(CustomerHelper.GetCustomerShoppingCart(ht));
+                                Response.Write(CustomerHelper.GetCustomerShoppingCartShortCuts(ht));
                             }
                         }
                     }
