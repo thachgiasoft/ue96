@@ -63,6 +63,6 @@ namespace YoeJoyHelper
         public static readonly string AlipayReturnURL = ConfigurationManager.AppSettings["AlipayReturnURL"].ToString().Trim();
         public static readonly string AlipayNotifyURL = ConfigurationManager.AppSettings["AlipayNotifyURL"].ToString().Trim();
         public static readonly string AlipaySellerEmailAddress = ConfigurationManager.AppSettings["AlipaySellerEmailURL"].ToString().Trim();
-
+        public static readonly string MyOrderProductListPagedCount = ConfigurationManager.AppSettings["MyOrderProductListPagedCount"].ToString().Trim();
     }
 }

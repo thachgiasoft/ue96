@@ -1,4 +1,22 @@
-$(document).ready(function() {		
+$(document).ready(function() {	
+    $('#myUe').hover(
+	    function(){
+			$('#myFast').show();
+		},
+		function(){
+			$('#myFast').hide();
+		}
+	);	
+	$('#myFast').hover(
+	    function(){
+			$(this).show();
+			$('#myUe').addClass('sel');
+		},
+		function(){
+			$('#myUe').removeClass('sel');
+			$(this).hide();
+		}
+	);
 	scrollLoad();
     focues();
 	notes();	
@@ -17,10 +35,29 @@ $(document).ready(function() {
 	History(box,3,552);
 	classNav();
 	adItemShow();
+	inputNumber();
 });
 $(window).load(function(e) {
 	$('#bg').addClass('allDom');
 });
+//加减商品数量组件
+var inputNumber=function()
+{
+    $('.add').click(function () {
+        var limitedQty = $("#limitQty").val();
+        var num = $(this).siblings('.num');
+        var _val = Number(num.val());
+        if (_val < limitedQty) {
+            num.attr('value', _val + 1);
+        }
+    });
+    $('.sub').click(function () {
+        var num = $(this).siblings('.num');
+        var _val = Number(num.val());
+        if (_val > 1)
+            num.attr('value', _val - 1);
+    });
+}
 //屏载组件
 function scrollLoad(){	
 	var _top,j=0;	
@@ -600,13 +637,8 @@ function focues(){
 		a.eq(num).show().siblings().hide();
 		n.eq(num).addClass('sel').siblings().removeClass('sel');
 		n.eq(num).css('opacity',1).siblings().css('opacity',0.5);
-	}
-	
-	
-	
-	
+	}	
 }
-
 function notes(){
 	var a=$('#notes dt a');
 	var p=$('#notes dd p');

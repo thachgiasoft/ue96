@@ -3923,7 +3923,7 @@ and product.SysNo not in (select productsysno from sale_countdown where status =
                 i++;
             }
             string sql = @"select 
-								product.sysno, C1SysNo,C2SysNo,C3SysNo,
+								product.sysno, C1SysNo,C2SysNo,C3SysNo,Weight,product_price.LimitedQty,
                                 productname,PromotionWord,VirtualArriveTime,size2name, 
 								product_price.CurrentPrice,
 								availableqty+virtualqty as onlineqty,availableqty,

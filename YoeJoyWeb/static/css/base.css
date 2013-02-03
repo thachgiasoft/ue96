@@ -15,6 +15,7 @@ a img{border:none;}
 .num{width:18px; height:18px; border:solid 1px #ccc; text-align:center; margin:0px 2px; vertical-align:middle}
 .sub,.add{width:15px; height:15px; border:solid 1px #ccc; text-align:center; vertical-align:middle; line-height:1.2; background-color:#fff; margin:0px 2px}
 .title{height:29px; background-color:#f5f5f5; font-weight:bold; text-indent:11px; line-height:2.4; border:solid 1px #ccc; border-bottom:none; border-radius:5px 5px 0 0; letter-spacing:1px}
+.line{font-size:0; width:1px; vertical-align:middle; background-color:#ccc}
 /*内页导航通用样式*/
 #foodImport h4{background-color:#CE2027; color:#fff; height:30px; border:none; border-radius:5px 5px 0 0}
 .listOut{border:#CE2027 solid 2px; border-top:none; border-radius:0 0 5px 5px; width:204px}
@@ -25,14 +26,20 @@ a img{border:none;}
 #foodImport li.sel{background-color:#f1e2ce}
 #foodImport li.sel h3{color:#BB1F23; border:none}
 #foodImport li.sel p{display:block; border-bottom:dotted 1px #ccc}
-#fastHead{width:1200px; height:26px; margin:0 auto; background:url(../images/indexline.gif) 0 -265px repeat-x; position:relative}
+#fastHead{width:1200px; height:26px; margin:0 auto; background:url(../images/indexline.gif) 0 -265px repeat-x; position:relative; z-index:100}
 #fastHead h6{display:inline-block}
 #fastHead span{height:100%; color:#777; background:url(../images/indexbgs.png) -163px -336px no-repeat; padding-left:45px; line-height:2.2}
 #fastHead span strong{margin-right:10px}
 #fastHead em{position:absolute; right:0; height:26px}
+#fastHead .line{height:12px}
 #fastHead a{margin:0 10px; color:#777}
 #fastHead a:hover{color:#CE2027}
 #fastHead em b{width:45px; height:26px; vertical-align:middle;  background:url(../images/indexbgs.png) 0 -336px no-repeat}
+#fastHead #myFast{position:absolute; top:19px; right:170px; background-color:#fff; border:solid 1px #ccc; border-top:none; height:123px; padding-top:4px; display:none}
+#fastHead li{border-bottom:dotted 1px #ccc; line-height:30px; width:77px}
+#fastHead li:hover{background-color:#f5f5f5}
+#fastHead #myUe{background:url(../images/headerBg.png) 61px -9px no-repeat; width:48px; height:15px; margin:0; padding:0 19px 0 10px}
+#fastHead #myUe.sel,#fastHead #myUe:hover{border-left:solid 1px #ccc; border-right:solid 1px #ccc; margin-right:-1px; background-color:#fff; color:#06B9D1}
 #ItemSortCon{margin-top:14px}
 .ItemSort1{background:url(../images/hov2.png) no-repeat left top}
 .ItemSort{background:url(../images/hov3.png) no-repeat left top}

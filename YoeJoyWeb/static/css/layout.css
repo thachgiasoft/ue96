@@ -11,8 +11,7 @@ textarea{padding:2px}
 .mix{overflow:hidden; zoom:1; width:100%}
 .clear{overflow:hidden; zoom:1}
 .l_module,.m_module,.r_module,.dgwz,.intlist{float:left;}
-.l_module{width:218px}
-.l_module .title h3{width:148px}
+.l_module{width:208px}
 .m_module{width:780px}
 #home .r_module{width:202px}
 .r_mix{float:right; width:982px}
@@ -26,7 +25,7 @@ textarea{padding:2px}
 .bt1{width:69px; height:23px; background:url(../images/allbt.png) no-repeat; line-height:23px; color:#fff;}
 .bt2{width:45px; height:20px; background:url(../images/btbg2.png) no-repeat; line-height:20px; color:#999;}
 .bt3{width:69px; height:20px; background:url(../images/allbt.png) 0 -32px no-repeat; color:#666; line-height:1.8}
-.bt4{width:119px; height:26px; background:url(../images/allbt.png) 0px -380px no-repeat; text-indent:25px; font-size:13px; font-weight:bold; color:#fff; line-height:2.2}
+.bt4{width:119px; height:29px; background:url(../images/allbt.png) 0px -377px no-repeat; text-indent:25px; font-size:13px; font-weight:bold; color:#fff; line-height:29px}
 .bt4:hover{color:#FFC}
 .bt5{width:151px; height:34px; background:url(../images/allbt.png) 0px -291px no-repeat; font-size:18px; text-indent:45px; font-weight:bold; color:#fff; line-height:2}
 .bt5:hover{color:#FFC}
@@ -60,24 +59,10 @@ textarea{border:solid 1px #ccc; vertical-align:top;}
 .box0 .group{border-left:solid 1px #ccc; border-right:solid 1px #ccc; padding:0px 10px 0px 5px; margin-bottom:-1px}
 .box0 .group li{padding:10px 0 5px 0; border-bottom:dotted 1px #ccc}
 /*面包屑导航样式*/
-#breadNav{margin-bottom:10px; border-bottom:solid 1px #ccc; padding:5px 0 5px 0; clear:both}
+#breadNav{margin-bottom:10px; border-bottom:solid 1px #ccc; padding:8px 0 8px 23px; clear:both}
 #breadNav p{color:#666; font-size:12px}
-#breadNav p a{font-size:14px; font-weight:bold; margin-right:5px}
+#breadNav p a{font-size:14px; font-weight:bold; margin:0 10px}
 #breadNav p a:hover{color:#c00}
-/*内页导航通用样式*/
-#foodImport h2{background:#F90; width:208px; font-size:14px; font-weight:bold; color:#000; overflow:hidden;zoom:1;}
-#foodImport h2 i,#foodImport h2 b,#foodImport h2 strong{float:left;}
-#foodImport h2 i{background: url(../images/showbg.png) 0px 0px no-repeat;width: 30px;height: 27px;}
-#foodImport h2 b{width: 148px;height: 25px;background-color: #F9AA3D;border-top: solid 2px #EF4100;color: black; line-height:1.8}
-#foodImport h2 strong{background: url(../images/showbg.png) -40px 0px no-repeat;width: 30px;height: 27px;}
-.listOut{border:#F00 solid 2px; border-top:none; border-radius:0 0 6px 6px; margin-top:-1px; width:204px}
-.listOut li{padding:0 10px}
-#foodImport li h3{ color:#666; font-weight:bold; font-size:14px; padding-top:7px; padding-bottom:5px; margin-left:10px; cursor:pointer; border-bottom:dotted 1px #ccc}
-#foodImport li p{overflow:hidden;zoom:1; margin:0 7px; padding-bottom:5px; display:none}
-#foodImport p a{display:block; padding:0 5px; float:left; border-right:#F63 solid 1px; margin-bottom:5px; white-space:nowrap}
-#foodImport li.sel{background-color:#f1e2ce}
-#foodImport li.sel h3{color:#BB1F23; border:none}
-#foodImport li.sel p{display:block; border-bottom:dotted 1px #ccc}
 /*弹出窗口样式*/
 .popbox{width:476px; display:none; position:absolute; margin:0 362px; display:none; z-index:200}
 .popbox .tBorder{height:4px; background:url(../images/floatWbg.png) no-repeat; font-size:0}

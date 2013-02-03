@@ -56,6 +56,9 @@ namespace YoeJoyHelper.Model
                             C3SysNo = int.Parse(data.Rows[i]["C3SysNo"].ToString().Trim()),
                             Price = float.Parse(data.Rows[i]["currentprice"].ToString().Trim()).ToString("0"),
                             ImgPath = data.Rows[i]["product_simg"].ToString().Trim(),
+                            Weight =float.Parse(data.Rows[i]["Weight"].ToString().Trim()),
+                            LimitQty=int.Parse(data.Rows[i]["LimitedQty"].ToString().Trim()),
+                            AvailableQty = int.Parse(data.Rows[i]["AvailableQty"].ToString().Trim()),
                         });
                     }
 
