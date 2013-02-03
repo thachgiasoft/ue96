@@ -46,9 +46,7 @@
         <!--右内容区Begin-->
         <div class="r_module">
             <!--相关搜索Begin-->
-            <div id="xgss">
-                <span><small>相关搜索：<a href="#">乐扣乐扣水杯</a><a href="#">乐扣乐扣水杯</a><a href="#">乐扣乐扣水杯</a><a
-                    href="#">乐扣乐扣水杯</a><a href="#">乐扣乐扣水杯</a></small></span></div>
+             <%=Research %>
             <!--相关搜索End-->
             <!--筛选条件Begin-->
             <div id="screening">
@@ -89,7 +87,7 @@
                     var c1 = $(this).children("input").eq(0).val();
                     var c2 = $(this).children("input").eq(1).val();
                     var c3 = $(this).children("input").eq(2).val();
-                    var searchDetailURL = serachDetailBaseURL + c1 + "&c2=" + c2 + "&c3=" + c3 + "&q=" + escape(keyWords);
+                    var searchDetailURL = serachDetailBaseURL + c1 + "&c2=" + c2 + "&c3=" + c3 + "&q=" + keyWords;
                     window.location.href = searchDetailURL;
                 });
             });

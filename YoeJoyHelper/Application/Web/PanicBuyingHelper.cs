@@ -40,10 +40,14 @@ namespace YoeJoyHelper
             List<PanicBuyingProductModelForHome> panicProducts = PanicBuyingProductService.GetHomePanicProduct();
             if (panicProducts != null)
             {
+              
                 string imageVitualPath = YoeJoyConfig.ImgVirtualPathBase;
                 StringBuilder strb = new StringBuilder("<ul id='panicBuyContents'>");
                 foreach (PanicBuyingProductModelForHome panic in panicProducts)
                 {
+                    
+                    
+
                     string liTemplate = @"<li>
                     <h4 class='time'>
                         <span>还剩</span>
@@ -58,14 +62,15 @@ namespace YoeJoyHelper
                             {5}</a> <span class='adText'>{6}</span>
                         <p class='price'>
                             <b>¥{7}</b><span>¥{8}</span></p>
-                        <em>库存：</em><span class='inventory'><b></b></span> <a class='buying' href='{9}'>
+                        <em>库存：</em><div id='{10}' style='height:8px; width:80px'></div><a class='buying' href='{9}'>
                             立即抢购</a>
                     </div>
                 </li>";
 
+                    string progressbar ="progressbar"+ panic.Count;
                     string imgURL = String.Concat(imageVitualPath, panic.CoverImg);
                     string deeplink = YoeJoyConfig.SiteBaseURL + "Pages/Product.aspx?c1=" + panic.C1SysNo + "&c2=" + panic.C2SysNo + "&c3=" + panic.C3SysNo + "&pid=" + panic.ProductSysNo;
-                    strb.Append(String.Format(liTemplate, panic.EndTime.ToString("MM/dd/yyyy HH:mm:ss"), deeplink, imgURL, panic.BriefName, deeplink, panic.BriefName, panic.PromotionWord, panic.ProductPrice, panic.BaiscPrice,deeplink));
+                    strb.Append(String.Format(liTemplate, panic.EndTime.ToString("MM/dd/yyyy HH:mm:ss"), deeplink, imgURL, panic.BriefName, deeplink, panic.BriefName, panic.PromotionWord, panic.ProductPrice, panic.BaiscPrice, deeplink, progressbar));
                 }
                 strb.Append("</ul>");
                 HomePanicHTML = strb.ToString();

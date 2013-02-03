@@ -8,6 +8,67 @@ namespace YoeJoyHelper
 {
     public class SearchHelper
     {
+
+         /// <summary>
+        /// 相关搜索
+        /// </summary>
+        /// <param name="keyWords"></param>
+        /// <returns></returns>
+        public static string relevancesearch(string keyWords)
+        {
+            string serach1C3ProductFilterHTML = String.Empty;
+
+            List<Research> search1Filters = Search1ProductService.GetSearch(keyWords);
+            if (search1Filters != null)
+            {
+
+
+                StringBuilder strb = new StringBuilder(@"<div id='xgss'><span><small>相关搜索：".Trim());
+
+                string filterItemHTMLTemplate = @"<a href='#'>{0}</a> ,<a href='#'> {1} </a> , <a href='#'>{2}</a> ,<a href='#'> {3}</a>".Trim();
+
+                foreach (Research filter in search1Filters)
+                {
+                    strb.Append(String.Format(filterItemHTMLTemplate, filter.rulest1, filter.rulest2, filter.rulest3, filter.rulest4));
+                }
+
+                strb.Append(@"</small></span></div>".Trim());
+                serach1C3ProductFilterHTML = strb.ToString();
+            }
+            return serach1C3ProductFilterHTML;
+        }
+
+
+        /// <summary>
+        /// 相关搜索
+        /// </summary>
+        /// <param name="keyWords"></param>
+        /// <returns></returns>
+        public static string Detailsearch(int C3SYSNO)
+        {
+            string serach1C3ProductFilterHTML = String.Empty;
+
+            List<Research> search1Filters = Search1ProductService.GetSecondSearch(C3SYSNO);
+            if (search1Filters != null)
+            {
+
+
+                StringBuilder strb = new StringBuilder(@"<div id='xgss'><span><small>相关搜索：".Trim());
+
+                string filterItemHTMLTemplate = @"<a href='#'>{0}</a> ,<a href='#'> {1} </a> , <a href='#'>{2}</a> ,<a href='#'> {3}</a>".Trim();
+
+                foreach (Research filter in search1Filters)
+                {
+                    strb.Append(String.Format(filterItemHTMLTemplate, filter.rulest1, filter.rulest2, filter.rulest3, filter.rulest4));
+                }
+
+                strb.Append(@"</small></span></div>".Trim());
+                serach1C3ProductFilterHTML = strb.ToString();
+            }
+            return serach1C3ProductFilterHTML;
+        }
+
+
         /// <summary>
         /// 初始化Search1的筛选项
         /// </summary>

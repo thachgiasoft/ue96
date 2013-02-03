@@ -70,7 +70,7 @@
 
         function getProductListItem(callbackHandler) {
             //Use random number in query string to avoid the Ajax get handler browser cache
-            var handlerURL = handlerBaseURL + "?c1=" + c1 + "&c2=" + c2 + "&c3=" + c3 + "&startIndex=" + currentPageIndex + "&orderBy=" + orderOption + "&attrIds=" + attrIds + "&order=" + order + "&q=" + keyWords + "&random=" + Math.random();
+            var handlerURL = handlerBaseURL + "?c1=" + c1 + "&c2=" + c2 + "&c3=" + c3 + "&startIndex=" + currentPageIndex + "&orderBy=" + orderOption + "&attrIds=" + attrIds + "&order=" + order + "&q=" + escape(keyWords) + "&random=" + Math.random();
             //var handlerURL = handerBaseURL + "?c1=" + c1 + "&c2=" + c2 + "&c3=" + c3 + "&startIndex=" + currentPageIndex + "&orderBy=" + orderOption + "&attrIds=" + attributionIds;
             $.get(handlerURL, function (data) {
                 $("#productList").empty().append(data);

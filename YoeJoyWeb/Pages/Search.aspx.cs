@@ -31,11 +31,14 @@ namespace YoeJoyWeb.Pages
 
         protected string SearchHotCommentProductsHTML { get; set; }
 
+        protected string Research { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ((Site)this.Master).IsHomePage = false;
             if (!IsPostBack)
             {
+                Research = SearchHelper.relevancesearch(KeyWords);
                 SubCategoryNavigation1.C1SysNo = SearchHelper.GetSearchResultC1SysNo(KeyWords);
                 Search1C3Filter = SearchHelper.InitSearch1C3ProductFilter(KeyWords);
                 SearchHotCommentProductsHTML = FrontProductsHelper.GetSearchHotCommentedProductsHTMLWrapper();

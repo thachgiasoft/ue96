@@ -127,6 +127,8 @@ namespace YoeJoyWeb
                 }
                 else
                 {
+                    
+                    string aaa = Request.QueryString["q"].ToString();
                     return Request.QueryString["q"].ToString().GetUrlDecodeStr();
                 }
             }

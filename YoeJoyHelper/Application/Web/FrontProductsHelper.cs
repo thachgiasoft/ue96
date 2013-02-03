@@ -156,6 +156,8 @@ namespace YoeJoyHelper
             return searchHotCommentedProductsHTML;
         }
 
+
+
         /// <summary>
         /// 首页大类商品展示的HTML代码
         /// </summary>

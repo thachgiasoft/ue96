@@ -20,6 +20,7 @@ namespace YoeJoyHelper.Model
         public int C3SysNo { get; set; }
         public string BriefName { get; set; }
         public string BaiscPrice { get; set; }
+        public int Count { get; set; }
     }
 
     public class PanicBuyingProductService
@@ -51,6 +52,7 @@ namespace YoeJoyHelper.Model
                         CoverImg = data.Rows[i]["product_limg"].ToString().Trim(),
                         BaiscPrice = data.Rows[i]["basicPrice"].ToString().Trim(),
                         BriefName = data.Rows[i]["BriefName"].ToString().Trim(),
+                        Count=i,
                     });
                 }
                 return panicProducts;

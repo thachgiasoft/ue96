@@ -46,9 +46,7 @@
         <!--右内容区Begin-->
         <div class="r_mix">
             <!--相关搜索Begin-->
-            <div id="xgss">
-                <span><small>相关搜索：<a href="#">乐扣乐扣水杯</a><a href="#">乐扣乐扣水杯</a><a href="#">乐扣乐扣水杯</a><a
-                    href="#">乐扣乐扣水杯</a><a href="#">乐扣乐扣水杯</a></small></span></div>
+              <%=Research %>
             <!--相关搜索End-->
             <!--筛选条件Begin-->
             <div id="screening">
