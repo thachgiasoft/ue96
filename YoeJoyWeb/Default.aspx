@@ -6,9 +6,8 @@
 <%@ Register Src="Controls/OnlineStaticAD.ascx" TagName="OnlineStaticAD" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link type="text/css" rel="Stylesheet" href="../static/css/head.css" />
-    <link href="static/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
-	<script src="static/js/jquery-1.9.0.js" type="text/javascript"></script>
-	<script src="static/js/jquery-ui-1.10.0.custom.js" type="text/javascript"></script>
+    <link href="static/css/ui-lightness/jquery-ui-1.10.0.custom.min.css" rel="stylesheet"/>
+	<script src="static/js/prod/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftTopModule" runat="server">
     <uc1:CategoryNavigation ID="CategoryNavigation1" runat="server" />

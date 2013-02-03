@@ -9,7 +9,7 @@
     <title>攸怡网 - 综合类互联网商城 100%正品行货 折扣 实惠</title>
     <meta property="qc:admins" content="2422330137617527163757" />
     <link type="text/css" rel="Stylesheet" href="../static/css/base.css" />
-    <script type="text/javascript" src="../static/js/dev/jquery-1.8.1.js"></script>
+    <script type="text/javascript" src="../static/js/dev/jquery-1.9.0.js" />
     <script type="text/javascript" src="../static/js/dev/usercustom.js"></script>
     <script type="text/javascript" src="../static/js/dev/jquery.js"></script>
     <script type="text/javascript" src="../static/js/dev/YoeJoy.Namespace.js"></script>
