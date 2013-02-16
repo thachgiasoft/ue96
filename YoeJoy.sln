@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoeJoyWeb", "YoeJoyWeb\YoeJoyWeb.csproj", "{9419170D-D074-4132-A080-3E704F718D7A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoeJoyHelper", "YoeJoyHelper\YoeJoyHelper.csproj", "{5C830E24-8D46-4827-B6D5-E06C70A36E8A}"
