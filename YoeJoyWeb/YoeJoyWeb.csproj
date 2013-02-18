@@ -1021,10 +1021,6 @@
     <Content Include="static\images\image003.jpg" />
     <Content Include="static\images\image004.jpg" />
     <Content Include="static\images\image005.jpg" />
-    <Content Include="static\images\indexbg - 副本 %282%29.png" />
-    <Content Include="static\images\indexbg - 副本 %283%29.png" />
-    <Content Include="static\images\indexbg - 赂卤卤戮 %282%29.png" />
-    <Content Include="static\images\indexbg - 赂卤卤戮 %283%29.png" />
     <Content Include="static\images\indexbg.png" />
     <Content Include="static\images\indexbg2.png" />
     <Content Include="static\images\indexbgs.png" />
