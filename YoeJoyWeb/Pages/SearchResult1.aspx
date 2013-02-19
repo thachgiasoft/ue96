@@ -9,7 +9,7 @@
     <link type="text/css" rel="Stylesheet" href="../static/css/layout.css" />
     <link type="text/css" rel="Stylesheet" href="../static/css/class.css" />
     <script type="text/javascript" src="../static/js/dev/YoeJoy.Namespace.js"></script>
-    <script type="text/javascript" src="../static/js/dev/jquery-1.8.1.js"></script>
+    <script type="text/javascript" src="../static/js/dev/jquery-1.9.0.js"></script>
     <script type="text/javascript" src="../static/js/dev/jquery.js"></script>
     <script type="text/javascript" src="../static/js/dev/usercustom.js"></script>
     <script type="text/javascript" src="../static/js/dev/Yoejoy.Site.js"></script>

@@ -3885,18 +3885,16 @@ and product.SysNo not in (select productsysno from sale_countdown where status =
                 i++;
             }
             string sql = @"select 
-								product.sysno, productname,PromotionWord,VirtualArriveTime,size2name, 
+								product.sysno, productname,PromotionWord,VirtualArriveTime,
 								product_price.*,
 								availableqty+virtualqty as onlineqty,availableqty
 							from
-								product(nolock), product_price(nolock), inventory(nolock),size2(nolock) 
+								product(nolock), product_price(nolock), inventory(nolock)
 							where
 								product.sysno = product_price.productsysno
 							and product.sysno = inventory.productsysno 
-                            and product.productsize *= size2.sysno 
 							@onlineShowLimit
-							and product.sysno in (@productsysnoS)
-							";
+							and product.sysno in (@productsysnoS)";
             sql = sql.Replace("@onlineShowLimit", onlineShowLimit);
             sql = sql.Replace("@productsysnoS", sb.ToString());
             return SqlHelper.ExecuteDataSet(sql);
@@ -3924,22 +3922,20 @@ and product.SysNo not in (select productsysno from sale_countdown where status =
             }
             string sql = @"select 
 								product.sysno, C1SysNo,C2SysNo,C3SysNo,Weight,product_price.LimitedQty,
-                                productname,PromotionWord,VirtualArriveTime,size2name, 
+                                productname,PromotionWord,VirtualArriveTime,
 								product_price.CurrentPrice,
 								availableqty+virtualqty as onlineqty,availableqty,
                                 product_simg
 							from
-								product(nolock), product_price(nolock), inventory(nolock),size2(nolock),Product_Images (nolock)
+								product(nolock), product_price(nolock), inventory(nolock),Product_Images (nolock)
 							where
 								product.sysno = product_price.productsysno
 							and product.sysno = inventory.productsysno 
-                            and product.productsize *= size2.sysno
                             and product.SysNo=Product_Images.product_sysNo
 							@onlineShowLimit
                             and Product_Images.status=1
                             and Product_Images.orderNum=1
-							and product.sysno in (@productsysnoS)
-							";
+							and product.sysno in (@productsysnoS)";
             sql = sql.Replace("@onlineShowLimit", onlineShowLimit);
             sql = sql.Replace("@productsysnoS", sb.ToString());
             return SqlHelper.ExecuteDataTable(sql);
