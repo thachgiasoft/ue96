@@ -59,6 +59,8 @@ namespace YoeJoyHelper.Model
                             Weight =float.Parse(data.Rows[i]["Weight"].ToString().Trim()),
                             LimitQty=int.Parse(data.Rows[i]["LimitedQty"].ToString().Trim()),
                             AvailableQty = int.Parse(data.Rows[i]["AvailableQty"].ToString().Trim()),
+                            Point = int.Parse(data.Rows[i]["Point"].ToString().Trim()),
+                            BaiscPrice = float.Parse(data.Rows[i]["BasicPrice"].ToString().Trim()).ToString("0"),
                         });
                     }
 

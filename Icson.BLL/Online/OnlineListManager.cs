@@ -3924,8 +3924,10 @@ and product.SysNo not in (select productsysno from sale_countdown where status =
 								product.sysno, C1SysNo,C2SysNo,C3SysNo,Weight,product_price.LimitedQty,
                                 productname,PromotionWord,VirtualArriveTime,
 								product_price.CurrentPrice,
+                                product_price.Point,
+                                product_price.BasicPrice,
 								availableqty+virtualqty as onlineqty,availableqty,
-                                product_simg
+                                product_simg,product.Weight
 							from
 								product(nolock), product_price(nolock), inventory(nolock),Product_Images (nolock)
 							where

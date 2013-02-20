@@ -34,7 +34,14 @@ namespace YoeJoyHelper.Model
         /// 可用库存
         /// </summary>
         public int AvailableQty { get; set; }
+        /// <summary>
+        /// 商品重量
+        /// </summary>
         public float Weight { get; set; }
+        /// <summary>
+        /// 积分
+        /// </summary>
+        public int Point { get; set; }
     }
 
     /// <summary>
