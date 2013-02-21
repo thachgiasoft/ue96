@@ -31,13 +31,13 @@
                 <input type="checkbox" checked="checked"/>
                 全选
                 <a href="#">批量删除</a>
-                <a href="#">清空购物车</a>
+                <a href="javascript:void(0);" id="btnClear">清空购物车</a>
             </div>
             <div class="r">
                 <b>商品总价:</b>
                 <strong>1228</strong>
                 <b>元</b>
-                <a href="process2.html">
+                <a href="javascript:void(0);" id="btnConfirm">
                     <img src="../static/images/comfirm.jpg"></a>
             </div>
         </div>
@@ -50,4 +50,13 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="BackupContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">
+    <script type="text/javascript">
+        $(function () {
+
+            $("#btnClear").click(function () {
+                YoeJoy.Site.ShoppingCart.MainCart.ClearCartItems();
+            });
+
+        });
+    </script>
 </asp:Content>

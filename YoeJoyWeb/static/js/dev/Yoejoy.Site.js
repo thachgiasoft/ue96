@@ -128,6 +128,28 @@ YoeJoy.Site = new function () {
 
         var _this = this;
 
+        //购物车
+        _this.MainCart = new function () {
+
+            var _this = this;
+
+            //清空购物车
+            _this.ClearCartItems = function () {
+                var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=clear";
+                var params = "pid=99999";
+                $.post(shoppingCartServiceURL,params,function (data) {
+                    var result = YoeJoy.Site.Utility.GetJsonStr(data);
+                    if (result.IsSuccess) {
+                        alert(result.Msg);
+                    }
+                    else {
+                        alert(result.Msg);
+                    }
+                });
+            };
+
+        };
+
         //页面头部的购物车快捷方式
         _this.ShortCuts = new function () {
 

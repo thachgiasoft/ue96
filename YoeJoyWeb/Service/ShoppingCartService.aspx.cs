@@ -25,6 +25,13 @@ namespace YoeJoyWeb.Service
 
         /// <summary>
         /// 购物车的服务指令
+        /// 1. add : 添加商品到购物车中
+        /// 2. delete: 删除单个商品
+        /// 3. clear: 清空购物车
+        /// 4. updateCart： 更新购物车内某商品的数量
+        /// 5. updateShortCuts: 更新购物车快捷方式内某商品的数量
+        /// 6. viewCart : 查看购物车
+        /// 7. viewShortCuts: 查看购物车快捷方式
         /// </summary>
         protected string Cmd
         {
@@ -148,6 +155,19 @@ namespace YoeJoyWeb.Service
                                         Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
                                         break;
                                     }
+                                case "clear":
+                                        {
+                                            CartManager.GetInstance().ClearCart();
+                                            msg = "成功清空购物车";
+                                            result = true;
+                                            Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
+                                            break;
+                                        }
+                                case "viewshortcuts":
+                                        {
+
+                                            break;
+                                        }
                                 //默认什么都不做
                                 default:
                                     {
