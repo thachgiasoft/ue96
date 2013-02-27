@@ -5,12 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>支付宝付款返回</title>
+    <meta http-equiv="Expires " content="0 "/>
+    <meta http-equiv="Cache-Control " content="no-cache "/>
+    <meta http-equiv="Pragma " content="no-cache "/>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-    </div>
+        <div>
+        </div>
     </form>
 </body>
 </html>

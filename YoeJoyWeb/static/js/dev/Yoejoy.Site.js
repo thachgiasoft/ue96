@@ -133,19 +133,28 @@ YoeJoy.Site = new function () {
 
             var _this = this;
 
+            _this.ReloadCartItem = function () {
+                window.location.reload();
+            };
+
             //清空购物车
             _this.ClearCartItems = function () {
                 var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=clear";
-                var params = "pid=99999";
-                $.post(shoppingCartServiceURL,params,function (data) {
+                $.post(shoppingCartServiceURL,function (data) {
                     var result = YoeJoy.Site.Utility.GetJsonStr(data);
                     if (result.IsSuccess) {
                         alert(result.Msg);
+                        _this.ReloadCartItem();
                     }
                     else {
                         alert(result.Msg);
                     }
                 });
+            };
+
+            //删除购物车商品
+            _this.DeleteCartItem = function (sender) {
+                
             };
 
         };
@@ -157,7 +166,7 @@ YoeJoy.Site = new function () {
 
             //更新购物车信息
             _this.RefreshOnlineShoppingCartShortCuts = function () {
-                var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=view&random=" + Math.random();
+                var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=viewshortcuts&random=" + Math.random();
                 //var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=view";
                 $.get(shoppingCartServiceURL, function (data) {
                     $("#count").empty().append(data);

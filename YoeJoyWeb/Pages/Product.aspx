@@ -741,7 +741,7 @@
     <script type="text/javascript">
 
         function RefreshOnlineShoppingCart() {
-            var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=view&random=" + Math.random();
+            var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=viewshortcuts&random=" + Math.random();
             //var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=view";
             $.get(shoppingCartServiceURL, function (data) {
                 $("#count").empty().append(data);

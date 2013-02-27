@@ -4,6 +4,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link type="text/css" rel="Stylesheet" href="../static/css/base.css" />
     <link type="text/css" rel="Stylesheet" href="../static/css/process1.css" />
+    <meta http-equiv="Expires " content="0 " />
+    <meta http-equiv="Cache-Control " content="no-cache " />
+    <meta http-equiv="Pragma " content="no-cache " />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -28,7 +31,7 @@
         </div>
         <div id="comfirm">
             <div class="l">
-                <input type="checkbox" checked="checked"/>
+                <input type="checkbox" checked="checked" />
                 全选
                 <a href="#">批量删除</a>
                 <a href="javascript:void(0);" id="btnClear">清空购物车</a>
@@ -38,7 +41,7 @@
                 <strong>1228</strong>
                 <b>元</b>
                 <a href="javascript:void(0);" id="btnConfirm">
-                    <img src="../static/images/comfirm.jpg"></a>
+                    <img src="../static/images/comfirm.jpg"/></a>
             </div>
         </div>
     </div>

@@ -110,91 +110,88 @@ namespace YoeJoyWeb.Service
                     bool result = false;
                     try
                     {
-                        if (ProductSysNo != 0)
+                        switch (Cmd)
                         {
-                            switch (Cmd)
-                            {
-                                //添加商品到购物车
-                                case "add":
+                            //添加商品到购物车
+                            case "add":
+                                {
+                                    CartInfo oInfo = new CartInfo()
                                     {
-                                        CartInfo oInfo = new CartInfo()
-                                        {
-                                            ProductSysNo = ProductSysNo,
-                                            Quantity = ProductQty,
-                                            ExpectQty = ProductQty,
-                                        };
-                                        newHt = CartManager.GetInstance().GetCartHash();
-                                        newHt.Add(ProductSysNo, oInfo);
-                                        Hashtable ht = new Hashtable();
-                                        ht.Add(ProductSysNo, oInfo);
-                                        CartManager.GetInstance().AddToCart(ht);
-                                        result = true;
-                                        msg = "成功添加";
-                                        Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
-                                        break;
-                                    }
-                                //删除单个购物车中的商品
-                                case "delete":
+                                        ProductSysNo = ProductSysNo,
+                                        Quantity = ProductQty,
+                                        ExpectQty = ProductQty,
+                                    };
+                                    newHt = CartManager.GetInstance().GetCartHash();
+                                    newHt.Add(ProductSysNo, oInfo);
+                                    Hashtable ht = new Hashtable();
+                                    ht.Add(ProductSysNo, oInfo);
+                                    CartManager.GetInstance().AddToCart(ht);
+                                    result = true;
+                                    msg = "成功添加";
+                                    Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
+                                    break;
+                                }
+                            //删除单个购物车中的商品
+                            case "delete":
+                                {
+                                    CartManager.GetInstance().DeleteFromCart(ProductSysNo);
+                                    msg = "删除成功";
+                                    result = true;
+                                    Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
+                                    break;
+                                }
+                            //更新购物车商品数量
+                            case "update":
+                                {
+                                    CartInfo cart = new CartInfo();
+                                    newHt = CartManager.GetInstance().GetCartHash();
+                                    cart = (CartInfo)newHt[ProductSysNo];
+                                    cart.Quantity = ProductQty;
+                                    CartManager.GetInstance().UpdateCart(cart);
+                                    msg = "修改成功";
+                                    result = true;
+                                    Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
+                                    break;
+                                }
+                            case "clear":
+                                {
+                                    CartManager.GetInstance().ClearCart();
+                                    msg = "成功清空购物车";
+                                    result = true;
+                                    Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
+                                    break;
+                                }
+                            case "viewshortcuts":
+                                {
+                                    //浏览购物车
+                                    Hashtable ht = new Hashtable();
+                                    if (newHt.Count == 0)
                                     {
-                                        CartManager.GetInstance().DeleteFromCart(ProductSysNo);
-                                        msg = "删除成功";
-                                        result = true;
-                                        Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
-                                        break;
+                                        ht = CartManager.GetInstance().GetCartHash();
                                     }
-                                //更新购物车商品数量
-                                case "update":
+                                    else
                                     {
-                                        CartInfo cart = new CartInfo();
-                                        newHt = CartManager.GetInstance().GetCartHash();
-                                        cart = (CartInfo)newHt[ProductSysNo];
-                                        cart.Quantity = ProductQty;
-                                        CartManager.GetInstance().UpdateCart(cart);
-                                        msg = "修改成功";
-                                        result = true;
-                                        Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
-                                        break;
+                                        ht = newHt;
                                     }
-                                case "clear":
-                                        {
-                                            CartManager.GetInstance().ClearCart();
-                                            msg = "成功清空购物车";
-                                            result = true;
-                                            Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = result, Msg = msg }));
-                                            break;
-                                        }
-                                case "viewshortcuts":
-                                        {
-
-                                            break;
-                                        }
-                                //默认什么都不做
-                                default:
+                                    if (ht == null || ht.Count == 0)
                                     {
-                                        break;
+                                        Response.Write(emptyShoppingCartHTML);
                                     }
-                            }
-                        }
-                        else
-                        {
-                            //浏览购物车
-                            Hashtable ht = new Hashtable();
-                            if (newHt.Count == 0)
-                            {
-                                ht = CartManager.GetInstance().GetCartHash();
-                            }
-                            else
-                            {
-                                ht = newHt;
-                            }
-                            if (ht == null || ht.Count == 0)
-                            {
-                                Response.Write(emptyShoppingCartHTML);
-                            }
-                            else
-                            {
-                                Response.Write(CustomerHelper.GetCustomerShoppingCartShortCuts(ht));
-                            }
+                                    else
+                                    {
+                                        Response.Write(CustomerHelper.GetCustomerShoppingCartShortCuts(ht));
+                                    }
+                                    break;
+                                }
+                            //默认什么都不做
+                            case "viewcart":
+                                {
+                                    break;
+                                }
+                            default:
+                                {
+                                    break;
+                                }
                         }
                     }
                     catch
