@@ -38,10 +38,10 @@
             </div>
             <div class="r">
                 <b>商品总价:</b>
-                <strong>1228</strong>
+                <strong id="bottomPrice"></strong>
                 <b>元</b>
                 <a href="javascript:void(0);" id="btnConfirm">
-                    <img src="../static/images/comfirm.jpg"/></a>
+                    <img src="../static/images/comfirm.jpg" /></a>
             </div>
         </div>
     </div>
@@ -55,6 +55,9 @@
 <asp:Content ID="Content7" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">
     <script type="text/javascript">
         $(function () {
+
+            var totalPrice = $("#totalPrice").val();
+            $("#bottomPrice").html(totalPrice);
 
             $("#btnClear").click(function () {
                 YoeJoy.Site.ShoppingCart.MainCart.ClearCartItems();

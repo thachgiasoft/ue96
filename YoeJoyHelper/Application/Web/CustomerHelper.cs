@@ -339,9 +339,9 @@ namespace YoeJoyHelper
                 {
                     string deeplink = YoeJoyConfig.SiteBaseURL + "Pages/Product.aspx?c1=" + product.C1SysNo + "&c2=" + product.C2SysNo + "&c3=" + product.C3SysNo + "&pid=" + product.ProductSysNo;
                     string image = YoeJoyConfig.ImgVirtualPathBase + product.ImgPath;
-                    int productQty=((CartInfo)ht[int.Parse(product.ProductSysNo)]).Quantity;
-                    strb.Append(String.Format(liHTML, deeplink, product.ProductBriefName, image, deeplink, product.ProductBriefName, product.Price,productQty,product.LimitQty, product.AvailableQty, product.ProductSysNo));
-                    productTotalPrice += (float.Parse(product.Price)*productQty);
+                    int productQty = ((CartInfo)ht[int.Parse(product.ProductSysNo)]).Quantity;
+                    strb.Append(String.Format(liHTML, deeplink, product.ProductBriefName, image, deeplink, product.ProductBriefName, product.Price, productQty, product.LimitQty, product.AvailableQty, product.ProductSysNo));
+                    productTotalPrice += (float.Parse(product.Price) * productQty);
                 }
 
                 shoppingCartHTML = strb.ToString();
@@ -384,7 +384,7 @@ namespace YoeJoyHelper
         public static string GetCustomerShoppingCart(Hashtable ht)
         {
             float productTotalPrice = 0;
-            int productTotalWeight=0;
+            int productTotalWeight = 0;
             string siteBaseURL = YoeJoyConfig.SiteBaseURL;
             List<FrontDsiplayProduct> products = CustomerShoppingCartService.GetShoppingCartProducts(ht);
             string shoppingCartHTML = String.Empty;
@@ -408,7 +408,6 @@ namespace YoeJoyHelper
                     	<td>
                         	<p class='ProductAcountTitle'>
                                 <input type='checkbox' checked='checked'/>
-                                <input type='hidden' class='availableQty' value='{0}'/>
                                 <input type='hidden' class='productId' value='{1}'/>
                                 <a href='{2}'><img src='{3}'/></a>
                                 <a href='{4}'>{5}</a>
@@ -422,9 +421,11 @@ namespace YoeJoyHelper
                         	<span>{8}</span>
                         </td>
                     	<td class='AllNum'>
-                        	<a class='sub' href='javascript:void(0);'>-</a>
+                   <a class='sub' href='javascript:void(0);' onClick='YoeJoy.Site.ShoppingCart.MainCart.DecreaseItemNum(this);'>-</a>
                   <input class='num' type='text' maxlength='3' value='{9}'>
-                  <a class='add' href='javascript:void(0);'>+</a>
+                  <input type='hidden' class='limitQty' value='{12}'/>
+                  <input type='hidden' class='availableQty' value='{0}'/>
+                  <a class='add' href='javascript:void(0);' onClick='YoeJoy.Site.ShoppingCart.MainCart.IncreaseItemNum(this);'>+</a>
                             <br>
                             <a class='kc' href='javascript:void(0);'>库存充足</a>
                         </td>
@@ -438,7 +439,7 @@ namespace YoeJoyHelper
                         <th>
                         	<a href='#'>收藏</a>
                             &nbsp;&nbsp;
-                        	<a href='#'>删除</a>
+                        	<a href='javascript:void(0);' onClick='YoeJoy.Site.ShoppingCart.MainCart.DeleteCartItem(this);'>删除</a>
                         </th>
                     </tr>";
 
@@ -447,10 +448,11 @@ namespace YoeJoyHelper
                     string deeplink = YoeJoyConfig.SiteBaseURL + "Pages/Product.aspx?c1=" + product.C1SysNo + "&c2=" + product.C2SysNo + "&c3=" + product.C3SysNo + "&pid=" + product.ProductSysNo;
                     string image = YoeJoyConfig.ImgVirtualPathBase + product.ImgPath;
                     int productQty = ((CartInfo)ht[int.Parse(product.ProductSysNo)]).Quantity;
-                    float currentProductTotalPrice=float.Parse(product.Price) * productQty;
-                    strb.Append(String.Format(trHTML, product.AvailableQty, product.ProductSysNo, deeplink, image, deeplink, product.ProductBriefName, product.BaiscPrice, product.Price, product.Point,productQty,product.Weight, currentProductTotalPrice.ToString("0.00")));
+                    float currentProductTotalPrice = float.Parse(product.Price) * productQty;
+                    int totalPoints = product.Point * productQty;
+                    strb.Append(String.Format(trHTML, product.AvailableQty, product.ProductSysNo, deeplink, image, deeplink, product.ProductBriefName, product.BaiscPrice, product.Price, totalPoints, productQty, product.Weight, currentProductTotalPrice.ToString("0.00"), product.LimitQty));
                     productTotalPrice += currentProductTotalPrice;
-                    productTotalWeight+=(int)product.Weight*productQty;
+                    productTotalWeight += (int)product.Weight * productQty;
                 }
 
                 strb.Append("<tbody></table>");
@@ -462,8 +464,9 @@ namespace YoeJoyHelper
 				<span><b>运费：</b>(以结算为准)</span>
                 <b>商品金额：</b>
                 <strong>{1}</strong>
+                <input type='hidden' value='{2}' id='totalPrice'/>
                 <span>元</span>
-            </p>", productTotalWeight/1000,productTotalPrice);
+            </p>", productTotalWeight / 1000, productTotalPrice, productTotalPrice);
 
             return String.Concat(shoppingCartHTML, shoppingCartHTMLWrapper1);
         }

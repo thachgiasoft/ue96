@@ -140,7 +140,7 @@ YoeJoy.Site = new function () {
             //清空购物车
             _this.ClearCartItems = function () {
                 var shoppingCartServiceURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=clear";
-                $.post(shoppingCartServiceURL,function (data) {
+                $.post(shoppingCartServiceURL, function (data) {
                     var result = YoeJoy.Site.Utility.GetJsonStr(data);
                     if (result.IsSuccess) {
                         alert(result.Msg);
@@ -154,7 +154,69 @@ YoeJoy.Site = new function () {
 
             //删除购物车商品
             _this.DeleteCartItem = function (sender) {
-                
+                var $this = $(sender);
+                var deleteHandlerBaseURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=delete";
+                var productSysNo = $this.parent().parent().children().eq(0).children("p").children(".productId").val()
+                var params = "pid=" + productSysNo;
+                $.post(deleteHandlerBaseURL, params, function (data) {
+                    var result = YoeJoy.Site.Utility.GetJsonStr(data);
+                    if (result.IsSuccess) {
+                        _this.ReloadCartItem();
+                    }
+                    else {
+                        alert(result.Msg);
+                    }
+                });
+            };
+
+            //更新购物车商品数量
+            _this.UpdateCartItem = function (productSysNo, qtyCount) {
+                var updateHandlerBaseURL = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=update";
+                var params = "pid=" + productSysNo + "&qty=" + qtyCount;
+                $.post(updateHandlerBaseURL, params, function (data) {
+                    var result = YoeJoy.Site.Utility.GetJsonStr(data);
+                    if (result.IsSuccess) {
+                        _this.ReloadCartItem();
+                    }
+                    else {
+                        alert(result.Msg);
+                    }
+                });
+            };
+
+            //购物车商品数量减一
+            _this.DecreaseItemNum = function (sender) {
+                var $this = $(sender);
+                var $numBox = $(sender).siblings("input[class='num']");
+                var currentQty = parseInt($numBox.val());
+                if (currentQty == 1) {
+                    alert("购物车商品数不能小于1");
+                }
+                else {
+                    var newCount = currentQty - 1;
+                    var productSysNo = $this.parent().parent().children().eq(0).children("p").children(".productId").val()
+                    _this.UpdateCartItem(productSysNo, newCount);
+                }
+            };
+
+            //购物车商品数量加一
+            _this.IncreaseItemNum = function (sender) {
+                var $this = $(sender);
+                var $numBox = $(sender).siblings("input[class='num']");
+                var currentQty = parseInt($numBox.val());
+                var limitQty = parseInt($(sender).siblings("input[class='limitQty']").val());
+                var availableQty = parseInt($(sender).siblings("input[class='availableQty']").val());
+                if (currentQty >= limitQty) {
+                    alert("购物车商品数不能大于限购数量，本商品一次限购：" + limitQty + "件");
+                }
+                else if (currentQty >= availableQty) {
+                    alert("该商品库存不足，请修改数量");
+                }
+                else {
+                    var newCount = currentQty + 1;
+                    var productSysNo = $this.parent().parent().children().eq(0).children("p").children(".productId").val()
+                    _this.UpdateCartItem(productSysNo, newCount);
+                }
             };
 
         };
