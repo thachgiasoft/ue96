@@ -28,6 +28,21 @@ namespace YoeJoyHelper.Model
         public string CustomerEmail { get; set; }
     }
 
+    /// <summary>
+    /// 用户地址的模型类
+    /// </summary>
+    public class CustomerAddressModel
+    {
+        public string SysNo { get; set; }
+        public string CustomerSysNo { get; set; }
+        public string ContactName { get; set; }
+        public string ProvinceName { get; set; }
+        public string CityName { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
+        public string CellPhone { get; set; }
+    }
+
     public class CustomerShoppingCartService
     {
         /// <summary>
@@ -77,4 +92,6 @@ namespace YoeJoyHelper.Model
             }
         }
     }
+
+
 }

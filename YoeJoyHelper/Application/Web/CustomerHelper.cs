@@ -682,7 +682,7 @@ namespace YoeJoyHelper
         /// <param name="customSysNo"></param>
         /// <param name="pageNum"></param>
         /// <returns></returns>
-        public static string GetCustomOrderList(int customSysNo, int pageNum)
+        public static string GetCustomerOrderList(int customSysNo, int pageNum)
         {
             string orderListHTML = String.Empty;
             int pageCount = int.Parse(YoeJoyConfig.MyOrderProductListPagedCount);
@@ -781,6 +781,21 @@ namespace YoeJoyHelper
                 orderListHTML = strb.ToString();
             }
             return orderListHTML;
+        }
+
+        /// <summary>
+        /// 初始化订单页面
+        /// 用户收货地址
+        /// </summary>
+        /// <param name="customSysNo"></param>
+        /// <returns></returns>
+        public static string InitCustomerPaymentAddress(int customSysNo)
+        {
+            string paymentAddressHTML = String.Empty;
+
+
+
+            return paymentAddressHTML;
         }
 
     }

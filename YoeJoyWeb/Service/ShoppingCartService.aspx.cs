@@ -288,7 +288,7 @@ namespace YoeJoyWeb.Service
             else
             {
                 var precheckOutURL = YoeJoyConfig.SiteBaseURL + "Shopping/precheckout.aspx";
-                Response.Redirect("precheckout.aspx");
+                Response.Redirect(precheckOutURL);
             }
         }
 

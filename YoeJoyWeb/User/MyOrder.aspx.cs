@@ -33,7 +33,7 @@ namespace YoeJoyWeb.User
             base.CheckProfile(Context);
 
             oS = CommonUtility.GetUserSession(Context);
-            OrderListHTML=CustomerHelper.GetCustomOrderList(oS.sCustomer.SysNo,0);
+            OrderListHTML=CustomerHelper.GetCustomerOrderList(oS.sCustomer.SysNo,0);
         }
     }
 }

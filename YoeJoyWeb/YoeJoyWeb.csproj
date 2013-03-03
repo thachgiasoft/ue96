@@ -326,6 +326,13 @@
     <Compile Include="Shopping\CheckOut.aspx.designer.cs">
       <DependentUpon>CheckOut.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Shopping\CheckOut_new.aspx.cs">
+      <DependentUpon>CheckOut_new.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shopping\CheckOut_new.aspx.designer.cs">
+      <DependentUpon>CheckOut_new.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Shopping\Comfirm.aspx.cs">
       <DependentUpon>Comfirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -802,7 +809,9 @@
     <Content Include="Controls\My97DatePicker\WdatePicker.js" />
     <Content Include="Controls\UserProfiler.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Shopping\CheckOut_new.aspx" />
     <Content Include="Shopping\log\log.txt" />
     <Content Include="Pages\Article.aspx" />
     <Content Include="Pages\BrandProductList1.aspx" />
