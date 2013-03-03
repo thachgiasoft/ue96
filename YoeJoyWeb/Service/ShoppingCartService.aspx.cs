@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using YoeJoyHelper;
 using System.Globalization;
 using System.Collections;
+using System.Data;
 
 using Icson.Utils;
 using Icson.Objects.Online;
@@ -32,6 +33,7 @@ namespace YoeJoyWeb.Service
         /// 5. updateShortCuts: 更新购物车快捷方式内某商品的数量
         /// 6. viewCart : 查看购物车
         /// 7. viewShortCuts: 查看购物车快捷方式
+        /// 8. goShopping: 付款，下一步填写订单详细信息
         /// </summary>
         protected string Cmd
         {
@@ -188,6 +190,11 @@ namespace YoeJoyWeb.Service
                                 {
                                     break;
                                 }
+                            case "goshopping":
+                                {
+                                    goShopping();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -204,6 +211,84 @@ namespace YoeJoyWeb.Service
             else
             {
                 Response.Write(JsonContentTransfomer<object>.GetJsonContent(new { IsSuccess = false, Msg = "请先登录" }));
+            }
+        }
+
+        private void goShopping()
+        {
+            DataSet ds = new DataSet();
+            SOInfo oldSoInfo = null;
+            var oSession = CommonUtility.GetUserSession(Context);
+            try
+            {
+                ds = SaleManager.GetInstance().GetSOOnlineDs(oSession.sCustomer.SysNo, 1);
+            }
+            catch
+            {
+                Response.Redirect("../User/login.aspx?url=../Shopping/ShoppingCart.aspx");
+            }
+            //-------------------------库存判断--------------------------//
+
+            //newHt = CartManager.GetInstance().GetCartHash();
+            //DataSet ds2 = OnlineListManager.GetInstance().GetCartDs(newHt);
+            //foreach (DataRow dr in ds2.Tables[0].Rows)
+            //{
+            //    int que = Int32.Parse(dr["OnlineQty"].ToString());
+
+            //    if (que <= 0)
+            //    {
+            //        ShowMessage("您要购买的" + dr["productName"] + "已无库存！");
+            //        return;
+            //    }
+
+
+            //}
+            //------------------------------------------------------------//
+
+
+            if (Util.HasMoreRow(ds))
+            {
+                if (ds.Tables[0].Rows.Count == 1)
+                {
+                    DataRow dr = ds.Tables[0].Rows[0];
+
+                    int soSysNo = int.Parse(dr["sysno"].ToString());
+
+                    oldSoInfo = SaleManager.GetInstance().LoadSOMaster(soSysNo);
+                }
+            }
+
+
+            if (oldSoInfo != null)
+            {
+
+
+                oSession.sSO = new SOInfo();
+                oSession.sSO.CustomerSysNo = oSession.sCustomer.SysNo;
+                oSession.sSO.ReceiveAddress = oldSoInfo.ReceiveAddress;
+                oSession.sSO.ReceiveAreaSysNo = oldSoInfo.ReceiveAreaSysNo;
+                oSession.sSO.ReceiveCellPhone = oldSoInfo.ReceiveCellPhone;
+                oSession.sSO.ReceiveContact = oldSoInfo.ReceiveContact;
+                oSession.sSO.ReceiveName = oldSoInfo.ReceiveName;
+                oSession.sSO.ReceivePhone = oldSoInfo.ReceivePhone;
+                oSession.sSO.ReceiveZip = oldSoInfo.ReceiveZip;
+
+                oSession.sSO.IsPremium = (int)AppEnum.YNStatus.Yes;
+                oSession.sSO.IsVAT = (int)AppEnum.YNStatus.No;
+                oSession.sSO.IsWholeSale = (int)AppEnum.YNStatus.No;
+                oSession.sSO.VATEMSFee = 0;
+                oSession.sSO.VatInfo.VATEMSFee = 0;
+                oSession.sSO.FreeShipFeePay = 0;
+                oSession.sSO.PayTypeSysNo = oldSoInfo.PayTypeSysNo;
+                oSession.sSO.ShipTypeSysNo = oldSoInfo.ShipTypeSysNo;
+                var checkOutURL = YoeJoyConfig.SiteBaseURL + "Shopping/CheckOut.aspx";
+                Response.Redirect(checkOutURL);
+            }
+
+            else
+            {
+                var precheckOutURL = YoeJoyConfig.SiteBaseURL + "Shopping/precheckout.aspx";
+                Response.Redirect("precheckout.aspx");
             }
         }
 

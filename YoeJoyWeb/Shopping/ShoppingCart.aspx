@@ -63,6 +63,10 @@
                 YoeJoy.Site.ShoppingCart.MainCart.ClearCartItems();
             });
 
+            $("#btnConfirm").click(function () {
+                YoeJoy.Site.ShoppingCart.MainCart.GoShopping();
+            });
+
         });
     </script>
 </asp:Content>

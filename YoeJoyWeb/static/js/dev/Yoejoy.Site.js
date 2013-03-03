@@ -219,6 +219,10 @@ YoeJoy.Site = new function () {
                 }
             };
 
+            _this.GoShopping = function () {
+                window.location.href = YoeJoy.Site.Utility.GetSiteBaseURL(false) + "/Service/ShoppingCartService.aspx?cmd=goshopping";
+            };
+
         };
 
         //页面头部的购物车快捷方式
